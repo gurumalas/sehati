@@ -25,7 +25,12 @@
                         </div>
                         <div class="content">
                             <div class="text">PRODUK</div>
-                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                            <?php
+                            // Counter Data Per Kolom tanpa kondisi
+                            $produk = $koneksi->query("SELECT * FROM produk WHERE kd_produk");
+                            $jproduk = mysqli_num_rows($produk);
+                            ?>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $jproduk;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
