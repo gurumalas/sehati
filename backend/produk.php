@@ -10,11 +10,12 @@ if(isset($_GET['delete'])){
 
 if (isset($_POST["tambah"])) {
     $kd_produk = $_POST['kd_produk'];
-    $foto_file = $_POST['foto_file'];
+
     $kd_jenis = $_POST['kd_jenis'];
 
     $harga = $_POST['harga'];
     $deskripsi = $_POST['deskripsi'];
+    $foto_file = $_POST['foto_file'];
     $nama = "1463";
     $dir_upload = "../images/";
     $nama_file = $_FILES['foto_file']['name'];

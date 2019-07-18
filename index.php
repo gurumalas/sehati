@@ -1,6 +1,43 @@
 <?php
 include 'aksinya/koneksi.php';
 include 'aksinya/fungsi.php';
+if(isset ($_POST['tambah'])){
+    $nik = $_POST['nik'];
+    $n_member = $_POST['n_member'];
+    $jk = $_POST['jk'];
+    $hp = $_POST['hp'];
+    $remail = $_POST['email'];
+    $kota = $_POST['kota'];
+    $kodepost = $_POST['kodepos'];
+    $password = $_POST['password'];
+    $alamat = $_POST['alamat'];
+    $fotomember = $_POST['fotomember'];
+
+    $nama = "1463";
+    $dir_upload = "/";
+    $nama_file = $_FILES['fotomember']['name'];
+//    $nama_file = $kd_produk.pathinfo($_FILES['foto_file']['name'], PATHINFO_EXTENSION);
+    $x                 = explode('.', $nama_file);
+    $extension         = strtolower(end($x));
+    $namabaru             = $nama_file . '.' . $extension;
+//
+    if (is_uploaded_file($_FILES['fotomember']['tmp_name'])) {
+//        'Whatevernameyouwant.'.pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+        $masuk = move_uploaded_file($_FILES['fotomember']['tmp_name'],
+            $dir_upload . $nama_file);
+        $insert = mysqli_query($koneksi, "INSERT INTO member(nik,n_member,jk,hp,email,kota,kodepos,fotomember,alamat,password)
+      VALUES('$nik','$n_member','$jk','$hp','$remail','$kota','$kodepost','$fotomember','$alamat','$password')") or die(mysqli_error($koneksi));
+        $result = mysqli_query($koneksi, $insert) or die("gagal " . mysqli_error($koneksi));
+        $register = mysqli_query($koneksi, "SELECT * FROM  member WHERE nik='$nik'");
+        if ($insert) {
+        } else {
+            die ("File gagal diupload");
+        }
+
+
+    }
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -12,13 +49,15 @@ include 'aksinya/fungsi.php';
     <meta name="description" content="Little Closet template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+    <link rel="stylesheet" href="panel_member/plugins/bootstrap/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
-
 </head>
 <body>
 
@@ -332,55 +371,55 @@ include 'aksinya/fungsi.php';
                     $no = 1;
                     //proses menampilkan data
                     while($prod = mysqli_fetch_object($hasil)) {
-                    ?>
-                    <div class="col-xl-4 col-md-6">
-                        <div class="product">
-                            <div class="product_image"><?php echo "<img  src='images/" . $prod ->foto_file . "'; style='width:270px; height:150px;' /> ";?>
-                            </div>
-                            <div class="product_content">
-                                <div class="product_info d-flex flex-row align-items-start justify-content-start">
-                                    <div>
-                                        <div>
-                                            <div class="product_name"><a href="product.html"><?=$prod->nama?></a></div>
-                                            <div class="product_category">In <a href="category.html">Category</a></div>
-                                        </div>
-                                    </div>
-                                    <div class="ml-auto text-right">
-                                        <div class="rating_r rating_r_5 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                        <div class="product_price text-right">IDR 2.000.99</div>
-                                    </div>
+                        ?>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="product">
+                                <div class="product_image"><?php echo "<img  src='images/" . $prod ->foto_file . "'; style='width:270px; height:150px;' /> ";?>
                                 </div>
-                                <div class="product_buttons">
-                                    <div class="text-right d-flex flex-row align-items-start justify-content-start">
-                                        <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-                                            <div><div><img src="images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
+                                <div class="product_content">
+                                    <div class="product_info d-flex flex-row align-items-start justify-content-start">
+                                        <div>
+                                            <div>
+                                                <div class="product_name"><a href="product.html"><?=$prod->nama?></a></div>
+                                                <div class="product_category">In <a href="category.html">Category</a></div>
+                                            </div>
                                         </div>
-                                        <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-                                            <div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                                        <div class="ml-auto text-right">
+                                            <div class="rating_r rating_r_5 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
+                                            <div class="product_price text-right">IDR 2.000.99</div>
+                                        </div>
+                                    </div>
+                                    <div class="product_buttons">
+                                        <div class="text-right d-flex flex-row align-items-start justify-content-start">
+                                            <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
+                                                <div><div><img src="images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
+                                            </div>
+                                            <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                                                <div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
                     <?php } ?>
 
                 </div>
                 <div class="demo-button-toolbar clearfix">
 
-                        <?php //=============CUT HERE for paging====================================
-                        $tampil2 = mysqli_query($GLOBALS["___mysqli_ston"], "SELECT kd_produk from produk");
+                    <?php //=============CUT HERE for paging====================================
+                    $tampil2 = mysqli_query($GLOBALS["___mysqli_ston"], "SELECT kd_produk from produk");
 
-                        $jmldata = mysqli_num_rows($tampil2);
-                        $jumlah_halaman = ceil($jmldata / $batas);
-                        ?>
+                    $jmldata = mysqli_num_rows($tampil2);
+                    $jumlah_halaman = ceil($jmldata / $batas);
+                    ?>
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
-                                <?php pagination($halaman, $jumlah_halaman, "produknya"); ?>
+                        <?php pagination($halaman, $jumlah_halaman, "produknya"); ?>
 
-                        </div>
-<!--                        <div class="button load_more ml-auto mr-auto"><a href="#">load more</a></div>-->
+                    </div>
+                    <!--                        <div class="button load_more ml-auto mr-auto"><a href="#">load more</a></div>-->
                     <div class='well'>Jumlah data :<strong><?= $jmldata; ?> </strong></div>
                 </div>
             </div>
@@ -476,11 +515,11 @@ include 'aksinya/fungsi.php';
                                     <!-- Nav tabs -->
                                     <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab">  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                                                 Login</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                                 Register</a>
                                         </li>
                                     </ul>
@@ -493,18 +532,18 @@ include 'aksinya/fungsi.php';
                                             <!--Body-->
                                             <div class="modal-body mb-1">
                                                 <div class="md-form form-sm mb-5">
-                                                    <i class="fas fa-envelope prefix"></i>
+                                                    <label>Your email</label>
                                                     <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
-                                                    <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+
                                                 </div>
 
                                                 <div class="md-form form-sm mb-4">
-                                                    <i class="fas fa-lock prefix"></i>
+                                                    <label>Your password</label>
                                                     <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
-                                                    <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+
                                                 </div>
                                                 <div class="text-center mt-2">
-                                                    <button class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                                                    <button class="btn btn-info">Log in <span class="glyphicon glyphicon-ok"></span></i></button>
                                                 </div>
                                             </div>
                                             <!--Footer-->
@@ -523,30 +562,52 @@ include 'aksinya/fungsi.php';
                                         <div class="tab-pane fade" id="panel8" role="tabpanel">
 
                                             <!--Body-->
-                                            <div class="modal-body">
-                                                <div class="md-form form-sm mb-5">
-                                                    <i class="fas fa-envelope prefix"></i>
-                                                    <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
-                                                    <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
-                                                </div>
+                                            <form action="" method="post">
+                                                <div class="modal-body">
+                                                    <div class="md-form form-sm mb-7">
+                                                        <label>NIK</label>
+                                                        <input name="nik" type="text" id="modalLRInput12" class="form-control form-control-sm validate">
 
-                                                <div class="md-form form-sm mb-5">
-                                                    <i class="fas fa-lock prefix"></i>
-                                                    <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
-                                                    <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
-                                                </div>
+                                                        <label>Nama Lengkap</label>
+                                                        <input name="n_member" type="text" id="modalLRInput12" class="form-control form-control-sm validate">
 
-                                                <div class="md-form form-sm mb-4">
-                                                    <i class="fas fa-lock prefix"></i>
-                                                    <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
-                                                    <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
-                                                </div>
+                                                        <label  data-success="right" >Jenis Kelamin</label>
+                                                        <select name="jk"  id="modalLRInput12" class="form-control selectpicker validate" data-live-search="true" style="width: 100%;" required>
+                                                            <option  id="modalLRInput12" value="1">Pria</option>
+                                                            <option  id="modalLRInput12" value="2">Wanita</option>
+                                                        </select>
 
-                                                <div class="text-center form-sm mt-2">
-                                                    <button class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
-                                                </div>
+                                                        <label  data-success="right" for="modalLRInput12">Kontak Telphone</label>
+                                                        <input name="hp" id="modalLRInput12" class="form-control form-control-sm validate">
 
-                                            </div>
+                                                    </div>
+                                                    <div class="md-form form-sm mb-5">
+                                                        <label  data-success="right" for="modalLRInput12">email</label>
+                                                        <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+
+                                                        <label  data-success="right" for="modalLRInput12">Kota/Kecematan</label>
+                                                        <input name="kota" type="text" id="modalLRInput12" class="form-control form-control-sm validate">
+
+                                                        <label  data-success="right" for="modalLRInput12">Kode Pos</label>
+                                                        <input name="kodepos" type="text" id="modalLRInput12" class="form-control form-control-sm validate">
+
+                                                        <label  data-success="right" for="modalLRInput12">Alamat</label>
+                                                        <textarea name="alamat" type="text" id="modalLRInput12" class="form-control form-control-sm validate"></textarea>
+
+                                                        <label data-success="right" for="modalLRInput12">FOTO</label>
+                                                        <input name="fotomember" type="file" >
+
+                                                        <label  data-success="right" for="modalLRInput12">Password</label>
+                                                        <input name="password" type="password" id="modalLRInput12" class="form-control form-control-sm validate">
+
+                                                    </div>
+
+                                                    <div class="text-center form-sm mt-2">
+                                                        <button type="submit" name="tambah" class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                                                    </div>
+
+                                                </div>
+                                            </form>
                                             <!--Footer-->
                                             <div class="modal-footer">
                                                 <div class="options text-right">
