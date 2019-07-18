@@ -23,7 +23,7 @@ if (isset($_POST{'tambah'})) {
         $result = mysqli_query($koneksi, $update);
         echo "<script>
 			alert('Data Berhasil Diperbaharuai');
-			location='produk.php';
+                location='produk.php';
 		  </script>";
     }
     if ((is_uploaded_file($_FILES['foto_file']['tmp_name'])) == '') {

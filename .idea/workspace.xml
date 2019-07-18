@@ -55,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/produk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+            <state relative-caret-position="276">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="36" selection-end-column="9" />
               <folding>
                 <element signature="e#25#31#0" expanded="true" />
                 <element signature="e#32#38#0" expanded="true" />
@@ -65,11 +65,24 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/eproduk.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <folding>
+                <element signature="e#43#49#0" expanded="true" />
+                <element signature="e#50#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+            <state relative-caret-position="69">
+              <caret line="544" column="67" selection-start-line="544" selection-start-column="67" selection-end-line="544" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -111,13 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>textare</find>
-      <find>kd_j</find>
-      <find>FILE UPLOAD</find>
-      <find>uplo</find>
-      <find>dropz</find>
-      <find>kd_pr</find>
-      <find>file</find>
       <find>kd_je</find>
       <find>set</find>
       <find>upda</find>
@@ -137,10 +143,17 @@
       <find>regi</find>
       <find>regis</find>
       <find>sec</find>
-      <find>nik</find>
-      <find>produk</find>
       <find>nama</find>
       <find>edit</find>
+      <find>nama_file</find>
+      <find>foto</find>
+      <find>fotome</find>
+      <find>form</find>
+      <find>nik</find>
+      <find>produk</find>
+      <find>dir</find>
+      <find>foto_file</find>
+      <find>masuk</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -174,12 +187,12 @@
         <option value="$PROJECT_DIR$/backend/ejenis.php" />
         <option value="$PROJECT_DIR$/backend/plugins/jquery-sparkline/src/header.js" />
         <option value="$PROJECT_DIR$/backend/footer.php" />
-        <option value="$PROJECT_DIR$/backend/eproduk.php" />
         <option value="$PROJECT_DIR$/aksinya/fungsi.php" />
         <option value="$PROJECT_DIR$/backend/jenis.php" />
         <option value="$PROJECT_DIR$/backend/header.php" />
         <option value="$PROJECT_DIR$/backend/index.php" />
         <option value="$PROJECT_DIR$/backend/produk.php" />
+        <option value="$PROJECT_DIR$/backend/eproduk.php" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
@@ -286,12 +299,12 @@
       <workItem from="1562037035818" duration="9474000" />
       <workItem from="1562106925549" duration="29947000" />
       <workItem from="1562330153672" duration="28868000" />
-      <workItem from="1563015133616" duration="21252000" />
+      <workItem from="1563015133616" duration="31393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142474000" />
+    <option name="totallyTimeSpent" value="152615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -493,18 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/eproduk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="e#43#49#0" expanded="true" />
-            <element signature="e#50#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/pages/forms/advanced-form-elements.html" />
     <entry file="file://$PROJECT_DIR$/backend/pages/ui/buttons.html" />
     <entry file="file://$PROJECT_DIR$/aksinya/koneksi.php">
@@ -591,8 +592,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/produk.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        <state relative-caret-position="276">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="36" selection-end-column="9" />
           <folding>
             <element signature="e#25#31#0" expanded="true" />
             <element signature="e#32#38#0" expanded="true" />
@@ -600,10 +601,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/eproduk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding>
+            <element signature="e#43#49#0" expanded="true" />
+            <element signature="e#50#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        <state relative-caret-position="69">
+          <caret line="544" column="67" selection-start-line="544" selection-start-column="67" selection-end-line="544" selection-end-column="67" />
         </state>
       </provider>
     </entry>

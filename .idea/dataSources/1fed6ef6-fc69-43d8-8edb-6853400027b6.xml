@@ -1493,7 +1493,7 @@
     </column>
     <column id="406" parent="381" name="kodepos">
       <Position>7</Position>
-      <DataType>int(9)|0s</DataType>
+      <DataType>char(9)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="407" parent="381" name="alamat">
@@ -1503,7 +1503,7 @@
     </column>
     <column id="408" parent="381" name="fotomember">
       <Position>9</Position>
-      <DataType>longtext|0s</DataType>
+      <DataType>char(99)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="409" parent="381" name="password">

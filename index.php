@@ -1,43 +1,8 @@
 <?php
 include 'aksinya/koneksi.php';
+$update = mysqli_query($koneksi, "SELECT * FROM  member");
 include 'aksinya/fungsi.php';
-if(isset ($_POST['tambah'])){
-    $nik = $_POST['nik'];
-    $n_member = $_POST['n_member'];
-    $jk = $_POST['jk'];
-    $hp = $_POST['hp'];
-    $remail = $_POST['email'];
-    $kota = $_POST['kota'];
-    $kodepost = $_POST['kodepos'];
-    $password = $_POST['password'];
-    $alamat = $_POST['alamat'];
-    $fotomember = $_POST['fotomember'];
 
-    $nama = "1463";
-    $dir_upload = "/";
-    $nama_file = $_FILES['fotomember']['name'];
-//    $nama_file = $kd_produk.pathinfo($_FILES['foto_file']['name'], PATHINFO_EXTENSION);
-    $x                 = explode('.', $nama_file);
-    $extension         = strtolower(end($x));
-    $namabaru             = $nama_file . '.' . $extension;
-//
-    if (is_uploaded_file($_FILES['fotomember']['tmp_name'])) {
-//        'Whatevernameyouwant.'.pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-        $masuk = move_uploaded_file($_FILES['fotomember']['tmp_name'],
-            $dir_upload . $nama_file);
-        $insert = mysqli_query($koneksi, "INSERT INTO member(nik,n_member,jk,hp,email,kota,kodepos,fotomember,alamat,password)
-      VALUES('$nik','$n_member','$jk','$hp','$remail','$kota','$kodepost','$fotomember','$alamat','$password')") or die(mysqli_error($koneksi));
-        $result = mysqli_query($koneksi, $insert) or die("gagal " . mysqli_error($koneksi));
-        $register = mysqli_query($koneksi, "SELECT * FROM  member WHERE nik='$nik'");
-        if ($insert) {
-        } else {
-            die ("File gagal diupload");
-        }
-
-
-    }
-
-}
 
 ?>
 <!DOCTYPE html>
@@ -562,7 +527,58 @@ if(isset ($_POST['tambah'])){
                                         <div class="tab-pane fade" id="panel8" role="tabpanel">
 
                                             <!--Body-->
-                                            <form action="" method="post">
+                                            <form id="form_advanced_validation" action="" enctype="multipart/form-data" method="POST">
+                                                <?php
+                                                if(isset ($_POST['tambah'])) {
+                                                    $nik = $_POST['nik'];
+                                                    $n_member = $_POST['n_member'];
+                                                    $jk = $_POST['jk'];
+                                                    $hp = $_POST['hp'];
+                                                    $remail = $_POST['email'];
+                                                    $kota = $_POST['kota'];
+                                                    $kodepost = $_POST['kodepos'];
+                                                    $password = $_POST['password'];
+                                                    $alamat = $_POST['alamat'];
+                                                    $fotomember = $_POST['fotomember'];
+
+                                                    $nama = "1463";
+                                                    $dir_upload = "panel_member/images/";
+                                                    $nama_file = $_FILES['fotomember']['name'];
+                                                    //    $nama_file = $kd_produk.pathinfo($_FILES['foto_file']['name'], PATHINFO_EXTENSION);
+                                                    $x = explode('.', $nama_file);
+                                                    $extension = strtolower(end($x));
+                                                    $namabaru = $nama_file . '.' . $extension;
+                                                    //
+                                                    $lokasi_file = $_FILES['fotomember']['tmp_name'];
+
+                                                    if (is_uploaded_file($_FILES['fotomember']['tmp_name'])) {
+                                                        //        'Whatevernameyouwant.'.pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                                                        $terupload = move_uploaded_file($lokasi_file, $dir_upload.$nama_file);
+                                                        $update = mysqli_query($koneksi, "INSERT INTO member(nik,n_member,jk,hp,email,kota,kodepos,alamat,fotomember,password)
+      VALUES('$nik','$n_member','$jk','$hp','$remail','$kota','$kodepost','$alamat','$nama_file','$password')") or die(mysqli_error($koneksi));
+                                                        $result = mysqli_query($koneksi, $update);
+                                                        echo "<script> alert('Data Berhasil Diperbaharuai');
+location='index.php';</script>";
+
+                                                        if ($terupload) {
+                                                            echo "<script> alert('Data Berhasil Di Upload');</script>";
+                                                        } else {
+                                                            die ("File gagal diupload");
+                                                        }
+
+                                                    }
+                                                    if ((is_uploaded_file($_FILES['fotomember']['tmp_name'])) == '') {
+                                                        $update = mysqli_query($koneksi, "INSERT INTO member(nik,n_member,jk,hp,email,kota,kodepos,alamat,password)
+      VALUES('$nik','$n_member','$jk','$hp','$remail','$kota','$kodepost','$alamat','$password')") or die(mysqli_error($koneksi));
+                                                        $result = mysqli_query($koneksi, $update);
+                                                        echo "<script>
+			alert('Data Berhasil Diperbaharuai Dan Foto TIDAK DI UBAH');
+			
+		  </script>";
+                                                    }
+                                                }
+
+                                                ?>
                                                 <div class="modal-body">
                                                     <div class="md-form form-sm mb-7">
                                                         <label>NIK</label>
@@ -595,7 +611,7 @@ if(isset ($_POST['tambah'])){
                                                         <textarea name="alamat" type="text" id="modalLRInput12" class="form-control form-control-sm validate"></textarea>
 
                                                         <label data-success="right" for="modalLRInput12">FOTO</label>
-                                                        <input name="fotomember" type="file" >
+                                                        <input type="file" multiple  name="fotomember"  required>
 
                                                         <label  data-success="right" for="modalLRInput12">Password</label>
                                                         <input name="password" type="password" id="modalLRInput12" class="form-control form-control-sm validate">

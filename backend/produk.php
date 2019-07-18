@@ -2,7 +2,6 @@
 include 'header.php';
 
 $cek = mysqli_query($koneksi, "Select * from produk");
-
 if(isset($_GET['delete'])){
     $kd_produk= $_GET['kd_produk'];
     $delete = mysqli_query($koneksi, "DELETE FROM produk WHERE kd_produk='$kd_produk'");
