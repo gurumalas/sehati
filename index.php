@@ -165,30 +165,7 @@ include 'aksinya/fungsi.php';
                                                                 </div>
                                                             </div>
                                                             <div class="product_image"><img src="images/tas.png" alt=""></div>
-                                                            <div class="product_content">
-                                                                <div class="product_info d-flex flex-row align-items-start justify-content-start">
-                                                                    <div>
-                                                                        <div>
-                                                                            <div class="product_name"><a href="product.html">Cool Clothing with Brown Stripes</a></div>
-                                                                            <div class="product_category">In <a href="category.html">Category</a></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="ml-auto text-right">
-                                                                        <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                                                        <div class="product_price text-right">$3<span>.99</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product_buttons">
-                                                                    <div class="text-right d-flex flex-row align-items-start justify-content-start">
-                                                                        <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-                                                                            <div><div><img src="images/heart.svg" alt=""><div>+</div></div></div>
-                                                                        </div>
-                                                                        <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-                                                                            <div><div><img src="images/cart_2.svg" alt=""><div>+</div></div></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
@@ -317,25 +294,18 @@ include 'aksinya/fungsi.php';
 
                     <!-- Product -->
                     <?php
-                    $kd_produk = $_GET['kd_produk'];
-                    $batas='1';
-                    $tabel="produknya";
-                    $halaman=$_GET['halaman'];
-                    $posisi=null;
-                    if(empty($halaman)){
-                        $posisi=0;
-                        $halaman=1;
-                    }else{
-                        $posisi=($halaman-1)* $batas;
-                    }
-                    $sql = " SELECT * from produk order  by kd_produk asc limit $batas";
-                    if(!empty($id)) {
-                        $sql = " SELECT * from produk";
-                    }
-                    $hasil = mysqli_query($GLOBALS["___mysqli_ston"], $sql) or die(((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)));
-                    $no = 1;
-                    //proses menampilkan data
-                    while($prod = mysqli_fetch_object($hasil)) {
+
+                    $halaman = 1;
+                    $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
+                    $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
+                    $result = mysqli_query($koneksi,"SELECT * FROM produk");
+                    $total = mysqli_num_rows($result);
+                    $pages = ceil($total/$halaman);
+                    $query = mysqli_query($koneksi,"select * from produk LIMIT $mulai, $halaman")or die("gagal " . mysqli_error($koneksi))    ;
+                    $no =$mulai+1;
+
+
+                    while ($prod = mysqli_fetch_object($query)) {
                         ?>
                         <div class="col-xl-4 col-md-6">
                             <div class="product">
@@ -373,19 +343,33 @@ include 'aksinya/fungsi.php';
                 </div>
                 <div class="demo-button-toolbar clearfix">
 
-                    <?php //=============CUT HERE for paging====================================
-                    $tampil2 = mysqli_query($GLOBALS["___mysqli_ston"], "SELECT kd_produk from produk");
 
-                    $jmldata = mysqli_num_rows($tampil2);
-                    $jumlah_halaman = ceil($jmldata / $batas);
-                    ?>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                        <b>Large</b>
+                        <nav>
+                            <ul class="pagination pagination-lg">
+                                <li>
+                                    <a href="javascript:void(0);" class="waves-effect">
+                                        <i class="material-icons">chevron_left</i>
+                                    </a>
+                                </li>
+                                <li><?php for ($i=1; $i<=$pages ; $i++){ ?>
+                                    <a href="?halaman=<?php echo    $i; ?>"class="waves-effect"><?php echo $i; ?></a></li><?php } ?>
+                                <li><a href="javascript:void(0);" class="waves-effect"><i class="material-icons">chevron_right</i></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+
+
+
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
-                        <?php pagination($halaman, $jumlah_halaman, "produknya"); ?>
+<!--                        --><?php //pagination($halaman, $jumlah_halaman, "produknya"); ?>
 
                     </div>
                     <!--                        <div class="button load_more ml-auto mr-auto"><a href="#">load more</a></div>-->
-                    <div class='well'>Jumlah data :<strong><?= $jmldata; ?> </strong></div>
+<!--                    <div class='well'>Jumlah data :<strong>--><?//= $jmldata; ?><!-- </strong></div>-->
                 </div>
             </div>
         </div>
@@ -537,7 +521,7 @@ include 'aksinya/fungsi.php';
                                                     $remail = $_POST['email'];
                                                     $kota = $_POST['kota'];
                                                     $kodepost = $_POST['kodepos'];
-                                                    $password = $_POST['password'];
+                                                    $password = md5($_POST['password']);
                                                     $alamat = $_POST['alamat'];
                                                     $fotomember = $_POST['fotomember'];
 
@@ -560,21 +544,16 @@ include 'aksinya/fungsi.php';
                                                         echo "<script> alert('Data Berhasil Diperbaharuai');
 location='index.php';</script>";
 
-                                                        if ($terupload) {
-                                                            echo "<script> alert('Data Berhasil Di Upload');</script>";
-                                                        } else {
-                                                            die ("File gagal diupload");
-                                                        }
 
                                                     }
                                                     if ((is_uploaded_file($_FILES['fotomember']['tmp_name'])) == '') {
+
                                                         $update = mysqli_query($koneksi, "INSERT INTO member(nik,n_member,jk,hp,email,kota,kodepos,alamat,password)
       VALUES('$nik','$n_member','$jk','$hp','$remail','$kota','$kodepost','$alamat','$password')") or die(mysqli_error($koneksi));
                                                         $result = mysqli_query($koneksi, $update);
                                                         echo "<script>
 			alert('Data Berhasil Diperbaharuai Dan Foto TIDAK DI UBAH');
-			
-		  </script>";
+			location='index.php';</script>";
                                                     }
                                                 }
 
