@@ -309,10 +309,12 @@ include 'aksinya/fungsi.php';
                         ?>
                         <div class="col-xl-4 col-md-6">
                             <div class="product">
-                                <div class="product_image"><?php echo "<img  src='images/" . $prod ->foto_file . "'; style='width:270px; height:150px;' /> ";?>
+                                <div class="thumbnail">
+                                    <?php echo "<img  src='images/" . $prod ->foto_file . "';/> ";?>
                                 </div>
                                 <div class="product_content">
                                     <div class="product_info d-flex flex-row align-items-start justify-content-start">
+
                                         <div>
                                             <div>
                                                 <div class="product_name"><a href="product.html"><?=$prod->nama?></a></div>
@@ -326,11 +328,9 @@ include 'aksinya/fungsi.php';
                                     </div>
                                     <div class="product_buttons">
                                         <div class="text-right d-flex flex-row align-items-start justify-content-start">
-                                            <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-                                                <div><div><img src="images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
-                                            </div>
-                                            <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-                                                <div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+
+                                            <div style="width: 100%" class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+                                                <div><div><img src="images/cart.svg" class="svg" alt="" ><div>+</div></div></div>
                                             </div>
                                         </div>
                                     </div>
@@ -345,17 +345,13 @@ include 'aksinya/fungsi.php';
 
 
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                        <b>Large</b>
+
                         <nav>
                             <ul class="pagination pagination-lg">
-                                <li>
-                                    <a href="javascript:void(0);" class="waves-effect">
-                                        <i class="material-icons">chevron_left</i>
-                                    </a>
-                                </li>
-                                <li><?php for ($i=1; $i<=$pages ; $i++){ ?>
-                                    <a href="?halaman=<?php echo    $i; ?>"class="waves-effect"><?php echo $i; ?></a></li><?php } ?>
-                                <li><a href="javascript:void(0);" class="waves-effect"><i class="material-icons">chevron_right</i></a></li>
+                                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                                <li class="active"><?php for ($i=1; $i<=$pages ; $i++){ ?>
+                                    <a href="?halaman=<?php echo    $i; ?>"class="waves-effect"><?php echo $i; ?><?php } ?><li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&arr</span></a></li>
+
                             </ul>
                         </nav>
                     </div>
