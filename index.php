@@ -208,7 +208,7 @@ include 'aksinya/fungsi.php';
                                                                     <div>
                                                                         <div>
                                                                             <div class="product_name"><a href="product.html">Cool Clothing with Brown Stripes</a></div>
-                                                                            <div class="product_category">In <a href="category.html">Category</a></div>
+                                                                            <div class="product_category">In <a href="kategori.php">Category</a></div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="ml-auto text-right">
@@ -280,12 +280,12 @@ include 'aksinya/fungsi.php';
                     <div class="col">
                         <div class="page_nav">
                             <ul class="d-flex flex-row align-items-start justify-content-center">
-                                <li class="active"><a href="category.html">Aksesoris <br/>Herbalife</a></li>
-                                <li><a style="text-align: center" href="category.html">Obat <br/>Kapsul</a></li>
-                                <li><a style="text-align: center" href="category.html">Obat<br/>Tablet</a></li>
-                                <li><a style="text-align: center" href="category.html">Obat <br/>Pil</a></li>
-                                <li><a style="text-align: center" href="category.html">Obat <br/>Botol</a></li>
-                                <li><a style="text-align: center" href="category.html">Obat <br/>Tetes</a></li>
+                                <li class="active">
+                                    <?php
+
+                                    list_kategori();
+                                    ?>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -318,7 +318,7 @@ include 'aksinya/fungsi.php';
                                         <div>
                                             <div>
                                                 <div class="product_name"><a href="product.html"><?=$prod->nama?></a></div>
-                                                <div class="product_category">In <a href="category.html">Category</a></div>
+                                                <div class="product_category">In <a href="kategori.php">Category</a></div>
                                             </div>
                                         </div>
                                         <div class="ml-auto text-right">
@@ -350,7 +350,7 @@ include 'aksinya/fungsi.php';
                             <ul class="pagination pagination-lg">
                                 <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
                                 <li class="active"><?php for ($i=1; $i<=$pages ; $i++){ ?>
-                                    <a href="?halaman=<?php echo    $i; ?>"class="waves-effect"><?php echo $i; ?><?php } ?><li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&arr</span></a></li>
+                                    <a href="?halaman=<?php echo    $i; ?>"class="waves-effect"><?php echo $i; ?><?php } ?><li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
 
                             </ul>
                         </nav>
@@ -385,7 +385,7 @@ include 'aksinya/fungsi.php';
                                 <div class="box_content d-flex flex-row align-items-center justify-content-start">
                                     <div class="box_left">
                                         <div class="box_image">
-                                            <a href="category.html">
+                                            <a href="kategori.php">
                                                 <div class="background_image" style="background-image:url(images/box_2_img.jpg)"></div>
                                             </a>
                                         </div>
@@ -402,7 +402,7 @@ include 'aksinya/fungsi.php';
                                 <div class="box_content d-flex flex-row align-items-center justify-content-start">
                                     <div class="box_left">
                                         <div class="box_image">
-                                            <a href="category.html">
+                                            <a href="kategori.php">
                                                 <div class="background_image" style="background-image:url(images/botol.gif)"></div>
                                             </a>
                                         </div>
@@ -716,10 +716,10 @@ location='index.php';</script>";
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
                                 <nav class="footer_nav ml-md-auto order-md-2 order-1">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
-                                        <li><a href="category.html">Kapsul</a></li>
-                                        <li><a href="category.html">Pil</a></li>
-                                        <li><a href="category.html">Tetes</a></li>
-                                        <li><a href="category.html">Botol</a></li>
+                                        <li><a href="kategori.php">Kapsul</a></li>
+                                        <li><a href="kategori.php">Pil</a></li>
+                                        <li><a href="kategori.php">Tetes</a></li>
+                                        <li><a href="kategori.php">Botol</a></li>
                                         <li><a href="#">Salap</a></li>
                                         <li><a href="#">Tablet</a></li>
                                     </ul>

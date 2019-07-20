@@ -1,3 +1,9 @@
+<?php
+include 'aksinya/koneksi.php';
+include 'aksinya/fungsi.php';
+$kd_jenis = $_GET['kd_jenis'];
+$sql = mysqli_query($koneksi, "Select * from produk where kd_jenis='$kd_jenis'");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,12 +114,12 @@
 		<div class="home">
 			<div class="home_container d-flex flex-column align-items-center justify-content-end">
 				<div class="home_content text-center">
-					<div class="home_title">Category Page</div>
+					<div class="home_title">Kategori</div>
 					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
 						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
-							<li><a href="#">Home</a></li>
-							<li><a href="category.html">Woman</a></li>
-							<li>New Products</li>
+                            <li><?php
+                                list_kategori();
+                                ?></li>
 						</ul>
 					</div>
 				</div>
@@ -167,13 +173,36 @@
 					<!-- Product -->
 					<div class="col-xl-4 col-md-6 grid-item new">
 						<div class="product">
-							<div class="product_image"><img src="images/Varian-Madu-TJ.png" alt=""></div>
+                            <?php
+
+                            $halaman = 1;
+                            $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
+                            $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
+                            $result = mysqli_query($koneksi,"SELECT * FROM produk");
+                            $total = mysqli_num_rows($result);
+                            $pages = ceil($total/$halaman);
+                            $query = mysqli_query($koneksi,"select * from produk where kd_jenis='$kd_jenis' LIMIT $mulai, $halaman")or die("gagal " . mysqli_error($koneksi))    ;
+                            $no =$mulai+1;
+
+
+                            while ($prod = mysqli_fetch_object($query)) {
+                            ?>
+							<div class="product_image">
+                                <?php echo "<img  src='images/" . $prod ->foto_file . "';/> ";?>
+                            </div>
 							<div class="product_content">
 								<div class="product_info d-flex flex-row align-items-start justify-content-start">
 									<div>
 										<div>
-											<div class="product_name"><a href="product.html">MADU TJ</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
+                                            <div class="product_name"><a href="product.html"><?=$prod->nama?></a></div>
+											<div class="product_category">#<a href="kategori.php?cari=kategori&kd_jenis=<?=$prod->kd_jenis?>">
+                                                    <?php
+                                                    $que = mysqli_query($koneksi,"select * from jenis where kd_jenis='$kd_jenis'");
+                                                    while ($cat = mysqli_fetch_object($que)) {
+                                                    ?><?=$cat->n_jenis?>
+                                                </a><?php
+                                                }
+                                                ?></div>
 										</div>
 									</div>
 									<div class="ml-auto text-right">
@@ -183,40 +212,7 @@
 								</div>
 								<div class="product_buttons">
 									<div class="text-right d-flex flex-row align-items-start justify-content-start">
-										<div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-											<div><div><img src="images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
-										</div>
-										<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-											<div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 
-					<!-- Product -->
-					<div class="col-xl-4 col-md-6 grid-item hot">
-						<div class="product">
-							<div class="product_image"><img src="images/obat-hammer-of-thor.png" alt=""></div>
-							<div class="product_content">
-								<div class="product_info d-flex flex-row align-items-start justify-content-start">
-									<div>
-										<div>
-											<div class="product_name"><a href="product.html">Hammer Of Thor</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
-										</div>
-									</div>
-									<div class="ml-auto text-right">
-										<div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-										<div class="product_price text-right">$4<span>.99</span></div>
-									</div>
-								</div>
-								<div class="product_buttons">
-									<div class="text-right d-flex flex-row align-items-start justify-content-start">
-										<div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-											<div><div><img src="images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
-										</div>
 										<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
 											<div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
 										</div>
@@ -224,37 +220,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
-
-					<!-- Product -->
-					<div class="col-xl-4 col-md-6 grid-item sale">
-						<div class="product">
-							<div class="product_image"><img src="images/obh%20madu.png" alt=""></div>
-							<div class="product_content">
-								<div class="product_info d-flex flex-row align-items-start justify-content-start">
-									<div>
-										<div>
-											<div class="product_name"><a href="product.html">OBH MADU</a></div>
-											<div class="product_category">In <a href="category.html">Category</a></div>
-										</div>
-									</div>
-									<div class="ml-auto text-right">
-										<div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-										<div class="product_price text-right">$13<span>.99</span></div>
-									</div>
-								</div>
-								<div class="product_buttons">
-									<div class="text-right d-flex flex-row align-items-start justify-content-start">
-										<div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-											<div><div><img src="images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
-										</div>
-										<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-											<div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                        <?php } ?>
 					</div>
 
 				</div>
@@ -262,10 +228,9 @@
 					<div class="col">
 						<div class="page_nav">
 							<ul class="d-flex flex-row align-items-start justify-content-center">
-								<li class="active"><a href="#">01</a></li>
-								<li><a href="#">02</a></li>
-								<li><a href="#">03</a></li>
-								<li><a href="#">04</a></li>
+								<li class="active">
+                                    <?php for ($i=1; $i<=$pages ; $i++){ ?>
+                                    <a href="?halaman=<?php echo $i; ?>&cari=kategori&kd_jenis=<?=$prod -> kd_jenis;?>"class="waves-effect"><?php echo $i; ?><?php } ?><li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -355,10 +320,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 								<nav class="footer_nav ml-md-auto order-md-2 order-1">
 									<ul class="d-flex flex-row align-items-center justify-content-start">
-										<li><a href="category.html">Women</a></li>
-										<li><a href="category.html">Men</a></li>
-										<li><a href="category.html">Kids</a></li>
-										<li><a href="category.html">Home Deco</a></li>
+										<li><a href="kategori.php">Women</a></li>
+										<li><a href="kategori.php">Men</a></li>
+										<li><a href="kategori.php">Kids</a></li>
+										<li><a href="kategori.php">Home Deco</a></li>
 										<li><a href="#">Contact</a></li>
 									</ul>
 								</nav>

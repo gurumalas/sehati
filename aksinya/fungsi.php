@@ -1,42 +1,30 @@
 <?php
+function query($qry) {
+    $result = mysqli_query($GLOBALS["___mysqli_ston"], $qry) or die("Gagal melakukan query pada :
+	 <br>$qry<br><br>Kode Salah : <br>&nbsp;&nbsp;&nbsp;" . ((is_object($GLOBALS["___mysqli_ston"])) ? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)) . "!");
+    return $result;
+}
+function fetch_row($qry) {
+    $tmp = query($qry);
+    list($result) = mysqli_fetch_row($tmp);
+    return $result;
+}
+
 function format_rupiah($rp) {
     $hasil = "<b>IDR." . number_format($rp, 0, "", ".") . ",00-</b>";
     return $hasil;
 }
 
-function pagination($halaman, $jumlah_halaman, $tabel) {
-    $baselink = "index.php?mod=" . $tabel . "&pg=" . $tabel . "_view&halaman=";
-    if($halaman > 1) {
-        $previous = $halaman - 1;
-        echo "<li><a href='" . $baselink . "1'><i class='icon-fast-backward'></i></a></li>";
-        echo "<li><a href='" . $baselink . $previous . "'><i class='icon-step-backward'></i></a></li>";
-    } else {
-        echo "<li><a href=''><i class='icon-fast-backward'></i></a></li><li><a href=''><i class='icon-step-backward'></i></a></li>";
-    }
+function list_kategori() {
 
-    $angka = ($halaman > 3) ? "<li><a href=''>...</a></li>" : " ";
-    for($i = $halaman - 2; $i < $halaman; $i++) {
-        if($i < 1)
-            continue ;
-        $angka .= "<li><a href='" . $baselink . $i . "'>" . $i . "</a></li>";
-    }
-    $angka .= "<li> <a href='' class='btn btn-primary'>".$halaman."</a></li>";
-    for($i = $halaman + 1; $i < $halaman + 3; $i++) {
-        if($i > $jumlah_halaman)
-            break;
-        $angka .= "<li><a href='" . $baselink . $i . "'>" . $i . "</a></li>";
-    }
-    $angka .= ($halaman + 2 < $jumlah_halaman ? "<li><a href=''>...</a></li>
-	<li><a href='" . $baselink . $jumlah_halaman . "'>$jumlah_halaman</a></li>" : "");
-    echo $angka;
-    if($halaman < $jumlah_halaman) {
-        $next = $halaman + 1;
-        echo "<li><a href='" . $baselink . $next . "'><i class='icon-step-forward'></i></a></li>";
-        echo "<li><a href='" . $baselink . $jumlah_halaman . "'><i class='icon-fast-forward'></i></a></li>";
-    } else {
-        echo "<li>	<a href=''><i class='icon-step-forward'></i></a></li><li><a href=''> <i class='icon-fast-forward'></i></a></li>";
-    }
 
+    $kat = query("SELECT kd_jenis, n_jenis FROM jenis ");
+
+    while ($row = mysqli_fetch_row($kat)) {
+
+        echo "<li><a href='kategori.php?cari=kategori&kd_jenis=".$row[0]."'>" . ucwords($row[1]) . "</a> </li>";
+
+    }
 }
 
 ?>
