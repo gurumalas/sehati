@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aksinya/Cart.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aksinya/aksikeranjang.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aksinya/ceklogin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aksinya/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ceklogin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1fed6ef6-fc69-43d8-8edb-6853400027b6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1fed6ef6-fc69-43d8-8edb-6853400027b6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aksinya/fungsi.php" beforeDir="false" afterPath="$PROJECT_DIR$/aksinya/fungsi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aksinya/koneksi.php" beforeDir="false" afterPath="$PROJECT_DIR$/aksinya/koneksi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/eproduk.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/eproduk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jenis.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jenis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kategori.php" beforeDir="false" afterPath="$PROJECT_DIR$/kategori.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,8 +115,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="293" column="74" selection-start-line="293" selection-start-column="74" selection-end-line="293" selection-end-column="74" />
+            <state relative-caret-position="272">
+              <caret line="289" column="84" selection-start-line="289" selection-start-column="84" selection-end-line="289" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -390,12 +371,12 @@
       <workItem from="1563761937551" duration="57137000" />
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
-      <workItem from="1564798506869" duration="29299000" />
+      <workItem from="1564798506869" duration="29565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325046000" />
+    <option name="totallyTimeSpent" value="325312000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -762,8 +743,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="293" column="74" selection-start-line="293" selection-start-column="74" selection-end-line="293" selection-end-column="74" />
+        <state relative-caret-position="272">
+          <caret line="289" column="84" selection-start-line="289" selection-start-column="84" selection-end-line="289" selection-end-column="84" />
         </state>
       </provider>
     </entry>

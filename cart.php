@@ -256,11 +256,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                                         <!-- Cart Item -->
                                         <li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
                                             <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
-                                                <div>
-                                                    <div class="product_image">
-                                                        <p><?php echo $a; ?></p>
-                                                    </div>
-                                                </div> <div>
+                                                 <div>
                                                     <div class="product_image">
                                                         <img src="images/<?php echo $keranjang->foto_file; ?>" alt="">
                                                     </div>
@@ -289,10 +285,10 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                                                 </div>
                                             </div>
 
-                                            <div class="">
+                                            <div class="product_price product_text">
                                                 <span>Harga: </span><?php echo format_rupiah($jumlah_harga); ?></div>
-                                            <div class="button btn-success">
-                                                <a  href="cart.php?act=del&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php"> <span><i class="fa fa-trash" aria-hidden="true"></i></span></a>
+                                            <div class="product_price product_text">
+                                                <a  href="cart.php?act=del&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php"> <span>Hapus</a>
 
                                             </div>
 
