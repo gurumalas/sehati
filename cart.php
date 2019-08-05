@@ -265,7 +265,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                                                 </div>
                                                 <div class="product_name_container">
                                                     <div class="product_name"><a
-                                                                href="product.php"><?php echo $keranjang->nama; ?></a>
+                                                                href="product.php?cari=produk&kd_produk=<?php echo $keranjang->kd_produk;?>"><?php echo $keranjang->nama; ?></a>
                                                     </div>
 
                                                 </div>

@@ -65,6 +65,70 @@ function autonumber($tabel, $kolom, $lebar=0, $awalan=''){
         $angka=$awalan.$nomor;
     return $angka;
 }
+function konversi_bulan($bln) {
+    switch($bln) {
+        case "1" :
 
+        case "01" :
+            $bulan = "Januari";
+            break;
+        case "2" :
 
+        case "02" :
+            $bulan = "Februari";
+            break;
+        case "3" :
+
+        case "03" :
+            $bulan = "Maret";
+            break;
+        case "4" :
+
+        case "04" :
+            $bulan = "April";
+            break;
+        case "5" :
+
+        case "05" :
+            $bulan = "Mei";
+            break;
+        case "6" :
+
+        case "06" :
+            $bulan = "Juni";
+            break;
+        case "7" :
+
+        case "07" :
+            $bulan = "Juli";
+            break;
+        case "8" :
+
+        case "08" :
+            $bulan = "Agustus";
+            break;
+        case "9" :
+
+        case "09" :
+            $bulan = "September";
+            break;
+        case "10" :
+            $bulan = "Oktober";
+            break;
+        case "11" :
+            $bulan = "November";
+            break;
+        case "12" :
+            $bulan = "Desember";
+            break;
+        default :
+            $bulan = "Nooooooot..!!";
+    }
+    return $bulan;
+}
+function konversi_tanggal($time) {
+    list($thn, $bln, $tanggal) = explode('-', $time);
+    $tmp = $tanggal . " " . konversi_bulan($bln) . " " . $thn;
+    return $tmp;
+}
 ?>

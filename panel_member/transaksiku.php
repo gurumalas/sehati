@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-
+include '../aksinya/fungsi.php';
 //$cek = mysqli_query($koneksi, "Select * from produk");
 //if(isset($_GET['delete'])){
 //    $kd_produk= $_GET['kd_produk'];
@@ -171,9 +171,11 @@ include 'header.php';
                                     <th>No.</th>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal Transaksi</th>
-                                    <th>Total Transaksi</th>
-                                    <th>Tanggal Kirim</th>
+                                    <th>Kode Produk</th>
                                     <th>Status</th>
+                                    <th>Banyak</th>
+                                    <th>Harga</th>
+                                    <th>Total</th>
                                     <th>Aksi</th>
                                 </tr>
                                 </thead> <?php
@@ -189,24 +191,21 @@ include 'header.php';
 
                                     <td><?php echo $no?></td>
                                     <td><?php echo $rows -> kd_transaksi?></td>
-
-                                    <td><?php echo $rows -> kd_invoic?></td>
-                                
-                                    <td><?php echo $rows ->totalbyar?></td>
-                                    <td><?php echo $rows ->totalbyar?></td>
-
-                                    <td>
-
-                                        <a class="btn bg-green waves-effect"href="eproduk.php?aksi=ubah&kd_produk=<?= $rows -> kd_produk; ?>" >
-                                            <i class="material-icons">edit</i>
-                                            <span>Edit</span></a>
-                                        <a class="btn bg-red waves-effect" href="produk.php?delete&kd_produk=<?= $rows -> kd_produk; ?>"
-                                           onclick="return confirm('Anda Yakin Akan Menghapus')" title="Hapus Data" >
-                                            <i class="material-icons">delete</i>
-                                            <span>Hapus</span></a>
-                                        </a>
-
+                                    <td><?php echo konversi_tanggal($rows -> tgl);?></td>
+                                    <td><?php echo $rows -> kd_produk?></td>
+                                    <td><?php
+                                        if (($rows->status) == 0) {
+                                            echo '<p style="color: #e80012">Belum Lunas</p>';
+                                        } else {
+                                            echo '<p style="color:#11e800">Lunas</p>';
+                                        }?></td>
+                                    <td><?php echo $rows ->quantity?></td>
+                                    <td><?php echo format_rupiah($rows ->harga)?></td>
+                                    <td><?php echo format_rupiah($rows ->totalbyar)?></td>
+                                    <td><a class="btn btn-danger waves-effect" href="jenis.php">
+                                            <i class="material-icons">book</i><span></span></a>
                                     </td>
+
                                 </tr>
                                 <?php $no++;
                                 }

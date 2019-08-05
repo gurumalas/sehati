@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/datamember.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/edatamember.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1fed6ef6-fc69-43d8-8edb-6853400027b6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1fed6ef6-fc69-43d8-8edb-6853400027b6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/produk.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/produk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aksinya/fungsi.php" beforeDir="false" afterPath="$PROJECT_DIR$/aksinya/fungsi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel_member/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_member/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_member/transaksiku.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_member/transaksiku.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,10 +92,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cart.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="76" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/edatamember.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="105" lean-forward="true" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="105" />
+            <state relative-caret-position="329">
+              <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="151" />
               <folding>
                 <element signature="e#126#133#1" expanded="true" />
               </folding>
@@ -112,10 +115,27 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/panel_member/transaksiku.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="189" column="54" selection-start-line="189" selection-start-column="54" selection-end-line="189" selection-end-column="54" />
+            <state relative-caret-position="412">
+              <caret line="205" column="84" selection-start-line="205" selection-start-column="84" selection-end-line="205" selection-end-column="84" />
               <folding>
                 <element signature="e#3600#3667#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aksinya/fungsi.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+              <folding>
+                <element signature="e#65#71#0" expanded="true" />
+                <element signature="e#71#77#0" expanded="true" />
+                <element signature="e#77#83#0" expanded="true" />
+                <element signature="n#konversi_bulan#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -134,9 +154,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;form</find>
-      <find>ull</find>
-      <find>full</find>
       <find>hala</find>
       <find>kd_pro</find>
       <find>kode</find>
@@ -164,6 +181,9 @@
       <find>kode je</find>
       <find>tambah</find>
       <find>img</find>
+      <find>auto</find>
+      <find>tgl</find>
+      <find>to</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -224,12 +244,12 @@
         <option value="$PROJECT_DIR$/aksinya/koneksi.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/backend/jenis.php" />
-        <option value="$PROJECT_DIR$/aksinya/fungsi.php" />
         <option value="$PROJECT_DIR$/checkout.php" />
-        <option value="$PROJECT_DIR$/cart.php" />
         <option value="$PROJECT_DIR$/backend/header.php" />
         <option value="$PROJECT_DIR$/backend/produk.php" />
         <option value="$PROJECT_DIR$/backend/datamember.php" />
+        <option value="$PROJECT_DIR$/cart.php" />
+        <option value="$PROJECT_DIR$/aksinya/fungsi.php" />
         <option value="$PROJECT_DIR$/panel_member/transaksiku.php" />
       </list>
     </option>
@@ -342,12 +362,12 @@
       <workItem from="1563761937551" duration="57137000" />
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
-      <workItem from="1564798506869" duration="39824000" />
+      <workItem from="1564798506869" duration="42829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="335571000" />
+    <option name="totallyTimeSpent" value="338576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -664,23 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aksinya/fungsi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
-          <folding>
-            <element signature="e#65#71#0" expanded="true" />
-            <element signature="e#71#77#0" expanded="true" />
-            <element signature="e#77#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ceklogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -712,16 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/edatamember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="105" lean-forward="true" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="105" />
-          <folding>
-            <element signature="e#126#133#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -729,12 +722,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aksinya/fungsi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+          <folding>
+            <element signature="e#65#71#0" expanded="true" />
+            <element signature="e#71#77#0" expanded="true" />
+            <element signature="e#77#83#0" expanded="true" />
+            <element signature="n#konversi_bulan#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="76" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/edatamember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="151" />
+          <folding>
+            <element signature="e#126#133#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/panel_member/transaksiku.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="189" column="54" selection-start-line="189" selection-start-column="54" selection-end-line="189" selection-end-column="54" />
+        <state relative-caret-position="412">
+          <caret line="205" column="84" selection-start-line="205" selection-start-column="84" selection-end-line="205" selection-end-column="84" />
           <folding>
             <element signature="e#3600#3667#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
