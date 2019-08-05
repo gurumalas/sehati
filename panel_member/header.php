@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome Bang bang Tampan</title>
+    <title>Welcome Admin</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -94,7 +94,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html">SEHATI MANAGERMAN SISTEM</a>
+                <a class="navbar-brand" href="index.html">SEHATI MANAGEMAN SISTEM</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -339,7 +339,7 @@ Answer GitHub questions
                         <ul class="ml-menu">
                             <li>
 
-                                <a href="kategori.php"><span>RINCIAN PESANAN</span></a>
+                                <a href="transaksiku.php"><span>RINCIAN PESANAN</span></a>
                             </li>
                             <li>
 

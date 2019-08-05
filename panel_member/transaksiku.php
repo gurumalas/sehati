@@ -1,42 +1,42 @@
 <?php
 include 'header.php';
 
-$cek = mysqli_query($koneksi, "Select * from produk");
-if(isset($_GET['delete'])){
-    $kd_produk= $_GET['kd_produk'];
-    $delete = mysqli_query($koneksi, "DELETE FROM produk WHERE kd_produk='$kd_produk'");
-}
-
-if (isset($_POST["tambah"])) {
-    $kd_produk = $_POST['kd_produk'];
-
-    $kd_jenis = $_POST['kd_jenis'];
-
-    $harga = $_POST['harga'];
-    $deskripsi = $_POST['deskripsi'];
-    $foto_file = $_POST['foto_file'];
-    $nama = "1463";
-    $dir_upload = "../images/";
-    $nama_file = $_FILES['foto_file']['name'];
-//    $nama_file = $kd_produk.pathinfo($_FILES['foto_file']['name'], PATHINFO_EXTENSION);
-    $x                 = explode('.', $nama_file);
-    $extension         = strtolower(end($x));
-    $namabaru             = $nama_file . '.' . $extension;
-    //
-    if (is_uploaded_file($_FILES['foto_file']['tmp_name'])) {
-//        'Whatevernameyouwant.'.pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-        $masuk = move_uploaded_file($_FILES['foto_file']['tmp_name'],
-            $dir_upload . $nama_file);
-
-        $mysqli = "INSERT INTO produk(kd_produk,foto_file,kd_jenis,harga,deskripsi) VALUES ('$kd_produk','$nama_file','$kd_jenis','$harga','$deskripsi')";
-        $result = mysqli_query($koneksi, $mysqli) or die("gagal " . mysqli_error($koneksi));
-        $cek = mysqli_query($koneksi, "SELECT * FROM produk WHERE kd_produk='$kd_produk'");
-        if ($cek) {
-        } else {
-            die ("File gagal diupload");
-        }
-    }
-}
+//$cek = mysqli_query($koneksi, "Select * from produk");
+//if(isset($_GET['delete'])){
+//    $kd_produk= $_GET['kd_produk'];
+//    $delete = mysqli_query($koneksi, "DELETE FROM produk WHERE kd_produk='$kd_produk'");
+//}
+//
+//if (isset($_POST["tambah"])) {
+//    $kd_produk = $_POST['kd_produk'];
+//
+//    $kd_jenis = $_POST['kd_jenis'];
+//
+//    $harga = $_POST['harga'];
+//    $deskripsi = $_POST['deskripsi'];
+//    $foto_file = $_POST['foto_file'];
+//    $nama = "1463";
+//    $dir_upload = "../images/";
+//    $nama_file = $_FILES['foto_file']['name'];
+////    $nama_file = $kd_produk.pathinfo($_FILES['foto_file']['name'], PATHINFO_EXTENSION);
+//    $x                 = explode('.', $nama_file);
+//    $extension         = strtolower(end($x));
+//    $namabaru             = $nama_file . '.' . $extension;
+//    //
+//    if (is_uploaded_file($_FILES['foto_file']['tmp_name'])) {
+////        'Whatevernameyouwant.'.pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+//        $masuk = move_uploaded_file($_FILES['foto_file']['tmp_name'],
+//            $dir_upload . $nama_file);
+//
+//        $mysqli = "INSERT INTO produk(kd_produk,foto_file,kd_jenis,harga,deskripsi) VALUES ('$kd_produk','$nama_file','$kd_jenis','$harga','$deskripsi')";
+//        $result = mysqli_query($koneksi, $mysqli) or die("gagal " . mysqli_error($koneksi));
+//        $cek = mysqli_query($koneksi, "SELECT * FROM produk WHERE kd_produk='$kd_produk'");
+//        if ($cek) {
+//        } else {
+//            die ("File gagal diupload");
+//        }
+//    }
+//}
 
 ?>
 
@@ -75,14 +75,13 @@ if (isset($_POST["tambah"])) {
                             <select name="kd_jenis" class="form-control selectpicker" data-live-search="true" style="width: 100%;" required>
                                 <option value="">Pilih Jenis</option>
                                 <?php
-                                include "../aksinya/koneksi.php";
-                                $query = "SELECT * from jenis";
-                                $hasil = mysqli_query($koneksi,$query);
-                                while ($data = mysqli_fetch_array($hasil))
-                                {
-
-                                    echo "<option value=$data[n_jenis]>$data[kd_jenis]&nbsp;-&nbsp;$data[n_jenis]</option>";
-                                }
+//                                include "../aksinya/koneksi.php";
+//                                $query = "SELECT * from jenis";
+//                                $hasil = mysqli_query($koneksi,$query);
+//                                while ($data = mysqli_fetch_array($hasil))
+//                                {
+//                                    echo "<option value=$data[n_jenis]>$data[kd_jenis]&nbsp;-&nbsp;$data[n_jenis]</option>";
+//                                }
                                 ?>
                             </select>
                         </div>
@@ -170,36 +169,32 @@ if (isset($_POST["tambah"])) {
                                 <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Kode Produk</th>
-                                    <th>Tampilan Produk</th>
-                                    <th>Nama Produk</th>
-                                    <th>Jenis</th>
-                                    <th>Harga</th>
-                                    <th>Deskripsi</th>
+                                    <th>Kode Transaksi</th>
+                                    <th>Tanggal Transaksi</th>
+                                    <th>Total Transaksi</th>
+                                    <th>Tanggal Kirim</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                                 </thead> <?php
-
-                                $query="SELECT * FROM produk ORDER by kd_produk desc"  ;
-                                $sql = mysqli_query($koneksi, "SELECT * FROM produk");
+                                include '../aksinya/koneksi.php';
+                                $sqlku = mysqli_query($koneksi, "SELECT * FROM invoice WHERE nik='1'");
                                 $no=1;
                                 //proses menampilkan data
-                                while($rows=mysqli_fetch_object($sql)){
+                                while($rows=mysqli_fetch_object($sqlku)){
 
-                                $foo =str_repeat($rows -> deskripsi,1);
-                                $deskripsi = wordwrap($foo, 19, '<br/>', true);
                                 ?>
                                 <tbody>
                                 <tr>
+
                                     <td><?php echo $no?></td>
-                                    <td><?php echo $rows -> kd_produk?></td>
-                                    <td><img src='../images/<?php echo $rows -> foto_file?>'  width='150px' height='150px'> <br/>
-                                        <p style="text-align: center;"><strong><?php echo $rows -> kd_produk?></strong></p>
-                                    </td>
-                                    <td><?php echo $rows -> nama?></td>
-                                    <td><?php echo $rows -> kd_jenis?></td>
-                                    <td><?php echo format_rupiah($rows ->harga)?></td>
-                                    <td><?php echo $rows -> deskripsi?></td>
+                                    <td><?php echo $rows -> kd_transaksi?></td>
+
+                                    <td><?php echo $rows -> kd_invoic?></td>
+                                
+                                    <td><?php echo $rows ->totalbyar?></td>
+                                    <td><?php echo $rows ->totalbyar?></td>
+
                                     <td>
 
                                         <a class="btn bg-green waves-effect"href="eproduk.php?aksi=ubah&kd_produk=<?= $rows -> kd_produk; ?>" >

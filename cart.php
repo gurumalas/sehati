@@ -62,7 +62,8 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
             unset($_SESSION['items']);
         }
     } elseif ($act == "full") {
-
+        $nik = $_SESSION['nik'];
+        $kd_transaksi = autonumber("invoice", "kd_transaksi", "5", "T");
         if (isset($_SESSION['items'])) {
             foreach ($_SESSION['items'] as $key => $value) {
                 $kd_produk = $_POST['kd_produk'.$key];
@@ -74,8 +75,9 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 
                 $totalbyar = $harga * $kuantitas;
                 //$total += $jumlah_harga;
-                mysqli_query($koneksi, "INSERT INTO invoice (kd_produk,quantity,harga,tgl,totalbyar,status)
-     VALUES ('$kd_produk$key','$value','$harga','$tgl','$totalbyar',0)");
+                $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik)
+     VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar',0,$nik)");
+
             }
         }
 }
@@ -129,8 +131,8 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 	<!-- Contact Info -->
 	<div class="menu_contact">
 		<div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-			<div><div><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-			<div>+1 912-252-7350</div>
+			<div><div><img src="images/phone.svg" href="https://wa.widget.web.id/a3e6bd"></div></div>
+			<div><a href="https://wa.widget.web.id/a3e6bd" target="_blank">Visit me on widget.web.id</a>12-252-7350</div>
 		</div>
 		<div class="menu_social">
 			<ul class="menu_social_list d-flex flex-row align-items-start justify-content-start">
@@ -189,7 +191,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 				<!-- Phone -->
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-					<div>+1 912-252-7350</div>
+					<div><a href="https://wa.widget.web.id/a3e6bd" target="_blank">Visit me on widget.web.id</a>+1 912-252-7350</div>
 				</div>
 			</div>
 		</div>
@@ -439,6 +441,15 @@ $a++;
 	</div>
 		
 </div>
+<!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
+<!-- Advanced options: -->
+<!-- data-align="left" -->
+<!-- data-overlay="true" -->
+<!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
+<!-- Advanced options: -->
+<!-- data-align="left" -->
+<!-- data-overlay="true" -->
+<a href="https://api.whatsapp.com/send?phone=628123456789&text=Hallo%20Agan%20Baik"><img src="tombol.png"></a>
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>

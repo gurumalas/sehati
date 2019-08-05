@@ -294,20 +294,6 @@ include '../aksinya/koneksi.php';
 
                                 <a href="produk.php"><span>DAFTAR PRODUK</span></a>
                             </li>
-                            <li>
-
-
-
-                            </li>
-                            <li>
-                                <a href="stok.php"><span>STOK BARANG</span></a>
-                            </li>
-                            <li>
-                                <a href="modalusaha.php"><span>STOK BARANG DAN MODAL</span></a>
-                            </li>
-                            <li>
-                                <a href="best_produk.php"><span>BEST PRODUK</span></a>
-                            </li>
 
                         </ul>
                     </li>
@@ -319,7 +305,7 @@ include '../aksinya/koneksi.php';
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
+                                <a href="datamember.php" class="menu-toggle">
                                     <span>DAFTAR MEMBER</span>
                                 </a>
                             </li>
