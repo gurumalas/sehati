@@ -56,8 +56,8 @@ if(isset ($_POST['tambah'])){
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label >Kode Produk</label>
-                            <input type="text" class="form-control" name="kd_jenis" maxlength="50" minlength="3" placeholder="HL00021" required>
-                            <div class="help-info">Min. Kerakter: 3, Max. Kerakter: 50</div>
+                            <input type="text" class="form-control" name="kd_jenis" maxlength="50" minlength="0" placeholder="HL00021" required>
+                            <div class="help-info">Min. Kerakter: 1, Max. Kerakter: 50</div>
                         </div>
 
 

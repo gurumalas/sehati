@@ -96,7 +96,7 @@ $sql = mysqli_query($koneksi, "Select * from produk where kd_jenis='$kd_jenis'")
 				<!-- User -->
 				<div class="user"><a href="#"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
 				<!-- Cart -->
-				<div class="cart"><a href="cart.html"><div><img class="svg" src="images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
+				<div class="cart"><a href="cart.php"><div><img class="svg" src="images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
 				<!-- Phone -->
 				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
 					<div><div><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
@@ -130,63 +130,27 @@ $sql = mysqli_query($koneksi, "Select * from produk where kd_jenis='$kd_jenis'")
 
 		<div class="products">
 			<div class="container">
-				<div class="row products_bar_row">
-					<div class="col">
-						<div class="products_bar d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
-							<div class="products_bar_links">
-								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="#">All</a></li>
-									<li><a href="#">Hot Products</a></li>
-									<li class="active"><a href="#">New Products</a></li>
-									<li><a href="#">Sale Products</a></li>
-								</ul>
-							</div>
-							<div class="products_bar_side d-flex flex-row align-items-center justify-content-start ml-lg-auto">
-								<div class="products_dropdown product_dropdown_sorting">
-									<div class="isotope_sorting_text"><span>Default Sorting</span><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-									<ul>
-										<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'>Default</li>
-										<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'>Price</li>
-										<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "name" }'>Name</li>
-									</ul>
-								</div>
-								<div class="product_view d-flex flex-row align-items-center justify-content-start">
-									<div class="view_item active"><img src="images/view_1.png" alt=""></div>
-									<div class="view_item"><img src="images/view_2.png" alt=""></div>
-									<div class="view_item"><img src="images/view_3.png" alt=""></div>
-								</div>
-								<div class="products_dropdown text-right product_dropdown_filter">
-									<div class="isotope_filter_text"><span>Filter</span><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-									<ul>
-										<li class="item_filter_btn" data-filter="*">All</li>
-										<li class="item_filter_btn" data-filter=".hot">Hot</li>
-										<li class="item_filter_btn" data-filter=".new">New</li>
-										<li class="item_filter_btn" data-filter=".sale">Sale</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
 				<div class="row products_row products_container grid">
 					
 					<!-- Product -->
-					<div class="col-xl-4 col-md-6 grid-item new">
+					<div class="col-xl-4  col-md-4 grid-item new">
+                        <?php
+
+                        $halaman = 5;
+                        $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
+                        $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
+                        $result = mysqli_query($koneksi,"SELECT * FROM produk");
+                        $total = mysqli_num_rows($result);
+                        $pages = ceil($total/$halaman);
+                        $query = mysqli_query($koneksi,"select * from produk where kd_jenis='$kd_jenis' LIMIT $mulai, $halaman")or die("gagal " . mysqli_error($koneksi))    ;
+                        $no =$mulai+1;
+
+
+                        while ($prod = mysqli_fetch_object($query)) {
+                        ?>
 						<div class="product">
-                            <?php
 
-                            $halaman = 1;
-                            $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
-                            $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
-                            $result = mysqli_query($koneksi,"SELECT * FROM produk");
-                            $total = mysqli_num_rows($result);
-                            $pages = ceil($total/$halaman);
-                            $query = mysqli_query($koneksi,"select * from produk where kd_jenis='$kd_jenis' LIMIT $mulai, $halaman")or die("gagal " . mysqli_error($koneksi))    ;
-                            $no =$mulai+1;
-
-
-                            while ($prod = mysqli_fetch_object($query)) {
-                            ?>
 							<div class="product_image">
                                 <?php echo "<img  src='images/" . $prod ->foto_file . "';/> ";?>
                             </div>
@@ -194,7 +158,7 @@ $sql = mysqli_query($koneksi, "Select * from produk where kd_jenis='$kd_jenis'")
 								<div class="product_info d-flex flex-row align-items-start justify-content-start">
 									<div>
 										<div>
-                                            <div class="product_name"><a href="product.html"><?=$prod->nama?></a></div>
+                                            <div class="product_name"><a href="product.php"><?=$prod->nama?></a></div>
 											<div class="product_category">#<a href="kategori.php?cari=kategori&kd_jenis=<?=$prod->kd_jenis?>">
                                                     <?php
                                                     $que = mysqli_query($koneksi,"select * from jenis where kd_jenis='$kd_jenis'");
@@ -206,23 +170,26 @@ $sql = mysqli_query($koneksi, "Select * from produk where kd_jenis='$kd_jenis'")
 										</div>
 									</div>
 									<div class="ml-auto text-right">
-										<div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-										<div class="product_price text-right">$3<span>.99</span></div>
+<!--										<div class="rating_r rating_r_4 home_item_rating">-->
+<!--                                            <i></i><i></i><i></i><i></i><i></i>-->
+<!--                                        </div>-->
+										<div class="product_price text-right"><span><?=format_rupiah($prod->harga);?></span></div>
 									</div>
 								</div>
 								<div class="product_buttons">
 									<div class="text-right d-flex flex-row align-items-start justify-content-start">
 
-										<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
+										<div style="width: 100%" class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
 											<div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+
+
                         <?php } ?>
 					</div>
-
 				</div>
 				<div class="row page_nav_row">
 					<div class="col">

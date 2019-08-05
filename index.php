@@ -1,8 +1,25 @@
 <?php
+session_start();
+//require 'aksinya/item.php';
 include 'aksinya/koneksi.php';
-$update = mysqli_query($koneksi, "SELECT * FROM  member");
+//$update = mysqli_query($koneksi, "SELECT * FROM  member");
 include 'aksinya/fungsi.php';
+if(!isset($_SESSION['nik'])){
+//    header('location:sss.php');
+}
+if($_SESSION['nik']!= ""){
+    echo "<script>alert('Mohon Login Terlebih Dahulu  !');</script>";
+}
 
+if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_member']) )
+{
+
+
+    if (($_SESSION['nik'] == "email") || ($_SESSION['nik'] == "n_member"))
+    {
+
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -101,7 +118,7 @@ include 'aksinya/fungsi.php';
                 <!-- User -->
                 <div class="user">
 
-                    <a data-toggle="modal" data-target="#modalLRForm" class="user-profile"  aria-expanded="false"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a>
+                    <a data-toggle="modal" data-target="#modalLRForm" class="user-profile"  aria-expanded="false"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>4</div></div></a>
                     <nav>
                         <ul >
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -121,8 +138,9 @@ include 'aksinya/fungsi.php';
                 </div>
 
                 <!-- Cart -->
-                <div class="cart"><a href="cart.html"><div><img class="svg" src="images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
-                <!-- Phone -->
+                <div class="cart"><a  href="cart.php"><div><img class="svg" src="images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div><div></a></div></div>
+            <?php echo $_SESSION['nik'];?>
+            <!-- Phone -->
                 <div class="header_phone d-flex flex-row align-items-center justify-content-start">
                     <!--					<div><div><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>-->
                     <!--					<div>+62 821-4835-2769</div>-->
@@ -154,7 +172,7 @@ include 'aksinya/fungsi.php';
                                             <div class="home_items">
                                                 <div class="row">
                                                     <div class="col-sm-3 offset-lg-1">
-                                                        <div class="home_item_side"><a href="product.html"><img src="images/botol.gif" alt=""></a></div>
+                                                        <div class="home_item_side"><a href="product.php"><img src="images/botol.gif" alt=""></a></div>
                                                     </div>
                                                     <div class="col-lg-4 col-md-6 col-sm-8 offset-sm-2 offset-md-0">
                                                         <div class="product home_item_large">
@@ -169,7 +187,7 @@ include 'aksinya/fungsi.php';
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <div class="home_item_side"><a href="product.html"><img src="images/baju.png" alt=""></a></div>
+                                                        <div class="home_item_side"><a href="product.php"><img src="images/baju.png" alt=""></a></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,7 +210,7 @@ include 'aksinya/fungsi.php';
                                             <div class="home_items">
                                                 <div class="row">
                                                     <div class="col-sm-3 offset-lg-1">
-                                                        <div class="home_item_side"><a href="product.html"><img src="images/obat-hammer-of-thor.png" alt=""></a></div>
+                                                        <div class="home_item_side"><a href="product.php"><img src="images/obat-hammer-of-thor.png" alt=""></a></div>
                                                     </div>
                                                     <div class="col-lg-4 col-md-6 col-sm-8 offset-sm-2 offset-md-0">
                                                         <div class="product home_item_large">
@@ -203,34 +221,11 @@ include 'aksinya/fungsi.php';
                                                                 </div>
                                                             </div>
                                                             <div class="product_image"><img src="images/obh madu.png" alt=""></div>
-                                                            <div class="product_content">
-                                                                <div class="product_info d-flex flex-row align-items-start justify-content-start">
-                                                                    <div>
-                                                                        <div>
-                                                                            <div class="product_name"><a href="product.html">Cool Clothing with Brown Stripes</a></div>
-                                                                            <div class="product_category">In <a href="kategori.php">Category</a></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="ml-auto text-right">
-                                                                        <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                                                        <div class="product_price text-right">$3<span>.99</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product_buttons">
-                                                                    <div class="text-right d-flex flex-row align-items-start justify-content-start">
-                                                                        <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-                                                                            <div><div><img src="images/heart.svg" alt=""><div>+</div></div></div>
-                                                                        </div>
-                                                                        <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-                                                                            <div><div><img src="images/cart_2.svg" alt=""><div>+</div></div></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
-                                                        <div class="home_item_side"><a href="product.html"><img src="images/Varian-Madu-TJ.png" alt=""></a></div>
+                                                        <div class="home_item_side"><a href="product.php"><img src="images/Varian-Madu-TJ.png" alt=""></a></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -294,7 +289,7 @@ include 'aksinya/fungsi.php';
 
                     <!-- Product -->
                     <?php
-
+                    // UNtuk banyak tampilan produk
                     $halaman = 1;
                     $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
                     $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
@@ -317,20 +312,30 @@ include 'aksinya/fungsi.php';
 
                                         <div>
                                             <div>
-                                                <div class="product_name"><a href="product.html"><?=$prod->nama?></a></div>
-                                                <div class="product_category">In <a href="kategori.php">Category</a></div>
+                                                <div class="product_name"><a style="align-items: center" href="product.php?cari=produk&kd_produk=<?=$prod->kd_produk;?>"><?=$prod->nama?></a></div>
+                                                <div class="product_category">#<a href="kategori.php?cari=kategori&kd_jenis=<?=$prod->kd_jenis?>">
+                                                        <?php
+                                                        $que = mysqli_query($koneksi,"select * from jenis where kd_jenis='$prod->kd_jenis'");
+                                                        while ($cat = mysqli_fetch_object($que)) {
+                                                        ?><?=$cat->n_jenis?>
+                                                    </a><?php
+                                                    }
+                                                    ?></div>
                                             </div>
                                         </div>
                                         <div class="ml-auto text-right">
-                                            <div class="rating_r rating_r_5 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                                            <div class="product_price text-right">IDR 2.000.99</div>
+<!--                                            <div class="rating_r rating_r_5 home_item_rating">--><?//=$prod->quantity?><!--</div>-->
+                                            <div class="product_price text-right"><?=format_rupiah($prod->harga); ?></div>
                                         </div>
                                     </div>
                                     <div class="product_buttons">
                                         <div class="text-right d-flex flex-row align-items-start justify-content-start">
 
                                             <div style="width: 100%" class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-                                                <div><div><img src="images/cart.svg" class="svg" alt="" ><div>+</div></div></div>
+                                                <div><div>
+
+
+                                                        <div><a alt="" href="cart.php?act=add&amp;kd_produk=<?=$prod->kd_produk;?>&amp;ref=index.php" ><img src="images/cart.svg" class="svg">BELI</a></div></div></div>
                                             </div>
                                         </div>
                                     </div>
@@ -467,28 +472,32 @@ include 'aksinya/fungsi.php';
                                             <a class="nav-link" data-toggle="tab" href="#panel8" role="tab">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                                 Register</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#panel9" role="tab">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                                Keluar</a>
+                                        </li>
                                     </ul>
 
                                     <!-- Tab panels -->
                                     <div class="tab-content">
                                         <!--Panel 7-->
                                         <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-
+                                            <form action="ceklogin.php" enctype="multipart/form-data" method="POST">
                                             <!--Body-->
                                             <div class="modal-body mb-1">
                                                 <div class="md-form form-sm mb-5">
-                                                    <label>Your email</label>
-                                                    <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                                    <label>NIK</label>
+                                                    <input type="text" id="modalLRInput10" name="nik" class="form-control form-control-sm validate">
 
                                                 </div>
 
                                                 <div class="md-form form-sm mb-4">
                                                     <label>Your password</label>
-                                                    <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                                                    <input type="password" id="modalLRInput11" name="password" class="form-control form-control-sm validate">
 
                                                 </div>
                                                 <div class="text-center mt-2">
-                                                    <button class="btn btn-info">Log in <span class="glyphicon glyphicon-ok"></span></i></button>
+                                                    <button name="log" class="btn btn-info">Log in <span class="glyphicon glyphicon-ok"></span></i></button>
                                                 </div>
                                             </div>
                                             <!--Footer-->
@@ -499,7 +508,7 @@ include 'aksinya/fungsi.php';
                                                 </div>
                                                 <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                                             </div>
-
+                                            </form>
                                         </div>
                                         <!--/.Panel 7-->
 
@@ -608,6 +617,13 @@ location='index.php';</script>";
                                             </div>
                                         </div>
                                         <!--/.Panel 8-->
+
+                                        <div class="tab-pane fade" id="panel9" role="tabpanel">
+                                            <div class="modal-body">
+                                                <div class="md-form form-sm mb-7">
+                                                    <h2><a href="aksinya/logout.php">Keluar</a></h2>
+                                                </div></div>
+                                        </div>
                                     </div>
 
                                 </div>

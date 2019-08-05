@@ -1,6 +1,23 @@
 <?php
+session_start();
 include '../aksinya/fungsi.php';
 include '../aksinya/koneksi.php';
+//if(!isset($_SESSION['username'])){
+//     header('location:sss.php');
+//}
+//if($_SESSION['level']!= "admin"){
+////     header('location:error-login.php');
+//}
+//
+//if (isset($_SESSION['level']) && isset($_SESSION['username']) && isset($_SESSION['nama']) )
+//{
+//
+//
+//    if (($_SESSION['level'] == "admin") || ($_SESSION['level'] == "username")| ($_SESSION['level'] == "nama"))
+//    {
+//
+//    }
+//}
 ?>
 <html>
 
@@ -231,7 +248,7 @@ include '../aksinya/koneksi.php';
                     <img src="images/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'];?> </div>
                     <div class="email">john.doe@example.com</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>

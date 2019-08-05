@@ -4,6 +4,7 @@ $kd_produk = $_GET['kd_produk'];
 $sql = mysqli_query($koneksi, "Select * from produk where kd_produk='$kd_produk'");
 
 if (isset($_POST{'tambah'})) {
+
     $kd_produk = $_POST['kd_produk'];
     $nama = $_POST['nama'];
     $foto_file = $_POST['foto_file'];

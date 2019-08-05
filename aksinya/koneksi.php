@@ -7,7 +7,7 @@
 
 $koneksi=($GLOBALS["___mysqli_ston"] = mysqli_connect($host, $user, $password));
 ((bool)mysqli_query($koneksi, "USE " . $database));
-$tanggal=date("d/m/Y");
+$tgl=date("Y/m/d");
 
 if ($koneksi)
 {

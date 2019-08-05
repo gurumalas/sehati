@@ -52,7 +52,12 @@
                         </div>
                         <div class="content">
                             <div class="text">MEMBER</div>
-                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                            <?php
+                            // Counter Data Per Kolom tanpa kondisi
+                            $membernya = $koneksi->query("SELECT * FROM member WHERE nik");
+                            $jmember = mysqli_num_rows($membernya);
+                            ?>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $jmember;?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -223,7 +228,22 @@
                                             <th>Status Barang</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <?php
+
+                                    $queryinvoice="SELECT * FROM invoice ORDER by status desc"  ;
+                                    $sqlinvoice = mysqli_query($koneksi, "SELECT * FROM invoice");
+
+                                    //proses menampilkan data
+                                    if(mysqli_fetch_object($sqlinvoice)==0){
+                                    echo '<tr><td colspan="25">Data Tidak Ada.</td></tr>'; } else {
+                                        $no=1;
+
+                                    while($rowsinvoice=mysqli_fetch_object($sqlinvoice)) {
+
+
+
+                                        ?>
+                                        <tbody>
                                         <tr>
                                             <td>1</td>
                                             <td><a>#3443</a></td>
@@ -232,35 +252,18 @@
                                             <td>Dikirim</td>
                                             <td>
                                                 <div class="progress">
-                                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
+                                                    <div class="progress-bar bg-green" role="progressbar"
+                                                         aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 62%"></div>
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td><a>#5753</a></td>
-                                            <td>Riduan</td>
-                                            <td><span class="label bg-blue">Pendding</span></td>
-                                            <td>Pending</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td><a>#5653</a></td>
-                                            <td>Ryan</td>
-                                            <td><span class="label bg-green">LUNAS</span></td>
-                                            <td>Pending</td>
-                                            <td>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-light-blue" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        </tbody>
+                                        <?php
+                                        $no++;
+                                    }}
+
+                                    ?>
                                 </table>
                             </div>
                         </div>
