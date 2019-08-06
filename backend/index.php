@@ -96,7 +96,7 @@
                                         </tr>
                                     </thead>
                                     <?php
-                                    
+
 
                                     if (isset($_GET['act']) == 'ubah') {
 
@@ -111,13 +111,13 @@
                                     //proses menampilkan data
 
                                     while($rowsinvoice=mysqli_fetch_object($sqlinvoice)) {
-
+//                                        $no=1;
 
 
                                         ?>
                                         <tbody>
                                         <tr>
-                                            <td>1</td>
+                                            <td><?php echo $no?></td>
                                             <td><a><?php echo $rowsinvoice->kd_transaksi?></a></td>
                                             <td><?php echo $rowsinvoice->nik?></td>
                                             <td><?php  if (($rowsinvoice->status) ==1) {

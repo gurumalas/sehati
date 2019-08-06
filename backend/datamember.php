@@ -68,6 +68,7 @@ if (isset($_GET['aksi']) == 'delete') {
                                     <th>Nik</th>
                                     <th>Foto</th>
                                     <th>Nama Member</th>
+                                    <th>Kontak</th>
                                     <th>Aksi</th>
                                 </tr>
                                 </thead> <?php

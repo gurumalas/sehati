@@ -2,7 +2,7 @@
 <?php
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
 
-$kd_transaksi   = $_GET['kd_transaksi']; //kode berita yang akan dikonvert
+$kd_jenis   = $_GET['kd_jenis']; //kode berita yang akan dikonvert
 
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
@@ -40,21 +40,17 @@ Telp. 082148352769</h3>
 
     <thead>
     <tr style="border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;">
-        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="7">Riwayat pendidikan</th>
+        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="4">Laporan Transaksi</th>
     </tr>
     <tr >
         <th width="" align="center" valign="middle">No</th>
-        <th width="" align="center" valign="middle">Kode Invoice</th>
-        <th width="" align="center" valign="middle">Tanggal</th>
-        <th width="" align="center" valign="middle">Kode Produk</th>
-        <th width="" align="center" valign="middle">Status</th>
-        <th width="" align="center" valign="middle">Quantity</th>
-        <th width="" align="center" valign="middle">Harga</th>
-    </tr></thead><tbody>
+        <th width="" align="center" valign="middle">Kode Jenis</th>
+        <th width="" align="center" valign="middle">Nama Jenis</th>
+        <th width="" align="center" valign="middle">Deskripsi</th>
     <br/>
     <?php
     include "../aksinya/koneksi.php";
-    $sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
+    $sql=mysqli_query($koneksi, "SELECT * FROM jenis WHERE kd_jenis='".$kd_jenis."'");
     $no=0;
     $tgl=date("d-m-Y");
     while($datapost=mysqli_fetch_array($sql)){
@@ -64,12 +60,9 @@ Telp. 082148352769</h3>
         ?>
         <tr>
         <td  align="center"><?PHP echo $no;?></td>
-        <td  align="center"><?PHP echo $datapost['kd_invoice']?></td>
-        <td  align="center"><?PHP echo $datapost['tgl']?></td>
-        <td  align="center"><?PHP echo $datapost['kd_produk']?></td>
-        <td  align="center"><?PHP echo $datapost['status']?></td>
-        <td  align="center"><?PHP echo $datapost['quantity']?></td>
-        <td  align="center"><?PHP echo $datapost['harga']?></td>
+        <td  align="center"><?PHP echo $datapost['kd_jenis']?></td>
+        <td  align="center"><?PHP echo $datapost['n_jenis']?></td>
+        <td  align="center"><?PHP echo $datapost['deskripsi']?></td>
         </tr><?PHP }?>
     </tbody></table><br/>
 

@@ -11,7 +11,7 @@ if (isset($_POST{'tambah'})) {
     $kd_jenis = $_POST['kd_jenis'];
     $harga = $_POST['harga'];
     $deskripsi = $_POST['deskripsi'];
-    $dir_upload = "images/";
+    $dir_upload = "../images/";
     $nama_file = $_FILES['foto_file']['name'];
     $x = explode('.', $nama_file);
     $extension = strtolower(end($x));
@@ -19,15 +19,15 @@ if (isset($_POST{'tambah'})) {
     if (is_uploaded_file($_FILES['foto_file']['tmp_name'])) {
         $masuk = move_uploaded_file($_FILES['foto_file']['tmp_name'],
             $dir_upload . $nama_file);
-        $update = mysqli_query($koneksi, "UPDATE produk SET nama='$nama', foto_file='$nama_file', kd_jenis='$kd_jenis'
+        $updatepic = mysqli_query($koneksi, "UPDATE produk SET nama='$nama', foto_file='$nama_file', kd_jenis='$kd_jenis'
  harga='$harga', deskripsi='$deskripsi' WHERE kd_produk='$kd_produk'");
-        $result = mysqli_query($koneksi, $update);
+        $result = mysqli_query($koneksi, $updatepic);
         echo "<script>
 			alert('Data Berhasil Diperbaharuai');
                 location='produk.php';
 		  </script>";
     }
-    if ((is_uploaded_file($_FILES['foto_file']['tmp_name'])) == '') {
+    elseif ((is_uploaded_file($_FILES['foto_file']['tmp_name'])) == '') {
         $update = mysqli_query($koneksi, "UPDATE produk SET nama='$nama', kd_jenis='$kd_jenis', harga='$harga', deskripsi='$deskripsi' 
  WHERE kd_produk='$kd_produk'");
         $result = mysqli_query($koneksi, $update);

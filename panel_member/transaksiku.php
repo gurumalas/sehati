@@ -174,7 +174,7 @@ include '../aksinya/fungsi.php';
                                     <th>Kode Produk</th>
                                     <th>Status</th>
                                     <th>Banyak</th>
-                                    <th>Harga</th>
+                                    <th>Banyak X Harga</th>
                                     <th>Total</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -200,7 +200,7 @@ include '../aksinya/fungsi.php';
                                             echo '<p style="color:#11e800">Lunas</p>';
                                         }?></td>
                                     <td><?php echo $rows ->quantity?></td>
-                                    <td><?php echo format_rupiah($rows ->harga)?></td>
+                                    <td><?php echo $rows ->quantity.'x'.format_rupiah($rows ->harga)?></td>
                                     <td><?php echo format_rupiah($rows ->totalbyar)?></td>
                                     <td><a class="btn btn-danger waves-effect" href="../laporan/laporantransaksi.php?report=<?php echo $rows->kd_transaksi;?>">
                                             <i class="material-icons">book</i><span></span></a>

@@ -131,4 +131,20 @@ function konversi_tanggal($time) {
     $tmp = $tanggal . " " . konversi_bulan($bln) . " " . $thn;
     return $tmp;
 }
+
+//if (isset($_GET['aksi']) == 'cari2') {
+//    $cari2 = $_GET['cari2'];
+//    $cari3 = $_GET['cari3'];
+//    $carikan = mysqli_query($koneksi, "select * from produk WHERE
+//    kd_produk='%$cari2%' or
+//    ");
+//    if(($carikan)==''){
+//        echo "<script>
+//			alert('Data TIDAK ADA !');
+//			location='../backend/produk.php';
+//		  </script>";
+//    } else{
+//        echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Ups, Data  Gagal Disimpan!</div>';
+//    }
+//}
 ?>
