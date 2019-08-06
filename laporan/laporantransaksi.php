@@ -55,7 +55,7 @@ Telp. 082148352769</h3>
     <?php
     include "../aksinya/koneksi.php";
     if (($kd_transaksi)=='') {
-        $sql=mysqli_query($koneksi, "SELECT * FROM invoice");
+        $sql=mysqli_query($koneksi, "SELECT * FROM invoice where status='1'");
     } else
     $sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
     $no=0;
