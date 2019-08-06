@@ -9,7 +9,7 @@ if(mysqli_num_rows($sql) == 0) {
 <?php
 if(isset ($_POST{'ubah'})){
     include '../aksinya/koneksi.php';
-    $nik = $_POST['nik'];
+    //$nik = $_GET['nik'];
     $n_member = $_POST['n_member'];
     $jk = $_POST['jk'];
     $hp = $_POST['hp'];
