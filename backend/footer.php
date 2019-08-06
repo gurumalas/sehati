@@ -8,8 +8,6 @@
 <!-- Input Mask Plugin Js -->
 <script src="plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
 
-<!-- Multi Select Plugin Js -->
-<script src="plugins/multi-select/js/jquery.multi-select.js"></script>
 
 <!-- Jquery Spinner Plugin Js -->
 <script src="plugins/jquery-spinner/js/jquery.spinner.js"></script>
@@ -74,8 +72,6 @@
 <!-- Bootstrap Core Js -->
 <script src="plugins/bootstrap/js/bootstrap.js"></script>
 
-<!-- Select Plugin Js -->
-<script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
 <!-- Slimscroll Plugin Js -->
 <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>

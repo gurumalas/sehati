@@ -202,7 +202,7 @@ include '../aksinya/fungsi.php';
                                     <td><?php echo $rows ->quantity?></td>
                                     <td><?php echo format_rupiah($rows ->harga)?></td>
                                     <td><?php echo format_rupiah($rows ->totalbyar)?></td>
-                                    <td><a class="btn btn-danger waves-effect" href="jenis.php">
+                                    <td><a class="btn btn-danger waves-effect" href="../laporan/laporantransaksi.php?report=<?php echo $rows->kd_transaksi;?>">
                                             <i class="material-icons">book</i><span></span></a>
                                     </td>
 

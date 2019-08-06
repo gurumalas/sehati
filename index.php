@@ -100,11 +100,9 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
             <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
             <nav class="main_nav">
                 <ul class="d-flex flex-row align-items-start justify-content-start">
-                    <li class="active"><a href="#">Tablet</a></li>
-                    <li><a href="#">Kapsul</a></li>
-                    <li><a href="#">Botol</a></li>
-                    <li><a href="#">Tetes</a></li>
-                    <li><a href="#">Salap</a></li>
+                    <?php
+                    list_kategori();
+                    ?>
                 </ul>
             </nav>
             <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">

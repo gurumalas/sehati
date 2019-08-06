@@ -30,6 +30,7 @@ include '../aksinya/koneksi.php';
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
+    <link href="plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
     <link href="plugins/google/css.css" rel="stylesheet" type="text/css">
     <link href="plugins/google/icon.css" rel="stylesheet" type="text/css">
 
@@ -58,8 +59,6 @@ include '../aksinya/koneksi.php';
     <!-- Dropzone Css -->
     <link href="plugins/dropzone/dropzone.css" rel="stylesheet">
 
-    <!-- Multi Select Css -->
-    <link href="plugins/multi-select/css/multi-select.css" rel="stylesheet">
 
     <!-- Bootstrap Spinner Css -->
     <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
@@ -67,8 +66,6 @@ include '../aksinya/koneksi.php';
     <!-- Bootstrap Tagsinput Css -->
     <link href="plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
 
-    <!-- Bootstrap Select Css -->
-    <link href="plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
     <!-- noUISlider Css -->
     <link href="plugins/nouislider/nouislider.min.css" rel="stylesheet" />

@@ -21,44 +21,7 @@ if (isset($_GET['aksi']) == 'delete') {
 
 
 ?>
-<!-- Modal Tambah -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="form_advanced_validation" method="POST">
 
-                    <div class="form-group form-float">
-                        <div class="form-line">
-                            <label >Kode Produk</label>
-                            <input type="text" class="form-control" name="nik" maxlength="50" minlength="0" placeholder="HL00021" required>
-                            <div class="help-info">Min. Kerakter: 1, Max. Kerakter: 50</div>
-                        </div>
-
-
-                    </div>
-                    <div class="form-group form-float">
-                        <div class="form-line">
-                            <label >Nama Produk</label>
-                            <input type="text" class="form-control" name="n_jenis" maxlength="50" minlength="3"  placeholder="Herbalife Milk" required>
-                            <div class="help-info">Min. Kerakter: 3, Max. Kerakter: 50</div>
-                        </div>
-                    </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" name="tambah" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <section class="content">
     <div class="container-fluid">

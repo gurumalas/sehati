@@ -72,7 +72,7 @@ if (isset($_POST["tambah"])) {
                     <div class="form-group form-float">
                         <div class="form-line">
                             <label >Pilih Jenis</label>
-                            <select name="kd_jenis" class="form-control selectpicker" data-live-search="true" style="width: 100%;" required>
+                            <select name="kd_jenis" class="form-control"  style="width: 100%;" required>
                                 <option value="">Pilih Jenis</option>
                                 <?php
                                 include "../aksinya/koneksi.php";
@@ -102,13 +102,7 @@ if (isset($_POST["tambah"])) {
                         </div>
                     </div>
                     <div class="form-group form-float"  class="dropzone">
-                        <div class="dz-message">
-                            <div class="drag-icon-cph">
-                                <i class="material-icons">touch_app</i>
-                            </div>
-                            <h3>Drop files here or click to upload.</h3>
-                            <em>(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</em>
-                        </div>
+
                         <div class="fallback">
                             <label >Foto</label>
                             <input type="file" multiple  name="foto_file"  required>
