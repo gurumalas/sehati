@@ -3,7 +3,8 @@
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
 
 $kd_jenis   = $_GET['kd_jenis']; //kode berita yang akan dikonvert
-
+$sql=mysqli_query($koneksi, "SELECT * FROM jenis WHERE kd_jenis='".$kd_jenis."'");
+$data=mysqli_fetch_array($sql);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
 <head>
@@ -40,7 +41,7 @@ Telp. 082148352769</h3>
 
     <thead>
     <tr style="border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;">
-        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="4">Laporan Transaksi</th>
+        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="4">Laporan Data Produk Kategori <?php echo $data['n_jenis']?></th>
     </tr>
     <tr >
         <th width="" align="center" valign="middle">No</th>
@@ -50,6 +51,9 @@ Telp. 082148352769</h3>
     <br/>
     <?php
     include "../aksinya/koneksi.php";
+    if (($kd_jenis)=='') {
+        $sql=mysqli_query($koneksi, "SELECT * FROM jenis");
+    } else
     $sql=mysqli_query($koneksi, "SELECT * FROM jenis WHERE kd_jenis='".$kd_jenis."'");
     $no=0;
     $tgl=date("d-m-Y");

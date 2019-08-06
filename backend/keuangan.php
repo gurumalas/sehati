@@ -148,7 +148,6 @@ include 'header.php';
                                 //proses menampilkan data
                                 while($rows=mysqli_fetch_object($sqlku)){
                                 $subtotal= $rows ->totalbyar;
-
                                 $semua=$semua+$subtotal;
                                 ?>
                                 <tbody>
