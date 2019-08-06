@@ -66,7 +66,9 @@ Telp. 082148352769</h3>
         <td  align="center"><?PHP echo $datapost['quantity']?></td>
         <td  align="center"><?PHP echo $datapost['harga']?></td>
         </tr><?PHP }?>
-    </tbody></table><br/>
+    </tbody>
+   <th width="" align="center" valign="middle">Jumlah</th>
+</table><br/>
 
 
 </body>
