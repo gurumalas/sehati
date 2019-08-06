@@ -232,7 +232,7 @@ include '../aksinya/koneksi.php';
                 </ul>
             </div>
         </div>
-        <p style="color: #fff"><marquee>Transksi <a href="#" style="color: #e6e848;">#3454</a> mengunggu vertifikasi pemesanan</marquee></p>
+<!--        <p style="color: #fff"><marquee>Transksi <a href="#" style="color: #e6e848;">#3454</a> mengunggu vertifikasi pemesanan</marquee></p>-->
     </nav>
 
     <!-- #Top Bar -->
