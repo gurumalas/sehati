@@ -8,7 +8,7 @@ $data=mysqli_fetch_array($sql);
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
 <head>
     <style>
-        .header img {width:40px;height:50px; float:center; text-align:center; }
+        .header img {width:40px;height:50px; float:; text-align:center; }
         .header h3{font-family:Times, serif;font-size:14px; line-height:30px; text-align:center; margin-top:20px; font-weight:bold; text-transform:uppercase}
         .header p {text-align:center; font-weight:bold; margin:auto;padding:1px!important;}
         .header span {padding-top:10px;}
