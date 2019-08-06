@@ -14,7 +14,12 @@
                         </div>
                         <div class="content">
                             <div class="text">PESANAN BARU</div>
-                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                            <?php
+                            // Counter Data Per Kolom tanpa kondisi
+                            $bkirim = $koneksi->query("SELECT * FROM invoice WHERE status=0");
+                            $jbkirim = mysqli_num_rows($bkirim);
+                            ?>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $jbkirim;?>" data-speed="15" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -41,7 +46,12 @@
                         </div>
                         <div class="content">
                             <div class="text">PESENAN TERKIRIM</div>
-                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                            <?php
+                            // Counter Data Per Kolom tanpa kondisi
+                            $kirim = $koneksi->query("SELECT * FROM invoice WHERE status='1'");
+                            $jkirim = mysqli_num_rows($kirim);
+                            ?>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $jkirim;?>"" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -79,13 +89,14 @@
                                             <th>No.</th>
                                             <th>Kode Transaksi</th>
                                             <th>NIK Pembeli</th>
+                                            <th>Status</th>
                                             <th>Harga X Jumlah</th>
                                             <th>Total</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <?php
-                                    $act = $_GET['act'];
+                                    
 
                                     if (isset($_GET['act']) == 'ubah') {
 
