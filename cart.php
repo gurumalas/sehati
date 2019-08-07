@@ -109,93 +109,13 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 
 <!-- Menu -->
 
-<div class="menu">
-
-	<!-- Search -->
-	<div class="menu_search">
-
-			<input type="text" class="search_input" placeholder="Search Item" required="required">
-			<button class="menu_search_button"><img src="images/search.png" alt=""></button>
-
-	</div>
-	<!-- Navigation -->
-	<div class="menu_nav">
-		<ul>
-			<li><a href="#">Women</a></li>
-			<li><a href="#">Men</a></li>
-			<li><a href="#">Kids</a></li>
-			<li><a href="#">Home Deco</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
-	</div>
-	<!-- Contact Info -->
-	<div class="menu_contact">
-		<div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-			<div><div><img src="images/phone.svg" href="https://wa.widget.web.id/a3e6bd"></div></div>
-			<div><a href="https://wa.widget.web.id/a3e6bd" target="_blank">Visit me on widget.web.id</a>12-252-7350</div>
-		</div>
-		<div class="menu_social">
-			<ul class="menu_social_list d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-	</div>
-</div>
 
 <div class="super_container">
 
 	<!-- Header -->
-
-	<header class="header">
-		<div class="header_overlay"></div>
-		<div class="header_content d-flex flex-row align-items-center justify-content-start">
-			<div class="logo">
-				<a href="#">
-					<div class="d-flex flex-row align-items-center justify-content-start">
-						<div><img src="images/logo_1.png" alt=""></div>
-						<div>Little Closet</div>
-					</div>
-				</a>	
-			</div>
-			<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-			<nav class="main_nav">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#">Women</a></li>
-					<li><a href="#">Men</a></li>
-					<li><a href="#">Kids</a></li>
-					<li><a href="#">Home Deco</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</nav>
-			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
-				<!-- Search -->
-				<div class="header_search">
-
-						<input type="text" class="search_input" placeholder="Search Item" required="required">
-						<button class="header_search_button"><img src="images/search.png" alt=""></button>
-
-				</div>
-				<!-- User -->
-				<div class="user"><a href="#"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
-				<!-- Cart -->
-				<div class="cart"><a href="cart.php"><div><img src="images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div>
-                        <?php
-                        if (count($_SESSION['items']) == '') {
-                            echo '';
-                        }
-                        else{
-                            echo  count($_SESSION['items']);}?></a></div>
-				<!-- Phone -->
-				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
-					<div><div><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-					<div><a href="https://wa.widget.web.id/a3e6bd" target="_blank">Visit me on widget.web.id</a>+1 912-252-7350</div>
-				</div>
-			</div>
-		</div>
-	</header>
+    <?php
+    include 'head.php';
+    ?>
 
 	<div class="super_container_inner">
 		<div class="super_overlay"></div>
@@ -208,8 +128,9 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 					<div class="home_title">Shopping Cart</div>
 					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
 						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
-							<li><a href="#">Home</a></li>
-							<li>Your Cart</li>
+                            <?php
+                            list_kategori();
+                            ?>
 						</ul>
 					</div>
 				</div>
@@ -328,116 +249,7 @@ $a++;
 
 		<!-- Footer -->
 
-    <footer class="footer">
-        <div class="footer_content">
-            <div class="container">
-                <div class="row">
 
-                    <!-- About -->
-                    <div class="col-lg-4 footer_col">
-                        <h4 class="mb-3">Data Pengiriman</h4>
-
-                            <div class="mb-3">
-                                <label for="username">Nama Lengkap</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">@</span>
-                                    </div>
-                                    <input type="text" name="nama" class="form-control" id="username" placeholder="Username" required>
-                                    <div class="invalid-feedback" style="width: 100%;">
-                                        Your username is required.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="">Kontak <span class="text-muted">(Optional)</span></label>
-                                <input type="text"  name="hp" class="form-control" id="" placeholder="+62">
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="address">Alamat</label>
-                                <input type="text" name="alamat" class="form-control" id="address" placeholder="1234 Main St" required>
-                                <div class="invalid-feedback">
-                                    Please enter your shipping address.
-                                </div>
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-md-3 mb-3">
-                                    <label for="zip">Kode Pos</label>
-                                    <input type="text" class="form-control"  name="kodepos" id="zip" placeholder="" required>
-                                    <div class="invalid-feedback">
-                                        Zip code required.
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="mb-4">
-
-                        </form>
-                    </div>
-
-                    <!-- Footer Links -->
-                    <div class="col-lg-4 footer_col">
-                        <div class="footer_menu">
-                            <div class="footer_title">Kategori Produk</div>
-                            <ul class="footer_list">
-                                <?php
-                                list_kategori();
-                                ?>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Contact -->
-                    <div class="col-lg-4 footer_col">
-                        <div class="footer_contact">
-                            <div class="footer_title">Stay in Touch</div>
-                            <div class="newsletter">
-
-                                    <input type="email" class="newsletter_input" placeholder="Subscribe to our Newsletter" required="required">
-                                    <button class="newsletter_button">+</button>
-
-                            </div>
-                            <div class="footer_social">
-                                <div class="footer_title">Social</div>
-                                <ul class="footer_social_list d-flex flex-row align-items-start justify-content-start">
-                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer_bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="footer_bar_content d-flex flex-md-row flex-column align-items-center justify-content-start">
-                            <div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="http://www.kostkoding.student.umm.ac.id/" target="_blank">Kostkoding.student.umm.ac.id</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-                            <nav class="footer_nav ml-md-auto order-md-2 order-1">
-                                <ul class="d-flex flex-row align-items-center justify-content-start">
-                                    <?php
-                                    list_kategori();
-                                    ?>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 	</div>
 		
 </div>
@@ -449,7 +261,7 @@ $a++;
 <!-- Advanced options: -->
 <!-- data-align="left" -->
 <!-- data-overlay="true" -->
-<a href="https://api.whatsapp.com/send?phone=628123456789&text=Hallo%20Agan%20Baik"><img src="tombol.png"></a>
+
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>

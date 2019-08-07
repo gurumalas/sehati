@@ -30,88 +30,12 @@ include 'aksinya/fungsi.php';
 
 <!-- Menu -->
 
-<div class="menu">
-
-    <!-- Search -->
-    <div class="menu_search">
-        <form action="#" id="menu_search_form" class="menu_search_form">
-            <input type="text" class="search_input" placeholder="Search Item" required="required">
-            <button class="menu_search_button"><img src="images/search.png" alt=""></button>
-        </form>
-    </div>
-    <!-- Navigation -->
-    <div class="menu_nav">
-        <ul>
-            <?php
-
-            list_kategori();
-            ?>
-        </ul>
-    </div>
-    <!-- Contact Info -->
-    <div class="menu_contact">
-        <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-            <div>
-                <div><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div>
-            </div>
-            <div>+1 912-252-7350</div>
-        </div>
-        <div class="menu_social">
-            <ul class="menu_social_list d-flex flex-row align-items-start justify-content-start">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
 <div class="super_container">
 
     <!-- Header -->
-
-    <header class="header">
-        <div class="header_overlay"></div>
-        <div class="header_content d-flex flex-row align-items-center justify-content-start">
-            <div class="logo">
-                <a href="#">
-                    <div class="d-flex flex-row align-items-center justify-content-start">
-                        <div><img src="images/logo_1.png" alt=""></div>
-                        <div>TOKO SEHATI</div>
-                    </div>
-                </a>
-            </div>
-            <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-            <nav class="main_nav">
-                <ul class="d-flex flex-row align-items-start justify-content-start">
-                    <?php
-
-                    list_kategori();
-                    ?>
-                </ul>
-            </nav>
-            <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
-                <!-- Search -->
-                <div class="header_search">
-                    <form action="#" id="header_search_form">
-                        <input type="text" class="search_input" placeholder="Search Item" required="required">
-                        <button class="header_search_button"><img src="images/search.png" alt=""></button>
-                    </form>
-
-				</div>
-				<!-- User -->
-				<div class="user"><a href="#"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
-				<!-- Cart -->
-				<div class="cart"><a href="cart.php"><div><img src="images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
-				<!-- Phone -->
-				<div class="header_phone d-flex flex-row align-items-center justify-content-start">
-					<div><div><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-					<div>+1 912-252-7350</div>
-				</div>
-			</div>
-		</div>
-	</header>
+    <?php
+    include 'head.php';
+    ?>
 
 	<div class="super_container_inner">
 		<div class="super_overlay"></div>
@@ -247,7 +171,8 @@ include 'aksinya/fungsi.php';
 							<div class="product_buttons">
 								<div class="text-right d-flex flex-row align-items-start justify-content-start">
                                     <div style="width: 100%;" class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-										<div><div><img src="images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+										<div>
+                                            <div><a alt="" href="cart.php?act=add&amp;kd_produk=<?=$product->kd_produk;?>&amp;ref=index.php" ><img src="images/cart.svg" class="svg">BELI</a></div>+</div></div></div>
 
 									</div>
 								</div>
@@ -258,128 +183,7 @@ include 'aksinya/fungsi.php';
 			</div>
 		</div>
 
-		<!-- Boxes -->
 
-		<div class="boxes">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="box d-flex flex-row align-items-center justify-content-start">
-							<div class="mt-auto"><div class="box_image"><img src="images/boxes_1.png" alt=""></div></div>
-							<div class="box_content">
-								<div class="box_title">Size Guide</div>
-								<div class="box_text">Phasellus sit amet nunc eros sed nec tellus.</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 box_col">
-						<div class="box d-flex flex-row align-items-center justify-content-start">
-							<div class="mt-auto"><div class="box_image"><img src="images/boxes_2.png" alt=""></div></div>
-							<div class="box_content">
-								<div class="box_title">Shipping</div>
-								<div class="box_text">Phasellus sit amet nunc eros sed nec tellus.</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Footer -->
-
-		<footer class="footer">
-			<div class="footer_content">
-				<div class="container">
-					<div class="row">
-						
-						<!-- About -->
-						<div class="col-lg-4 footer_col">
-							<div class="footer_about">
-								<div class="footer_logo">
-									<a href="#">
-										<div class="d-flex flex-row align-items-center justify-content-start">
-											<div class="footer_logo_icon"><img src="images/logo_2.png" alt=""></div>
-											<div>TOKO SEHATI</div>
-										</div>
-									</a>		
-								</div>
-								<div class="footer_about_text">
-									<p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
-								</div>
-							</div>
-						</div>
-
-						<!-- Footer Links -->
-						<div class="col-lg-4 footer_col">
-							<div class="footer_menu">
-								<div class="footer_title">JENIS OBAT</div>
-                                <?php
-                                $cekjenis = mysqli_query($koneksi,"SELECT * FROM jenis order by n_jenis");
-                               while ($jenisproduct = mysqli_fetch_object($cekjenis)) {
-                                   ?>
-                                   <ul class="footer_list">
-                                       <li>
-                                           <a href="kategori.php?cari=kategori&kd_jenis=<?= $jenisproduct->kd_jenis ?>">
-
-                                               <div><?= $jenisproduct->n_jenis ?>
-                                                   <div class="footer_tag_1">Open Now</div>
-                                               </div>
-                                           </a>
-                                       </li>
-
-                                   </ul>
-                                   <?php
-                               }
-                                ?>
-							</div>
-						</div>
-
-						<!-- Footer Contact -->
-						<div class="col-lg-4 footer_col">
-							<div class="footer_contact">
-								<div class="footer_title">Stay in Touch</div>
-								<div class="newsletter">
-									<form action="#" id="newsletter_form" class="newsletter_form">
-										<input type="email" class="newsletter_input" placeholder="Subscribe to our Newsletter" required="required">
-										<button class="newsletter_button">+</button>
-									</form>
-								</div>
-								<div class="footer_social">
-									<div class="footer_title">Social</div>
-									<ul class="footer_social_list d-flex flex-row align-items-start justify-content-start">
-										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer_bar">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="footer_bar_content d-flex flex-md-row flex-column align-items-center justify-content-start">
-								<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-								<nav class="footer_nav ml-md-auto order-md-2 order-1">
-									<ul class="d-flex flex-row align-items-center justify-content-start">
-                                        <?php
-
-                                        list_kategori();
-                                        ?>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
 	</div>
 		
 </div>
