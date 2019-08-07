@@ -119,7 +119,12 @@ Jl. A. Yani Km 28 Landasan Ulin, 70724 <br/>Telp. 082148352769</h3>
     <tr>    </tr>
     <tr>    </tr>
     <tr>    </tr>
-    <td>H. Ramlan</td>
+    <td><?php
+        $bos=mysqli_query($koneksi, "SELECT * FROM owner WHERE no=1");
+        while($databos=mysqli_fetch_object($bos))
+        {
+            echo $databos->nama;
+        }?></td>
     </tbody>
 </table>
 </body>
