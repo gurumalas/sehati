@@ -1,9 +1,14 @@
+
 <?php
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
 include  "../aksinya/fungsi.php";
-$kd_transaksi   = $_GET['kd_transaksi']; //kode berita yang akan dikonvert
-$sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
-$data=mysqli_fetch_array($sql);
+if (!isset($_SESSION)) {
+    session_start();
+
+}
+//$kd_transaksi   = $_GET['kd_transaksi']; //kode berita yang akan dikonvert
+//$sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
+//$data=mysqli_fetch_array($sql);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
 <head>
@@ -40,50 +45,40 @@ Telp. 082148352769</h3>
 
     <thead>
     <tr style="border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;">
-        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="7">Laporan Data Transaksi <?php echo $data['kd_transaksi']?></th>
+        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="7">Laporan Data Transaksi </th>
     </tr>
     <tr >
         <th width="" align="center" valign="middle">No</th>
         <th width="" align="center" valign="middle">Kode Transaksi</th>
-        <th width="" align="center" valign="middle">Tanggal</th>
-        <th width="" align="center" valign="middle">Kode Produk</th>
-        <th width="" align="center" valign="middle">Status</th>
-        <th width="" align="center" valign="middle">Quantity</th>
         <th width="" align="center" valign="middle">Harga</th>
+        <th width="" align="center" valign="middle">Banyak</th>
+        <th width="" align="center" valign="middle">Sub Total</th>
     </tr></thead><tbody>
     <br/>
     <?php
-    include "../aksinya/koneksi.php";
-    if (($kd_transaksi)=='') {
-        $sql=mysqli_query($koneksi, "SELECT * FROM invoice where status='1'");
-    } else
-    $sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
-    $no=0;
-    $semua=0;
-    $tgl=date("d-m-Y");
-    while($datapost=mysqli_fetch_array($sql)){
-        $subtotal= $datapost['totalbyar'];
-        $semua=$semua+$subtotal;
+    $total=0;
+    if (isset($_SESSION['items'])) {
+    foreach ($_SESSION['items'] as $key => $val) {
+    $que = mysqli_query($koneksi, "select * from produk where produk.kd_produk = '$key'");
+    $no =0;
+    while($keranjang=mysqli_fetch_object($que)){
         $no++;
-       
-        ?>
-        <tr>
-        <td  align="center"><?PHP echo $no;?></td>
-        <td  align="center"><?PHP echo $datapost['kd_transaksi']?></td>
-        <td  align="center"><?PHP echo $datapost['tgl']?></td>
-        <td  align="center"><?PHP echo $datapost['kd_produk']?></td>
-        <td  align="center"><?PHP if(($datapost['status'])=='0'){
-                echo "Belum Lunas";
-            } else {
-                echo "Lunas";
-            }
-            ?></td>
-        <td  align="center"><?PHP echo $datapost['quantity']?></td>
-        <td  align="center"><?PHP echo format_rupiah($datapost['harga'])?></td>
-        </tr><?PHP }?>
+        $jumlah_harga = $keranjang->harga * $val;
+        $total += $jumlah_harga;
+
+
+
+        ?>    <tr>
+        <td  align="center"> <img height="130" width="130" src="../images/<?php echo $keranjang->foto_file; ?>" alt=""></td>
+        <td  align="center"><?PHP echo $keranjang->kd_produk?></td>
+        <td  align="center"><?PHP echo format_rupiah($keranjang->harga);?></td>
+        <td  align="center"><?PHP echo $val?></td>
+        <td  align="center"><?php echo format_rupiah($jumlah_harga); ?></td>
+
+        </tr><?PHP }}}?>
     </tbody>
     <th colspan="7" align="left" ><p style="text-align: right">Jumlah : <?php
-        echo format_rupiah($semua);
+            echo format_rupiah($total);
             ?></p></th>
 </table><br/>
 

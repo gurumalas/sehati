@@ -233,9 +233,10 @@ $a++;
                                 <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
 
 
-                                    <div class="button button_continue trans_200"><a class="btn btn-primary btn-md btn-block" name="" href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
+
                                     <div class="button button_clear trans_200"><a lass="button button_clear trans_200"href="cart.php?act=clear&amp;ref=index.php">Clear</a></div>
                                     <div class="button button_continue trans_200"><a href="index.php">continue shopping</a></div>
+                                    <div class="button button_continue trans_200"><a class="btn btn-primary btn-md btn-block" name="" href="laporan/sc_cart.php">Cetak Keranjang</a></div>
                                     <div class="button button_continue trans_200"><a class="btn btn-primary btn-md btn-block" name="" href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
                                 </div>
                             </div>

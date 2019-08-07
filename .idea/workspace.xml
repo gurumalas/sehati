@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/laporan/rincianproduk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aksinya/koneksi.php" beforeDir="false" afterPath="$PROJECT_DIR$/aksinya/koneksi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jenis.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jenis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/produk.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/produk.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/semuatransaksi.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/semuatransaksi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laporan/Laporanjenisobat.php" beforeDir="false" afterPath="$PROJECT_DIR$/laporan/Laporanjenisobat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laporan/sc_cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/laporan/sc_cart.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,17 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laporan/laporanproduk.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+            <state relative-caret-position="105">
+              <caret line="64" column="42" lean-forward="true" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -172,8 +157,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="235" column="195" selection-start-line="235" selection-start-column="195" selection-end-line="235" selection-end-column="195" />
+            <state relative-caret-position="410">
+              <caret line="238" column="159" selection-start-line="238" selection-start-column="159" selection-end-line="238" selection-end-column="159" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -191,11 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>exs</find>
-      <find>keu</find>
-      <find>sele</find>
-      <find>&lt;ta</find>
-      <find>&lt;sele</find>
       <find>li</find>
       <find>form</find>
       <find>car</find>
@@ -210,17 +199,22 @@
       <find>meto</find>
       <find>modalLRForm</find>
       <find>modal</find>
-      <find>img</find>
       <find>heade</find>
       <find>ceta</find>
       <find>&lt;table</find>
       <find>&lt;tabl</find>
-      <find>but</find>
       <find>sea</find>
       <find>h5</find>
-      <find>tam</find>
       <find>cet</find>
       <find>pp</find>
+      <find>.php</find>
+      <find>but</find>
+      <find>pro</find>
+      <find>fung</find>
+      <find>juml</find>
+      <find>tam</find>
+      <find>che</find>
+      <find>img</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -231,6 +225,7 @@
       <replace>koneksi</replace>
       <replace>$_GET</replace>
       <replace>member</replace>
+      <replace>../</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -248,7 +243,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/head.php" />
         <option value="$PROJECT_DIR$/upload.php" />
         <option value="$PROJECT_DIR$/coba.php" />
         <option value="$PROJECT_DIR$/backend/pages/forms/advanced-form-elements.html" />
@@ -298,6 +292,7 @@
         <option value="$PROJECT_DIR$/backend/semuatransaksi.php" />
         <option value="$PROJECT_DIR$/laporan/Laporanjenisobat.php" />
         <option value="$PROJECT_DIR$/backend/jenis.php" />
+        <option value="$PROJECT_DIR$/laporan/sc_cart.php" />
         <option value="$PROJECT_DIR$/cart.php" />
       </list>
     </option>
@@ -417,12 +412,12 @@
       <workItem from="1563761937551" duration="57137000" />
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
-      <workItem from="1564798506869" duration="84670000" />
+      <workItem from="1564798506869" duration="86950000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380417000" />
+    <option name="totallyTimeSpent" value="382697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -481,13 +476,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Toko Obat Sehati" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/plugins/dropzone/dropzone.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panel_member/plugins/jquery-sparkline/src/header.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -817,20 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laporan/Laporanjenisobat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/semuatransaksi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -867,10 +841,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/laporan/Laporanjenisobat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="64" column="42" lean-forward="true" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="71" column="43" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="235" column="195" selection-start-line="235" selection-start-column="195" selection-end-line="235" selection-end-column="195" />
+        <state relative-caret-position="410">
+          <caret line="238" column="159" selection-start-line="238" selection-start-column="159" selection-end-line="238" selection-end-column="159" />
         </state>
       </provider>
     </entry>
