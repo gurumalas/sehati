@@ -216,7 +216,7 @@ $jprodukpesan = mysqli_num_rows($produkpesan);
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
+                        <a href="keuangan.php" class="menu-toggle">
                             <i class="material-icons">attach_money</i>
                             <span>KEUANGAN</span>
                         </a>

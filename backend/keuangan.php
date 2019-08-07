@@ -111,27 +111,44 @@ include 'header.php';
                         <h2>
                             EXPORTABLE TABLE
                         </h2>
+
                         <ul class="header-dropdown m-r--5">
 
                             <button data-toggle="modal" data-target="#exampleModal" class="btn bg-BLUE waves-effect" >
                                 <i class="material-icons">local_mall</i>
                                 <span>TAMBAH PRODUK</span>
                             </button>
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">more_vert</i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
-                                </ul>
-                            </li>
+
                         </ul>
                     </div>
-                    <div class="body">
+
+
+                        <form class="form-horizontal form-label-left" action="../laporan/laporankeuangan.php?dari=<?php echo $data['bulan1']; ?>&akhir=<?php echo $data['bulan2']; ?>" method="get">
+
+
+                                    <label class="col-xs-1">Dari</label>
+                                    <div class="col-md-2">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type="date" name="bulan1" class="form-control"value="">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+
+                                    </div>
+                                </div>
+                                    <label class="col-xs-1">Sampai</label>
+                                    <div class="col-md-2">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type="date" name="bulan2" class="form-control" value="">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                        </div>
+                                </div>
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;
+                              <button type="submit" class="btn btn-sl btn-primary"><i class="fa fa-download m-right-ml"> EXSPORT PDF</i> </button>
+                    </form>
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <table class="table table-bordered table-striped table-hover dataTable ">
                                 <thead>
                                 <tr>
                                     <th>No.</th>

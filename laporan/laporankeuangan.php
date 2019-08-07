@@ -1,11 +1,19 @@
 
 <?php
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
+$bulan1 = $_GET['bulan1'];
+$bulan2 = $_GET['bulan2'];
+$status = $_GET['status'];
+
+//
+$query  = mysqli_query($GLOBALS["___mysqli_ston"], "SELECT * FROM invoice LEFT JOIN produk ON invoice.kd_produk = produk.kd_produk
+where status=1 and tgl between '$bulan1' and '$bulan2'");
+$data   = mysqli_fetch_array($query);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
 <head>
     <style>
-        .header img {width:40px;height:50px; float:center; text-align:center; }
+        .header img {width:40px;height:50px;  text-align:center; }
         .header h3{font-family:Times, serif;font-size:14px; line-height:30px; text-align:center; margin-top:20px; font-weight:bold; text-transform:uppercase}
         .header p {text-align:center; font-weight:bold; margin:auto;padding:1px!important;}
         .header span {padding-top:10px;}
@@ -49,7 +57,8 @@ Telp. 082148352769</h3>
     <br/>
     <?php
     include "../aksinya/koneksi.php";
-    $sql=mysqli_query($koneksi, "SELECT * FROM invoice");
+    $sql=mysqli_query($GLOBALS["___mysqli_ston"], "SELECT * FROM invoice LEFT JOIN produk ON invoice.kd_produk = produk.kd_produk
+where status=1 and tgl between '$bulan1' and '$bulan2'");
     $no=0;
     $tgl=date("d-m-Y");
     while($datapost=mysqli_fetch_array($sql)){
