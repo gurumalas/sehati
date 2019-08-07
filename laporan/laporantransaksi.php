@@ -8,10 +8,10 @@ $data=mysqli_fetch_array($sql);
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
 <head>
     <style>
-        .header img {width:40px;height:50px; float:; text-align:center; }
-        .header h3{font-family:Times, serif;font-size:14px; line-height:30px; text-align:center; margin-top:20px; font-weight:bold; text-transform:uppercase}
+        .header img {width:100%;height:50%; float:; text-align:center; }
+        .header h3{font-family:Times, serif;font-size:14px; line-height:30px; text-align:center; margin-top:0px; font-weight:bold; text-transform:uppercase}
         .header p {text-align:center; font-weight:bold; margin:auto;padding:1px!important;}
-        .header span {padding-top:10px;}
+        .header span {padding-top:0px;}
         .table {border: solid 1px #eeeeee; width:100%;margin:auto;}
         .table th {border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;
             text-transform:uppercase}
@@ -25,10 +25,9 @@ $data=mysqli_fetch_array($sql);
 <body>
 
 <div class="header">
-
-  <h3 style="text-align: center">Toko Sehati<br/>
+    <img align="left" src="../images/logoapotek.png" />
+  <h3 style="text-align: center">
 Jl. A. Yani Km 28 Landasan Ulin, 70724 <br/>Telp. 082148352769</h3>
-    <p><img align="left" src="../images/logoapotek.png" /></p><span>
 </div>
 
 </table style="border-bottom:solid 1px #000;">
@@ -87,15 +86,11 @@ Jl. A. Yani Km 28 Landasan Ulin, 70724 <br/>Telp. 082148352769</h3>
 </table><br/>
 
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <table style=" position: relative;
- left: 930px;">
+ left: 80%;">
     <th align="left">Landasan Ulin</th>
-    <th>Tanggal, <?php
-        echo date('d-m-Y');
+    <th><?php
+        echo date('d/m/Y');
 //        echo date('l, d-m-Y');
         ?></th><tbody>
 

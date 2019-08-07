@@ -97,10 +97,9 @@
         <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="94">
-              <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
               <folding>
                 <element signature="n#style#0;n#h3#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/panel_member/eprofil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1081">
-              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+            <state relative-caret-position="46">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding>
                 <element signature="e#126#133#1" expanded="true" />
               </folding>
@@ -206,14 +205,14 @@
       <find>invo</find>
       <find>$bln</find>
       <find>$time</find>
-      <find>tamba</find>
       <find>al</find>
       <find>aler</find>
       <find>login</find>
       <find>muh</find>
+      <find>edit</find>
+      <find>edit</find>
       <find>tam</find>
-      <find>edit</find>
-      <find>edit</find>
+      <find>tamba</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -396,12 +395,12 @@
       <workItem from="1563761937551" duration="57137000" />
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
-      <workItem from="1564798506869" duration="92369000" />
+      <workItem from="1564798506869" duration="93077000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388116000" />
+    <option name="totallyTimeSpent" value="388824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -790,16 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panel_member/eprofil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-          <folding>
-            <element signature="e#126#133#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ceklogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -849,13 +838,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/panel_member/eprofil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#126#133#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
-          <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
           <folding>
             <element signature="n#style#0;n#h3#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
