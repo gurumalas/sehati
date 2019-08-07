@@ -59,7 +59,8 @@ include 'aksinya/fungsi.php';
 
 		<!-- Product -->
 
-		<div class="product">
+		<div class="product" ">
+        <input type="button" onclick="window.print()" value="CETAK">
 			<div class="container">
 				<div class="row">
 					
