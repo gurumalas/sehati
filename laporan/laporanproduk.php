@@ -57,6 +57,9 @@ Telp. 082148352769</h3>
         $no=0;
         $tgl=date("d-m-Y");
         while($datapost=mysqli_fetch_array($sql)){
+        $deskripsi = strip_tags($datapost['deskripsi']);
+        $foo =str_repeat($deskripsi,1);
+        $deskripsi = wordwrap($foo, 10, '<br/>', true);
 
         $no++;
 
@@ -66,7 +69,7 @@ Telp. 082148352769</h3>
         <td  align="center"><?PHP echo $datapost['kd_produk']?></td>
         <td  align="center"><?PHP echo $datapost['nama']?></td>
         <td  align="center"><?PHP echo $datapost['harga']?></td>
-        <td  align="center"><?PHP echo $datapost['deskripsi']?></td>
+        <td  align=""><?PHP echo $datapost['deskripsi']?></td>
     </tr><?PHP }?>
     </tbody></table><br/>
 
