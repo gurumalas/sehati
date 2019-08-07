@@ -2,8 +2,7 @@
 session_start();
 include '../aksinya/fungsi.php';
 include '../aksinya/koneksi.php';
-$sqlinvoice = mysqli_query($koneksi, "SELECT * FROM invoice where nik='$nik'");
-while($rowsinvoice=mysqli_fetch_object($sqlinvoice))
+
 ?>
 <html>
 
@@ -82,17 +81,7 @@ while($rowsinvoice=mysqli_fetch_object($sqlinvoice))
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <div class="search-icon">
-            <i class="material-icons">search</i>
-        </div>
-        <input type="text" placeholder="START TYPING...">
-        <div class="close-search">
-            <i class="material-icons">close</i>
-        </div>
-    </div>
-    <!-- #END# Search Bar -->
+   
     <!-- Top Bar -->
     <nav class="navbar">
         <div class="container-fluid">
@@ -349,16 +338,7 @@ Answer GitHub questions
                         <ul class="ml-menu">
                             <li>
 
-                                <a href="transaksiku.php"><span>RINCIAN PESANAN</span></a>
-                            </li>
-                            <li>
-
-                                <a href="kategori.php"><span>STATUS PESANAN</span></a>
-                            </li>
-                            <li>
-
-
-                                <a href="produk.php"><span>RIWAYAT PESANAN</span></a>
+                                <a href="transaksiku.php?nik=<?= $rowsinvoice->nik; ?>"><span>RINCIAN PESANAN</span></a>
                             </li>
 
                         </ul>
