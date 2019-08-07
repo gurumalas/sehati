@@ -23,13 +23,12 @@ $data=mysqli_fetch_array($sql);
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 </head>
 <body>
-<h5 align="center">Laporan Transaksi</h5>
+
 <div class="header">
+
+  <h3 style="text-align: center">Toko Sehati<br/>
+Jl. A. Yani Km 28 Landasan Ulin, 70724 <br/>Telp. 082148352769</h3>
     <p><img align="left" src="../images/logoapotek.png" /></p><span>
-  <h3 >Toko Sehati<br/>
-Jl. A. Yani Km 28 Landasan Ulin, 70724</h3>
-Telp. 082148352769</h3>
-  </span>
 </div>
 
 </table style="border-bottom:solid 1px #000;">
@@ -87,6 +86,41 @@ Telp. 082148352769</h3>
             ?></p></th>
 </table><br/>
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<table style=" position: relative;
+ left: 930px;">
+    <th align="left">Landasan Ulin</th>
+    <th>Tanggal, <?php
+        echo date('d-m-Y');
+//        echo date('l, d-m-Y');
+        ?></th><tbody>
 
+    <td>Pemilik Toko</td>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <td>H. Ramlan</td>
+    </tbody>
+</table>
 </body>
 </html>

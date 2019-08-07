@@ -1,4 +1,9 @@
 <?php
+session_start();
+include '../aksinya/fungsi.php';
+include '../aksinya/koneksi.php';
+$sqlinvoice = mysqli_query($koneksi, "SELECT * FROM invoice where nik='$nik'");
+while($rowsinvoice=mysqli_fetch_object($sqlinvoice))
 ?>
 <html>
 
@@ -6,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome Admin</title>
+    <title>Welcome Member</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -323,7 +328,12 @@ Answer GitHub questions
             <!-- #User Info -->
             <!-- Menu -->
             <div class="menu">
-                <ul class="list">
+
+                <?php
+                $nik = $_GET['nik'];
+                $sqlinvoice = mysqli_query($koneksi, "SELECT * FROM invoice where nik='$nik'");
+                while($rowsinvoice=mysqli_fetch_object($sqlinvoice)) { ?>
+                    <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
                         <a href="index.php">
@@ -361,7 +371,7 @@ Answer GitHub questions
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
+                                <a href="eprofil.php?nik=<?= $rowsinvoice->nik; ?>" class="menu-toggle">
                                     <span>EDIT DATA MEMBER</span>
                                 </a>
                             </li>
@@ -372,7 +382,9 @@ Answer GitHub questions
                             </li>
                         </ul>
                     </li>
-                </ul>
+                    </ul><?php
+                }
+                ?>
             </div>
             <!-- #Menu -->
             <!-- Footer -->

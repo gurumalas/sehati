@@ -7,9 +7,7 @@ include 'aksinya/fungsi.php';
 if(!isset($_SESSION['nik'])){
 //    header('location:sss.php');
 }
-if($_SESSION['nik']!= ""){
-    echo "<script>alert('Mohon Login Terlebih Dahulu  !');</script>";
-}
+
 
 if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_member']) )
 {

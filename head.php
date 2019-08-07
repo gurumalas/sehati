@@ -79,6 +79,10 @@
                             Register</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="panel_member/index.php?nik=<?php echo $_SESSION['nik'];?>" > PANEL MEMBER <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#panel9" role="tab">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                             Keluar</a>
                     </li>
@@ -92,7 +96,9 @@
                             <!--Body-->
                             <div class="modal-body mb-1">
                                 <div class="md-form form-sm mb-5">
-                                    <label>NIK</label>
+                                    <label>NIK</label><?php
+                                    echo $_SESSION['nik'];
+                                    ?>
                                     <input type="text" id="modalLRInput10" name="nik" class="form-control form-control-sm validate">
 
                                 </div>
