@@ -130,8 +130,13 @@ include 'header.php';
                         </ul>
                     </div>
                     <div class="body">
+
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+
+                            <a target="_blank" class="btn bg-blue waves-effect"href="../laporan/laporantransaksi.php?kd_transaksi=" >
+                                <i class="material-icons">print</i>
+                                <span>Cetak Semua Transaksi</span></a>
+                            <table class="table table-bordered table-striped table-hover dataTable">
                                 <thead>
                                 <tr>
                                     <th>No.</th>

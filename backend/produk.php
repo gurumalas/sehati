@@ -227,7 +227,7 @@ if (isset($_POST["tambah"])) {
                                            onclick="return confirm('Anda Yakin Akan Menghapus')" title="Hapus Data" >
                                             <i class="material-icons">delete</i>
                                             <span>Hapus</span></a>
-                                        <a class="btn bg-black waves-effect"href="pproduk.php?kd_produk=<?= $rows -> kd_produk; ?>" >
+                                        <a target="_blank" class="btn bg-black waves-effect"href="../laporan/rincianproduk.php?kd_produk=<?= $rows -> kd_produk; ?>" >
                                             <i class="material-icons">print</i>
                                             <span>Cetak</span></a>
 

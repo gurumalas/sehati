@@ -117,7 +117,10 @@ if(isset ($_POST['tambah'])){
                     </div>
                     <div class="body">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <a target="_blank" class="btn bg-blue waves-effect"href="../laporan/Laporanjenisobat.php?kd_jenis=" >
+                                <i class="material-icons">print</i>
+                                <span>Cetak Semua Kategori Jenis</span></a>
+                            <table class="table table-bordered table-striped table-hover dataTable ">
                                 <thead>
                                 <tr>
                                     <th>No.</th>
@@ -147,7 +150,10 @@ if(isset ($_POST['tambah'])){
                                            onclick="return confirm('Anda Yakin Akan Menghapus')" title="Hapus Data" >
                                             <i class="material-icons">delete</i>
                                             <span>Hapus</span></a>
-                                        </a>
+
+                                        <a target="_blank" class="btn bg-black waves-effect"href="../laporan/Laporanjenisobat.php?kd_jenis=<?= $rows -> kd_jenis; ?>" >
+                                            <i class="material-icons">print</i>
+                                            <span>Cetak</span></a>
 
                                     </td>
                                 </tr>
