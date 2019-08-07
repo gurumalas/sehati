@@ -61,7 +61,8 @@ if (isset($_GET['aksi']) == 'delete') {
                     </div>
                     <div class="body">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <a class="btn btn-primary" name="" href="../laporan/laporanmember.php" target="_blank">Cetak Semua Data</a>
+                            <table class="table table-bordered table-striped table-hover dataTable">
                                 <thead>
                                 <tr>
                                     <th>No.</th>
@@ -95,7 +96,10 @@ if (isset($_GET['aksi']) == 'delete') {
                                            onclick="return confirm('Anda Yakin Akan Menghapus')" title="Hapus Data" >
                                             <i class="material-icons">delete</i>
                                             <span>Hapus</span></a>
-                                        </a>
+                                        <a target="_blank" class="btn bg-black waves-effect"href="../laporan/profilmember.php?nik=<?= $rows -> nik; ?>" >
+                                            <i class="material-icons">print</i>
+                                            <span>Cetak</span></a>
+
 
                                     </td>
                                 </tr>

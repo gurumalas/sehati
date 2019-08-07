@@ -2,8 +2,7 @@
 <?php
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
 
-$kd_jenis   = $_GET['kd_jenis']; //kode berita yang akan dikonvert
-$sql=mysqli_query($koneksi, "SELECT * FROM produk WHERE kd_jenis='".$kd_jenis."'");
+$sql=mysqli_query($koneksi, "SELECT * FROM produk");
 $data=mysqli_fetch_array($sql);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
@@ -41,20 +40,20 @@ Telp. 082148352769</h3>
 
     <thead>
     <tr style="border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;">
-        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="4">Laporan Data Produk Kategori <?php echo $data['n_jenis']?></th>
+        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="5">Laporan Data Produk </th>
     </tr>
     <tr >
         <th width="" align="center" valign="middle">No</th>
-        <th width="" align="center" valign="middle">Kode Jenis</th>
-        <th width="" align="center" valign="middle">Nama Jenis</th>
+        <th width="" align="center" valign="middle">Kode Produk</th>
+        <th width="" align="center" valign="middle">Nama Produk</th>
+        <th width="" align="center" valign="middle">Harga</th>
         <th width="" align="center" valign="middle">Deskripsi</th>
         <br/>
         <?php
         include "../aksinya/koneksi.php";
-        if (($kd_jenis)=='') {
-            $sql=mysqli_query($koneksi, "SELECT * FROM jenis");
-        } else
-            $sql=mysqli_query($koneksi, "SELECT * FROM jenis WHERE kd_jenis='".$kd_jenis."'");
+
+            $sql=mysqli_query($koneksi, "SELECT * FROM produk");
+
         $no=0;
         $tgl=date("d-m-Y");
         while($datapost=mysqli_fetch_array($sql)){
@@ -64,8 +63,9 @@ Telp. 082148352769</h3>
         ?>
     <tr>
         <td  align="center"><?PHP echo $no;?></td>
-        <td  align="center"><?PHP echo $datapost['kd_jenis']?></td>
-        <td  align="center"><?PHP echo $datapost['n_jenis']?></td>
+        <td  align="center"><?PHP echo $datapost['kd_produk']?></td>
+        <td  align="center"><?PHP echo $datapost['nama']?></td>
+        <td  align="center"><?PHP echo $datapost['harga']?></td>
         <td  align="center"><?PHP echo $datapost['deskripsi']?></td>
     </tr><?PHP }?>
     </tbody></table><br/>

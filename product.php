@@ -60,7 +60,7 @@ include 'aksinya/fungsi.php';
 		<!-- Product -->
 
 		<div class="product" ">
-        <input type="button" onclick="window.print()" value="CETAK">
+<!--        <input type="button" onclick="window.print()" value="CETAK">-->
 			<div class="container">
 				<div class="row">
 					

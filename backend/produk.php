@@ -174,7 +174,9 @@ if (isset($_POST["tambah"])) {
                             <button name="cari2" class="btn btn-success">CARI</button>
                         </form>
                         <div class="table-responsive">
-
+                            <a target="_blank" class="btn bg-black waves-effect"href="../laporan/laporanproduk.php" >
+                                <i class="material-icons">print</i>
+                                <span>Cetak Semua Data</span></a>
                             <table class="table table-bordered table-striped table-hover dataTable ">
                                 <thead>
                                 <tr>
