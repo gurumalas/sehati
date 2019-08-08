@@ -81,7 +81,7 @@ include '../aksinya/koneksi.php';
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
-   
+
     <!-- Top Bar -->
     <nav class="navbar">
         <div class="container-fluid">
@@ -309,7 +309,7 @@ Answer GitHub questions
                             <li role="separator" class="divider"></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">vpn_key</i>Ubah Sandi</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Keluar</a></li>
+                            <li><a href="../aksinya/logout.php"><i class="material-icons">input</i>Keluar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -356,7 +356,7 @@ Answer GitHub questions
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
+                                <a href="ubahsandi.php?nik=<?= $rowsinvoice->nik; ?>" class="menu-toggle">
                                     <span>UBAH SANDI</span>
                                 </a>
                             </li>
