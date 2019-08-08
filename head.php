@@ -77,11 +77,18 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#panel8" role="tab">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                             Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="panel_member/index.php?nik=<?php echo $_SESSION['nik'];?>" > PANEL MEMBER <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+
+                    </li> <?php if(!isset($_SESSION['nik'])){
+//    header('location:sss.php');
+                    }else
+                        echo
+                            '.<li class="nav-item">
+                        <a class="nav-link" href="panel_member/index.php?nik="'.$_SESSION['nik'].'"> 
+                            PANEL MEMBER <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                             </a>
                     </li>
+                    .';
+                        ?>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#panel9" role="tab">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                             Keluar</a>
@@ -97,7 +104,9 @@
                             <div class="modal-body mb-1">
                                 <div class="md-form form-sm mb-5">
                                     <label>NIK</label><?php
-                                    echo $_SESSION['nik'];
+                                    if(!isset($_SESSION['nik'])){
+
+                                    }
                                     ?>
                                     <input type="text" id="modalLRInput10" name="nik" class="form-control form-control-sm validate">
 
@@ -114,10 +123,7 @@
                             </div>
                             <!--Footer-->
                             <div class="modal-footer">
-                                <div class="options text-center text-md-right mt-1">
-                                    <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
-                                    <p>Forgot <a href="#" class="blue-text">Password?</a></p>
-                                </div>
+
                                 <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
                             </div>
                         </form>
