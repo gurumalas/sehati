@@ -127,7 +127,7 @@
 </head>
 <body>
 <div id="logreg-forms">
-    <form class="form-signin">
+    <form method="get" action="../aksinya/cekadmin.php" class="form-signin">
         <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
 
         <p style="text-align:center"> OR  </p>

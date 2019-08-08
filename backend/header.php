@@ -1,6 +1,11 @@
 <?php
 session_start();
-include '../aksinya/fungsi.php';
+if(!isset($_SESSION['username'])){
+    header('location:error-login.php');
+}
+if($_SESSION['level']!='s'){
+//    header('location:error-login.php');
+}include '../aksinya/fungsi.php';
 include '../aksinya/koneksi.php';
 
 // Counter Data Per Kolom tanpa kondisi
