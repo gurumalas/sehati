@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-    header('location:error-login.php');
+    header('location:login.php');
 }
 if($_SESSION['level']!='s'){
 //    header('location:error-login.php');
