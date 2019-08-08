@@ -83,7 +83,7 @@
                     }else
                         echo
                             '.<li class="nav-item">
-                        <a class="nav-link" href="panel_member/index.php?nik="'.$_SESSION['nik'].'"> 
+                        <a class="nav-link" href="panel_member/index.php?nik='.$_SESSION['nik'].'"> 
                             PANEL MEMBER <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                             </a>
                     </li>

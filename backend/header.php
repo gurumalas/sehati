@@ -171,10 +171,10 @@ $jprodukpesan = mysqli_num_rows($produkpesan);
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">card_giftcard</i>
+                        <a href="editbos.php?no=1" class="menu-toggle">
+                            <i class="material-icons">people</i>
 
-                            <span>PESANAN</span><code></code>
+                            <span>Pemilik</span><code></code>
                         </a>
                     </li>
                     <li>

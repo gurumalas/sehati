@@ -1,6 +1,7 @@
 <?php
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
 include  "../aksinya/fungsi.php";
+
 $kd_transaksi   = $_GET['kd_transaksi']; //kode berita yang akan dikonvert
 $sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
 $data=mysqli_fetch_array($sql);
@@ -53,9 +54,18 @@ Jl. A. Yani Km 28 Landasan Ulin, 70724 <br/>Telp. 082148352769</h3>
     <?php
     include "../aksinya/koneksi.php";
     if (($kd_transaksi)=='') {
+        // Akan tampil transaksi yang sudah bayar
         $sql=mysqli_query($koneksi, "SELECT * FROM invoice where status='1'");
-    } else
-    $sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
+    } elseif (($kd_transaksi)==$kd_transaksi){
+        $sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
+    } elseif (((($kd_transaksi)==$kd_transaksi) && (($bulan1)==$bulan1)) && (($bulan2)==$bulan2)) {
+        $bulan1 = $_GET['bulan1'];
+        $bulan2 = $_GET['bulan2'];
+        $status = $_GET['status'];
+        $sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."' 
+        and bulan1='$bulan1' and bulan2='$bulan2' and status='1' and nik='$nik'");
+    }
+
     $no=0;
     $semua=0;
     $tgl=date("d-m-Y");
