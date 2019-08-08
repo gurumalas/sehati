@@ -43,21 +43,21 @@ Toko Sehati</h3>
     <tr style="border-left:1px text-align:left;">
         <td width="10%">Kode Produk</td>
         <td width="">:</td>
-        <td width="75%"><?php echo $data['kd_produk'];?></td>
+        <td width="90%"><?php echo $data['kd_produk'];?></td>
     </tr>
     <tr style="border-left:1px text-align:left;">
-        <td width="20%">NAMA Produk</td>
+        <td width="">NAMA Produk</td>
         <td width="">:</td>
-        <td width="20%"><?php echo $data['nama'];?> </td>
+        <td width=""><?php echo $data['nama'];?> </td>
     </tr>
     <tr style="border-;eft:1px text-align:left;">
-        <td width="20%">Harga Produk</td>
-        <td width="10%">:</td>
-        <td width="90%"><?php echo $data['harga'];?></td>
+        <td width="">Harga Produk</td>
+        <td width="">:</td>
+        <td width=""><?php echo $data['harga'];?></td>
     </tr>
     <tr style="border-;eft:1px text-align:left;">
-        <td width="20%">Deskripsi Produk</td>
-        <td width="10%">:</td>
+        <td width="">Deskripsi Produk</td>
+        <td width="">:</td>
         <td ><?php echo  $data['deskripsi']?></td>
     </tr>
 

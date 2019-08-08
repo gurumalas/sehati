@@ -85,6 +85,7 @@ $sudahtuntas = mysqli_num_rows($sudahtuntassql);
                                         <tr>
                                             <td><?php echo $no?></td>
                                             <td><a><?php echo $rowsinvoice->kd_transaksi?></a></td>
+                                            <td><a><?php echo konversi_tanggal($rowsinvoice->tgl);?></a></td>
                                             <td><?php echo $rowsinvoice->nik?></td>
                                             <td><?php  if (($rowsinvoice->status) ==1) {
                                                     echo  '<span class="label bg-green">Lunas</span>';
