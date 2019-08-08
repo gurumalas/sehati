@@ -79,6 +79,42 @@ where status=1 and tgl between '$bulan1' and '$bulan2'");
    <th width="" align="center" valign="middle">Jumlah</th>
 </table><br/>
 
+<table style=" position: relative;
+ left: 80%;">
+    <th align="left">Landasan Ulin</th>
+    <th><?php
+        echo date('d/m/Y');
+        //        echo date('l, d-m-Y');
+        ?></th><tbody>
+
+    <td>Pemilik Toko</td>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <tr>    </tr>
+    <td><?php
+        $bos=mysqli_query($koneksi, "SELECT * FROM owner WHERE no=1");
+        while($databos=mysqli_fetch_object($bos))
+        {
+            echo $databos->nama;
+        }?></td>
+    </tbody>
+</table>
 
 </body>
 </html>

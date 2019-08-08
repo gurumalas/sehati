@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/editbos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/semuatransaksi.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/semuatransaksi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laporan/laporantransaksi.php" beforeDir="false" afterPath="$PROJECT_DIR$/laporan/laporantransaksi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panel_member/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_member/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laporan/laporankeuangan.php" beforeDir="false" afterPath="$PROJECT_DIR$/laporan/laporankeuangan.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +82,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="65" column="78" selection-start-line="65" selection-start-column="78" selection-end-line="65" selection-end-column="78" />
+            <state relative-caret-position="171">
+              <caret line="134" lean-forward="true" selection-start-line="98" selection-end-line="134" />
+              <folding>
+                <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/editbos.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -126,14 +123,21 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/keuangan.php">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/laporan/laporankeuangan.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="54" lean-forward="true" selection-start-line="8" selection-start-column="74" selection-end-line="9" selection-end-column="54" />
+            <state relative-caret-position="323">
+              <caret line="117" selection-start-line="117" selection-end-line="117" />
+              <folding>
+                <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -222,7 +226,6 @@
         <option value="$PROJECT_DIR$/backend/edatamember.php" />
         <option value="$PROJECT_DIR$/backend/eproduk.php" />
         <option value="$PROJECT_DIR$/panel_member/transaksiku.php" />
-        <option value="$PROJECT_DIR$/laporan/laporankeuangan.php" />
         <option value="$PROJECT_DIR$/backend/keuangan.php" />
         <option value="$PROJECT_DIR$/hed.php" />
         <option value="$PROJECT_DIR$/product.php" />
@@ -251,6 +254,7 @@
         <option value="$PROJECT_DIR$/backend/semuatransaksi.php" />
         <option value="$PROJECT_DIR$/backend/header.php" />
         <option value="$PROJECT_DIR$/backend/editbos.php" />
+        <option value="$PROJECT_DIR$/laporan/laporankeuangan.php" />
       </list>
     </option>
   </component>
@@ -364,12 +368,12 @@
       <workItem from="1563761937551" duration="57137000" />
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
-      <workItem from="1564798506869" duration="105385000" />
+      <workItem from="1564798506869" duration="105540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="401132000" />
+    <option name="totallyTimeSpent" value="401287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -733,20 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laporan/laporankeuangan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="54" lean-forward="true" selection-start-line="8" selection-start-column="74" selection-end-line="9" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="65" column="78" selection-start-line="65" selection-start-column="78" selection-end-line="65" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/edatamember.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -756,9 +746,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/keuangan.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/semuatransaksi.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -818,6 +805,33 @@
           <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
           <folding>
             <element signature="e#126#133#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="134" lean-forward="true" selection-start-line="98" selection-end-line="134" />
+          <folding>
+            <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/keuangan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laporan/laporankeuangan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+          <folding>
+            <element signature="n#style#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
