@@ -263,7 +263,6 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
                                             </div>
                                         </div>
                                         <div class="ml-auto text-right">
-<!--                                            <div class="rating_r rating_r_5 home_item_rating">--><?//=$prod->quantity?><!--</div>-->
                                             <div class="product_price text-right"><?=format_rupiah($prod->harga); ?></div>
                                         </div>
                                     </div>
