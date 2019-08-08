@@ -2,7 +2,8 @@
 include 'aksinya/koneksi.php';
 include 'aksinya/fungsi.php';
 $kd_jenis = $_GET['kd_jenis'];
-$sql = mysqli_query($koneksi, "Select * from produk where kd_jenis='$kd_jenis'");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +71,9 @@ $sql = mysqli_query($koneksi, "Select * from produk where kd_jenis='$kd_jenis'")
                         $result = mysqli_query($koneksi,"SELECT * FROM produk");
                         $total = mysqli_num_rows($result);
                         $pages = ceil($total/$halaman);
-                        $query = mysqli_query($koneksi,"select * from produk where kd_jenis='$kd_jenis' LIMIT $mulai, $halaman")or die("gagal " . mysqli_error($koneksi))    ;
+                        if (($kd_jenis)=='') {
+                            $query = mysqli_query($koneksi, "select * from produk LIMIT $mulai, $halaman") or die("gagal " . mysqli_error($koneksi));
+                        } else  $query = mysqli_query($koneksi, "select * from produk where kd_jenis='$kd_jenis' LIMIT $mulai, $halaman") or die("gagal " . mysqli_error($koneksi));
                         $no =$mulai+1;
 
 
