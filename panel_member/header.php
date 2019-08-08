@@ -2,7 +2,9 @@
 session_start();
 include '../aksinya/fungsi.php';
 include '../aksinya/koneksi.php';
-
+if(!isset($_SESSION['nik'])){
+    echo "<script>alert('Anda Harus Login !'); window.location = '../index.php'</script>";
+}
 ?>
 <html>
 
