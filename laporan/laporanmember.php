@@ -22,7 +22,7 @@ include_once("../aksinya/koneksi.php"); //buat koneksi ke database
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 </head>
-<body>
+<body onload="window.print()">
 <h5 align="center">Laporan Data Member</h5>
 <div class="header">
     <p><img align="left" src="../images/logoapotek.png" /></p><span>

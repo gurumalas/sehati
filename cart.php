@@ -83,9 +83,6 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 }
 
     header ("location: cart.php");
-//    ((bool)mysqli_query($koneksi, "USE " . $database));
-//    $query = mysqli_query( $koneksi, "INSERT INTO invoice  (kd_produk, quantity, tgl, status)
-//VALUES ('$kd_produk', '$quantity', '$tgl', '$status')") or die(((is_object($koneksi)) ? mysqli_error($koneksi) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)));
 }
 
 ?>

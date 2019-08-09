@@ -3,7 +3,7 @@
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
 $bulan1 = $_GET['bulan1'];
 $bulan2 = $_GET['bulan2'];
-$status = $_GET['status'];
+//$status = $_GET['status'];
 
 //
 $query  = mysqli_query($GLOBALS["___mysqli_ston"], "SELECT * FROM invoice LEFT JOIN produk ON invoice.kd_produk = produk.kd_produk
@@ -27,7 +27,7 @@ $data   = mysqli_fetch_array($query);
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 </head>
-<body>
+<body onload="window.print()">
 <h5 align="center">Laporan Transaksi</h5>
 <div class="header">
     <p><img align="left" src="../images/logoapotek.png" /></p><span>

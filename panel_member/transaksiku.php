@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include '../aksinya/fungsi.php';
+//include '../aksinya/fungsi.php';
 //$cek = mysqli_query($koneksi, "Select * from produk");
 //if(isset($_GET['delete'])){
 //    $kd_produk= $_GET['kd_produk'];
@@ -179,8 +179,9 @@ include '../aksinya/fungsi.php';
                                     <th>Aksi</th>
                                 </tr>
                                 </thead> <?php
-                                include '../aksinya/koneksi.php';
-                                $sqlku = mysqli_query($koneksi, "SELECT * FROM invoice WHERE nik='1'");
+//                                include '../aksinya/koneksi.php';
+                                $nik = $_GET['nik'];
+                                $sqlku = mysqli_query($koneksi, "SELECT * FROM invoice WHERE nik='$nik'");
                                 $no=1;
                                 //proses menampilkan data
                                 while($rows=mysqli_fetch_object($sqlku)){
