@@ -150,11 +150,7 @@ $jprodukpesan = mysqli_num_rows($produkpesan);
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profil</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">vpn_key</i>Ubah Sandi</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Keluar</a></li>
+                            <li><a href="../aksinya/logout.php"><i class="material-icons">input</i>Keluar</a></li>
                         </ul>
                     </div>
                 </div>

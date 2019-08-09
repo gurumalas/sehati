@@ -100,7 +100,9 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/cart.css">
+<link rel="stylesheet" type="text/css" href="styles/checkout.css">
 <link rel="stylesheet" type="text/css" href="styles/cart_responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
 </head>
 <body>
 
@@ -141,7 +143,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 				<div class="row">
 					<div class="col">
                         <div class="cart_container">
-                            <!-- Cart Bar --><p><?=autonumber("invoice", "kd_invoice", "5", "NP") ?></p>
+
                             <div class="cart_bar">
                                 <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
                                     <li class="mr-auto">Product</li>
@@ -222,15 +224,52 @@ $a++;
                             }
                             }
     }?>
-                            <div class="product_size product_text "><p style="text-align: right"><?php echo format_rupiah($total); ?></div>
 
 
+<!--profil penerima-->
+                            <div class="col-lg-12">
+                                <div class="billing">
+                                    <div class="checkout_title">Data Pembeli</div>
+                                    <div class="checkout_form_container">
+                                        <form action="#" id="checkout_form" class="checkout_form">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <!-- Name -->
+                                                    <input type="text" id="checkout_name" class="checkout_input" placeholder="NIP KTP"  >
+                                                    <input type="text" id="checkout_name" class="checkout_input" placeholder="Nama Lengkap"  >
+                                                </div>
+
+                                            </div>
+                                            <div>
+                                                <select name="kota" id="checkout_country" class="dropdown_item_select checkout_input" >
+                                                    <option>Pilih Kota</option>
+                                                    <option>Lithuania</option>
+                                                    <option>Sweden</option>
+                                                    <option>UK</option>
+                                                    <option>Italy</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <!-- Address -->
+
+                                                <textarea type="text" id="checkout_address_2" class="checkout_input checkout_address_2" placeholder="Alamat Tujuan"  ></textarea>
+                                            </div>
+                                            <div>
+                                                <!-- Zipcode -->
+                                                <input type="text" id="checkout_zipcode" class="checkout_input" placeholder="Kode Pos"  >
+                                            </div>
+                                            <div>
+                                                <!-- Phone no -->
+                                                <input type="phone" id="checkout_phone" class="checkout_input" placeholder="Phone No."  >
+                                            </div>
+                                            <div class="product_size product_text "><p style="text-align: right"><?php echo format_rupiah($total); ?></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                             <!-- Cart Buttons -->
                             <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
                                 <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-
-
-
                                     <div class="button button_clear trans_200"><a lass="button button_clear trans_200"href="cart.php?act=clear&amp;ref=index.php">Clear</a></div>
                                     <div class="button button_continue trans_200"><a href="index.php">continue shopping</a></div>
                                     <div class="button button_continue trans_200"><a class="btn btn-primary btn-md btn-block" name="" href="laporan/sc_cart.php">Cetak Keranjang</a></div>
