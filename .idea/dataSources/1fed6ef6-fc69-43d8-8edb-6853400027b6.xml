@@ -1475,170 +1475,175 @@
       <DataType>char(12)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="406" parent="385" name="PRIMARY">
+    <column id="406" parent="385" name="ongkir">
+      <Position>10</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="407" parent="385" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>kd_invoice</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="407" parent="386" name="kd_jenis">
+    <column id="408" parent="386" name="kd_jenis">
       <Position>1</Position>
       <DataType>char(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="408" parent="386" name="n_jenis">
+    <column id="409" parent="386" name="n_jenis">
       <Position>2</Position>
       <DataType>char(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="409" parent="386" name="deskripsi">
+    <column id="410" parent="386" name="deskripsi">
       <Position>3</Position>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="410" parent="386" name="PRIMARY">
+    <key id="411" parent="386" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>kd_jenis</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="411" parent="387" name="nik">
+    <column id="412" parent="387" name="nik">
       <Position>1</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="412" parent="387" name="n_member">
+    <column id="413" parent="387" name="n_member">
       <Position>2</Position>
       <DataType>char(60)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="413" parent="387" name="jk">
+    <column id="414" parent="387" name="jk">
       <Position>3</Position>
       <DataType>int(4)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="414" parent="387" name="hp">
+    <column id="415" parent="387" name="hp">
       <Position>4</Position>
       <DataType>char(15)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="415" parent="387" name="email">
+    <column id="416" parent="387" name="email">
       <Position>5</Position>
       <DataType>char(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="416" parent="387" name="kota">
+    <column id="417" parent="387" name="kota">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="417" parent="387" name="kodepos">
+    <column id="418" parent="387" name="kodepos">
       <Position>7</Position>
       <DataType>char(9)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="418" parent="387" name="alamat">
+    <column id="419" parent="387" name="alamat">
       <Position>8</Position>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="419" parent="387" name="fotomember">
+    <column id="420" parent="387" name="fotomember">
       <Position>9</Position>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="420" parent="387" name="password">
+    <column id="421" parent="387" name="password">
       <Position>10</Position>
       <DataType>char(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="421" parent="387" name="PRIMARY">
+    <key id="422" parent="387" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>nik</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="422" parent="388" name="id_onkir">
+    <column id="423" parent="388" name="id_onkir">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="423" parent="388" name="kec">
+    <column id="424" parent="388" name="kec">
       <Position>2</Position>
       <DataType>char(60)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="424" parent="388" name="harga">
+    <column id="425" parent="388" name="harga">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="425" parent="388" name="PRIMARY">
+    <key id="426" parent="388" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_onkir</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="426" parent="389" name="no">
+    <column id="427" parent="389" name="no">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="427" parent="389" name="nama">
+    <column id="428" parent="389" name="nama">
       <Position>2</Position>
       <DataType>char(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="428" parent="389" name="PRIMARY">
+    <key id="429" parent="389" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>no</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="429" parent="390" name="kd_produk">
+    <column id="430" parent="390" name="kd_produk">
       <Position>1</Position>
       <DataType>char(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="430" parent="390" name="nama">
+    <column id="431" parent="390" name="nama">
       <Position>2</Position>
       <DataType>char(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="431" parent="390" name="foto_file">
+    <column id="432" parent="390" name="foto_file">
       <Position>3</Position>
       <DataType>varchar(99)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="432" parent="390" name="kd_jenis">
+    <column id="433" parent="390" name="kd_jenis">
       <Position>4</Position>
       <DataType>char(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="433" parent="390" name="harga">
+    <column id="434" parent="390" name="harga">
       <Position>5</Position>
       <DataType>char(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="434" parent="390" name="deskripsi">
+    <column id="435" parent="390" name="deskripsi">
       <Position>6</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="435" parent="390" name="quantity">
+    <column id="436" parent="390" name="quantity">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="436" parent="390" name="PRIMARY">
+    <key id="437" parent="390" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>kd_produk</ColNames>
       <Primary>1</Primary>

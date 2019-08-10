@@ -1,7 +1,9 @@
-
 <?php
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
 include  "../aksinya/fungsi.php";
+$id_onkir = $_GET['id_onkir'];
+$onkirnya = mysqli_query($koneksi, "select * from ongkir where id_onkir='$id_onkir'");
+  $bacaonkir=mysqli_fetch_object($onkirnya);
 if (!isset($_SESSION)) {
     session_start();
 
@@ -13,7 +15,7 @@ if (!isset($_SESSION)) {
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
 <head>
     <style>
-        .header img {width:40px;height:50px; float:; text-align:center; }
+        .header img {width:100%;height:50%; float:; text-align:center; }
         .header h3{font-family:Times, serif;font-size:14px; line-height:30px; text-align:center; margin-top:20px; font-weight:bold; text-transform:uppercase}
         .header p {text-align:center; font-weight:bold; margin:auto;padding:1px!important;}
         .header span {padding-top:10px;}
@@ -28,11 +30,11 @@ if (!isset($_SESSION)) {
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 </head>
 <body>
-<h5 align="center">Laporan Transaksi</h5>
+
 <div class="header">
     <p><img align="left" src="../images/logoapotek.png" /></p><span>
   <h3 >Toko Sehati<br/>
-Jl. A. Yani Km 28 Landasan Ulin, 70724</h3>
+Jl. A. Yani Km 28 Landasan Ulin, 70724<br/>
 Telp. 082148352769</h3>
   </span>
 </div>
@@ -45,7 +47,7 @@ Telp. 082148352769</h3>
 
     <thead>
     <tr style="border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;">
-        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="7">Laporan Data Transaksi </th>
+        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="7">Laporan Data Transaksi <?php echo autonumber("invoice", "kd_transaksi", "5", "T");?></th>
     </tr>
     <tr >
         <th width="" align="center" valign="middle">No</th>
@@ -76,9 +78,10 @@ Telp. 082148352769</h3>
         <td  align="center"><?php echo format_rupiah($jumlah_harga); ?></td>
 
         </tr><?PHP }}}?>
+    <th width="" colspan="5" align="left" valign="left"><?php echo '<p style="text-align: right">Harga Pengiriman '.format_rupiah($bacaonkir->harga).'</p>'?></th>
     </tbody>
-    <th colspan="7" align="left" ><p style="text-align: right">Jumlah : <?php
-            echo format_rupiah($total);
+    <th colspan="7" align="left" ><p style="text-align: right">Jumlah : <?php $hitungsemua = $bacaonkir->harga + $total;
+            echo $bacaonkir->harga .'x'.$total .'='. format_rupiah($hitungsemua);
             ?></p></th>
 </table><br/>
 

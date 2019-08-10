@@ -16,7 +16,7 @@ if ($ketemu > 0){
     session_start();
     $_SESSION[nik]     = $r[nik];
     $_SESSION[password]     = $r[password];
-        header('location:panel_member/index.php');
+        header('location:index.php');
 
 }
 else{

@@ -1,6 +1,6 @@
 
 <?php
-
+$id_onkir = $_GET['kota'];
 if (!isset($_SESSION)) {
     session_start();
 
@@ -145,6 +145,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                         <div class="cart_container">
 
                             <div class="cart_bar">
+                                <h3>Kode Transaksi - <?php echo autonumber("invoice", "kd_transaksi", "5", "T");?></h3>
                                 <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
                                     <li class="mr-auto">Product</li>
                                     <li>Kode Produk</li>
@@ -173,7 +174,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                             <div class="cart_items">
 
                                 <ul class="cart_items_list">
-                                    <form action="" method="post" enctype="multipart/form-data">
+<!--                                    <form action="" method="post" enctype="multipart/form-data">-->
 
                                         <!-- Cart Item -->
                                         <li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
@@ -231,54 +232,109 @@ $a++;
                                 <div class="billing">
                                     <div class="checkout_title">Data Pembeli</div>
                                     <div class="checkout_form_container">
-                                        <form action="#" id="checkout_form" class="checkout_form">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <!-- Name -->
-                                                    <input type="text" id="checkout_name" class="checkout_input" placeholder="NIP KTP"  >
-                                                    <input type="text" id="checkout_name" class="checkout_input" placeholder="Nama Lengkap"  >
-                                                </div>
+                                        <?php
+                                        $nik = $_SESSION['nik'];
+                                        $sqltemukan = mysqli_query($koneksi,"select * from member where nik='$nik'");
+                                        while ($temukan=mysqli_fetch_object($sqltemukan)){
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <!-- Name -->
+                                                <input type="text" name="nip" id="checkout_name"
+                                                       class="checkout_input" placeholder="NIK KTP"
+                                                       value="<?php echo $nik = $_SESSION['nik']; ?>">
+                                                <input type="text" id="checkout_name"
+                                                       class="checkout_input" placeholder="Nama Lengkap" name="nama"
+                                                       value="<?php echo $temukan->n_member; ?>">
+                                            </div>
 
-                                            </div>
-                                            <div>
-                                                <select name="kota" id="checkout_country" class="dropdown_item_select checkout_input" >
-                                                    <option>Pilih Kota</option>
-                                                    <option>Lithuania</option>
-                                                    <option>Sweden</option>
-                                                    <option>UK</option>
-                                                    <option>Italy</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <!-- Address -->
+                                        </div>
+                                        <div>
+                                            <select name="id_onkir" id="foo"
+                                                    class="dropdown_item_select checkout_input">
+                                                <option>Pilih Kota</option>
 
-                                                <textarea type="text" id="checkout_address_2" class="checkout_input checkout_address_2" placeholder="Alamat Tujuan"  ></textarea>
-                                            </div>
-                                            <div>
-                                                <!-- Zipcode -->
-                                                <input type="text" id="checkout_zipcode" class="checkout_input" placeholder="Kode Pos"  >
-                                            </div>
-                                            <div>
-                                                <!-- Phone no -->
-                                                <input type="phone" id="checkout_phone" class="checkout_input" placeholder="Phone No."  >
-                                            </div>
-                                            <div class="product_size product_text "><p style="text-align: right"><?php echo format_rupiah($total); ?></div>
-                                        </form>
+                                                <?php
+
+                                                $queryongkir = "SELECT * from ongkir";
+                                                $hasilonkir = mysqli_query($koneksi,$queryongkir);
+                                                while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
+                                                    echo "<option value=$dataongkir[id_onkir]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[harga]</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <!-- Address -->
+
+                                            <textarea type="text" id="checkout_address_2"
+                                                      class="checkout_input checkout_address_2"
+                                                      placeholder="Alamat Tujuan"><?php
+                                                echo $temukan->alamat;
+                                                ?></textarea>
+                                        </div>
+                                        <div>
+                                            <!-- Zipcode -->
+                                            <input type="text"  class="checkout_input" value="<?php
+                                            echo $temukan->kodepos;
+                                            ?>" name="kodepos" >
+                                        </div>
+                                        <div>
+                                            <!-- Phone no -->
+                                            <input type="phone" id="checkout_phone" class="checkout_input"
+                                                   value="<?php
+                                                   echo $temukan->hp;
+                                                   ?>" name="hp" id="txtSecond"
+                                                   >
+                                        </div>
+                                        <div class="product_size product_text "><p
+                                                    style="text-align: right"><?php echo format_rupiah($total); ?></div>
+<!--                                        <input type="text"  class="checkout_input"-->
+<!--                                               id="bar" placeholder="Kode Pos" name="kodepos" value=""></input>-->
+
                                     </div>
                                 </div>
                             </div>
                             <!-- Cart Buttons -->
                             <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
                                 <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                    <div class="button button_clear trans_200"><a lass="button button_clear trans_200"href="cart.php?act=clear&amp;ref=index.php">Clear</a></div>
-                                    <div class="button button_continue trans_200"><a href="index.php">continue shopping</a></div>
-                                    <div class="button button_continue trans_200"><a class="btn btn-primary btn-md btn-block" name="" href="laporan/sc_cart.php">Cetak Keranjang</a></div>
-                                    <div class="button button_continue trans_200"><a class="btn btn-primary btn-md btn-block" name="" href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
+                                    <div class="button button_clear trans_200"><a lass="button button_clear trans_200"
+                                                                                  href="cart.php?act=clear&amp;ref=index.php">Clear</a>
+                                    </div>
+                                    <div class="button button_continue trans_200"><a href="index.php">continue
+                                            shopping</a></div>
+<!--                                    <div class="button button_continue trans_200"><a-->
+<!--                                                class="btn btn-primary btn-md btn-block" id="bar" name=""-->
+<!--                                                href="laporan/sc_cart.php?id_onkir=--><?php // echo "1";?><!--">Cetak Keranjang</a>-->
+<!--                                        </div>-->
+                                    <div class="button button_continue trans_200"><a
+                                                class="btn btn-primary btn-md btn-block" name=""
+                                                href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Pilih Area
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                            <?php
+
+                                            $queryongkir = "SELECT * from ongkir";
+                                            $hasilonkir = mysqli_query($koneksi,$queryongkir);
+                                            while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
+
+
+                                           echo '<a class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['id_onkir'].'">'.$dataongkir['kec'].'-'.$dataongkir['harga'].''.'</a>';
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
-
-
+                        <?php
+                        }
+                        ?>
                     </div>
 					</div>
 				</div>
@@ -313,5 +369,17 @@ $a++;
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/cart.js"></script>
+<script>
+    $(function(){
+        var $foo = $('#foo');
+        var $bar = $('#bar');
+        function onChange() {
+            $bar.val($foo.val());
+        };
+        $('#foo')
+            .change(onChange)
+            .keyup(onChange);
+    });
+</script>
 </body>
 </html>
