@@ -68,15 +68,19 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
             foreach ($_SESSION['items'] as $key => $value) {
                 $kd_produk = $_POST['kd_produk'.$key];
                 $kuantitas = $value;
+                $ojek = $_POST['100'];
                 $query_barang = mysqli_query($koneksi, "SELECT * FROM produk WHERE `kd_produk` = '$key'");
+                $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE  harga= '$ojek'");
 
+                $rs_ojek = mysqli_fetch_array($query_ongkir);
                 $rs_barang = mysqli_fetch_array($query_barang);
                 $harga = $rs_barang['harga'];
+                $hargaujik = $rs_barang['hargaojek'];
 
-                $totalbyar = $harga * $kuantitas;
+                $totalbyar = ($harga * $kuantitas) + $ojek;
                 //$total += $jumlah_harga;
-                $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik)
-     VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar',0,$nik)");
+                $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik,ongkir)
+     VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar',0,'$nik','$ojek')");
 
             }
         }
@@ -250,7 +254,7 @@ $a++;
 
                                         </div>
                                         <div>
-                                            <select name="id_onkir" id="foo"
+                                            <select name="hargaojek" id="foo"
                                                     class="dropdown_item_select checkout_input">
                                                 <option>Pilih Kota</option>
 
@@ -259,7 +263,7 @@ $a++;
                                                 $queryongkir = "SELECT * from ongkir";
                                                 $hasilonkir = mysqli_query($koneksi,$queryongkir);
                                                 while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-                                                    echo "<option value=$dataongkir[id_onkir]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[harga]</option>";
+                                                    echo "<option value=$dataongkir[hargaojek]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[hargaojek]</option>";
                                                 }
                                                 ?>
                                             </select>
@@ -269,7 +273,7 @@ $a++;
 
                                             <textarea type="text" id="checkout_address_2"
                                                       class="checkout_input checkout_address_2"
-                                                      placeholder="Alamat Tujuan"><?php
+                                                      name="alamat" "><?php
                                                 echo $temukan->alamat;
                                                 ?></textarea>
                                         </div>
@@ -289,8 +293,6 @@ $a++;
                                         </div>
                                         <div class="product_size product_text "><p
                                                     style="text-align: right"><?php echo format_rupiah($total); ?></div>
-<!--                                        <input type="text"  class="checkout_input"-->
-<!--                                               id="bar" placeholder="Kode Pos" name="kodepos" value=""></input>-->
 
                                     </div>
                                 </div>
@@ -323,7 +325,7 @@ $a++;
                                             while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
 
 
-                                           echo '<a class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['id_onkir'].'">'.$dataongkir['kec'].'-'.$dataongkir['harga'].''.'</a>';
+                                           echo '<a class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['hargaojek'].'">'.$dataongkir['kec'].'-'.$dataongkir['hargaojek'].''.'</a>';
                                                 }
                                             ?>
                                         </div>

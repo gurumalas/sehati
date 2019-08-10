@@ -90,6 +90,10 @@
                     .';
                         ?>
                     <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel10" role="tab">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            Pembayaran</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#panel9" role="tab">  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                             Keluar</a>
                     </li>
@@ -235,13 +239,31 @@ location='index.php';</script>";
                         </div>
                     </div>
                     <!--/.Panel 8-->
-
-                    <div class="tab-pane fade" id="panel9" role="tabpanel">
+                    <iv class="tab-pane fade" id="panel10" role="tabpanel">
+                        <div class="modal-body">
+                            <div class="md-form form-sm mb-7">
+                                <h2>Cara Pembayaran</h2><br/>
+                                ----------------------<br/>
+                                Rekening Tokosehati<br/>
+                                BCA 1470470123<br/>
+                                MANDIRI 900-00165-33995<br/>
+                                BNI 015-1911-261<br/>
+                                BRI 6329-01-000738-500<br/>
+                                atas nama Muhammad Iqbal<br/>
+                                -----------------------<br/>
+                                Setelah transfer segera konfirmasi:<br/>
+                                1. Nama pengirim?<br/>
+                                2. Bank tujuan?<br/>
+                                3. Jumlah transfer?<br/>
+                                4. Kode Transaksi ?<br/>
+                            </div></div>
+                    </iv>
+                    <iv class="tab-pane fade" id="panel9" role="tabpanel">
                         <div class="modal-body">
                             <div class="md-form form-sm mb-7">
                                 <h2><a href="aksinya/logout.php">Keluar</a></h2>
                             </div></div>
-                    </div>
+                    </iv>
                 </div>
 
             </div>
