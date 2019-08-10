@@ -292,7 +292,7 @@ $a++;
                                                    >
                                         </div>
                                         <div class="product_size product_text "><p
-                                                    style="text-align: right"><?php echo format_rupiah($total); ?></div>
+                                                    style="text-align: right"><?php echo  format_rupiah($total); ?></div>
 
                                     </div>
                                 </div>

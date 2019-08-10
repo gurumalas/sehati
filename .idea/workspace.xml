@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/head.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,20 +70,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/head.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="244" column="61" selection-start-line="244" selection-start-column="61" selection-end-line="244" selection-end-column="61" />
+            <state relative-caret-position="-1815">
+              <caret line="181" column="64" lean-forward="true" selection-start-line="181" selection-start-column="64" selection-end-line="181" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+            <state relative-caret-position="187">
+              <caret line="165" column="76" selection-start-line="165" selection-start-column="75" selection-end-line="165" selection-end-column="76" />
               <folding>
                 <element signature="e#26#32#0" expanded="true" />
                 <element signature="e#33#39#0" expanded="true" />
@@ -141,7 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ins</find>
       <find>print</find>
       <find>&lt;body</find>
       <find>&lt;bod</find>
@@ -171,6 +169,7 @@
       <find>cetak</find>
       <find>que</find>
       <find>kelu</find>
+      <find>tota</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -249,8 +248,8 @@
         <option value="$PROJECT_DIR$/ceklogin.php" />
         <option value="$PROJECT_DIR$/laporan/sc_cart.php" />
         <option value="$PROJECT_DIR$/autocopy.php" />
-        <option value="$PROJECT_DIR$/cart.php" />
         <option value="$PROJECT_DIR$/head.php" />
+        <option value="$PROJECT_DIR$/cart.php" />
       </list>
     </option>
   </component>
@@ -364,12 +363,12 @@
       <workItem from="1563761937551" duration="57137000" />
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
-      <workItem from="1564798506869" duration="133779000" />
+      <workItem from="1564798506869" duration="134544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="429526000" />
+    <option name="totallyTimeSpent" value="430291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -829,22 +828,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1815">
+          <caret line="181" column="64" lean-forward="true" selection-start-line="181" selection-start-column="64" selection-end-line="181" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        <state relative-caret-position="187">
+          <caret line="165" column="76" selection-start-line="165" selection-start-column="75" selection-end-line="165" selection-end-column="76" />
           <folding>
             <element signature="e#26#32#0" expanded="true" />
             <element signature="e#33#39#0" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#5;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="244" column="61" selection-start-line="244" selection-start-column="61" selection-end-line="244" selection-end-column="61" />
         </state>
       </provider>
     </entry>
