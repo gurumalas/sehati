@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="" />
+    <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,17 +72,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="410" selection-start-line="410" selection-end-line="410" />
+            <state relative-caret-position="180">
+              <caret line="15" column="56" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/head.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="226">
-              <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+              <caret line="197" column="98" selection-start-line="197" selection-start-column="98" selection-end-line="197" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -114,13 +117,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1127">
-              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+            <state relative-caret-position="390">
+              <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cart.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="413">
@@ -195,10 +198,10 @@
       <find>but</find>
       <find>foo</find>
       <find>check</find>
-      <find>nik</find>
       <find>alama</find>
       <find>$data</find>
       <find>addni</find>
+      <find>nik</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -272,13 +275,13 @@
         <option value="$PROJECT_DIR$/ceklogin.php" />
         <option value="$PROJECT_DIR$/backend/formmember.php" />
         <option value="$PROJECT_DIR$/backend/index.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/head.php" />
         <option value="$PROJECT_DIR$/formmember.php" />
         <option value="$PROJECT_DIR$/panel_member/header.php" />
         <option value="$PROJECT_DIR$/autocopy.php" />
         <option value="$PROJECT_DIR$/laporan/sc_cart.php" />
         <option value="$PROJECT_DIR$/cart.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/head.php" />
       </list>
     </option>
   </component>
@@ -393,12 +396,12 @@
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
       <workItem from="1564798506869" duration="137837000" />
-      <workItem from="1565598595413" duration="24164000" />
+      <workItem from="1565598595413" duration="25441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="457748000" />
+    <option name="totallyTimeSpent" value="459025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -766,31 +769,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="410" selection-start-line="410" selection-end-line="410" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/formmember.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
-          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -858,6 +840,27 @@
             <element signature="e#25#31#0" expanded="true" />
             <element signature="e#32#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="197" column="98" selection-start-line="197" selection-start-column="98" selection-end-line="197" selection-end-column="98" />
         </state>
       </provider>
     </entry>

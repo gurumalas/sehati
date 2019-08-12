@@ -397,6 +397,9 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
 <script src="plugins/progressbar/progressbar.min.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="backend/plugins/sweetalert/sweetalert.min.js"></script>
+
+<script src="backend/plugins/jquery-validation/jquery.validate.js"></script>
 </body>
 <script>
 
