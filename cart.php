@@ -309,10 +309,14 @@ $a++;
 <!--                                                class="btn btn-primary btn-md btn-block" id="bar" name=""-->
 <!--                                                href="laporan/sc_cart.php?id_onkir=--><?php // echo "1";?><!--">Cetak Keranjang</a>-->
 <!--                                        </div>-->
-                                    <div class="button button_continue trans_200"><a
+
+                                    <h4>*Checkout Non- Member </h4><br/><br/>
+                                    <div class="button button_continue trans_200">
+<a
                                                 class="btn btn-primary btn-md btn-block" name=""
                                                 href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
                                     <div class="dropdown">
+                                        <h4>*Checkout Non- Member </h4><br/>
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Pilih Area
                                         </button>
@@ -323,7 +327,6 @@ $a++;
                                             $queryongkir = "SELECT * from ongkir";
                                             $hasilonkir = mysqli_query($koneksi,$queryongkir);
                                             while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-
 
                                            echo '<a class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['hargaojek'].'">'.$dataongkir['kec'].'-'.$dataongkir['hargaojek'].''.'</a>';
                                                 }
