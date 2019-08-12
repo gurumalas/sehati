@@ -195,7 +195,7 @@ location='index.php';</script>";
 
                                     <label  data-success="right" >Jenis Kelamin</label>
                                     <select name="jk"  id="modalLRInput12" class="form-control selectpicker validate" data-live-search="true" style="width: 100%;" required>
-                                        <option  id="modalLRInput12" value="1">Pilih Jenis Kelamin</option>
+                                        <option  id="modalLRInput12" value="">Pilih Jenis Kelamin</option>
                                         <option  id="modalLRInput12" value="1">Pria</option>
                                         <option  id="modalLRInput12" value="2">Wanita</option>
                                     </select>
