@@ -112,7 +112,7 @@
 
                                     }
                                     ?>
-                                    <input type="text" id="modalLRInput10" name="nik" class="form-control form-control-sm validate">
+                                    <input type="text" id="modalLRInput10" name="nik" class="form-control form-control-sm validate" onkeyup="checkNumber(this)">
 
                                 </div>
 
@@ -188,7 +188,7 @@ location='index.php';</script>";
                             <div class="modal-body">
                                 <div class="md-form form-sm mb-7">
                                     <label>NIK</label>
-                                    <input name="nik" type="text" id="modalLRInput12" class="form-control form-control-sm validate">
+                                    <input name="nik" type="text" id="modalLRInput12" class="form-control form-control-sm validate" onkeyup="checkNumber(this)">
 
                                     <label>Nama Lengkap</label>
                                     <input name="n_member" type="text" id="modalLRInput12" class="form-control form-control-sm validate">
@@ -204,8 +204,8 @@ location='index.php';</script>";
 
                                 </div>
                                 <div class="md-form form-sm mb-5">
-                                    <label  data-success="right" for="modalLRInput12">email</label>
-                                    <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+<!--                                    <label  data-success="right" for="modalLRInput12">email</label>-->
+<!--                                    <input name="email" type="email" id="modalLRInput12" class="form-control form-control-sm validate">-->
 
                                     <label  data-success="right" for="modalLRInput12">Kota/Kecematan</label>
                                     <input name="kota" type="text" id="modalLRInput12" class="form-control form-control-sm validate">
@@ -244,18 +244,18 @@ location='index.php';</script>";
                             <div class="md-form form-sm mb-7">
                                 <h2>Cara Pembayaran</h2><br/>
                                 ----------------------<br/>
-                                Rekening Tokosehati<br/>
-                                BCA 1470470123<br/>
-                                MANDIRI 900-00165-33995<br/>
-                                BNI 015-1911-261<br/>
-                                BRI 6329-01-000738-500<br/>
-                                atas nama Muhammad Iqbal<br/>
+                                Kami Dari Toko Sehati<br/>
+                                Bila ingin beli Obat dan Aksesoris Herbalife, Silakan Transfer Ke:<br/>
+                                ----------------------<br/>
+                                Rekening Toko Sehati<br/>
+                                BNI 067-3981-973<br/>
+                                Atas Nama Muhammad Iqbal<br/>
                                 -----------------------<br/>
-                                Setelah transfer segera konfirmasi:<br/>
-                                1. Nama pengirim?<br/>
-                                2. Bank tujuan?<br/>
-                                3. Jumlah transfer?<br/>
-                                4. Kode Transaksi ?<br/>
+                                Setelah Transfer Segera Konfirmasi:<br/>
+                                1. Kirim Bukti Transfer <br/>
+                                2. Barang Yang di Beli<br/>
+                                4. Kode Transaksi<br/>
+                                3. Jumlah transfer<br/>
                             </div></div>
                     </iv>
                     <iv class="tab-pane fade" id="panel9" role="tabpanel">

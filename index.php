@@ -398,4 +398,15 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
 </body>
+<script>
+
+    function checkNumber(a)
+    {
+        if(!/^[0-9.]+$/.test(a.value))
+        {
+            a.value = a.value.substring(0,a.value.length-1000);
+        }
+    }
+</script>
+
 </html>

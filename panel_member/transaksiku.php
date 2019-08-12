@@ -141,28 +141,7 @@ include 'header.php';
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
-                    <div class="header">
-                        <h2>
-                            EXPORTABLE TABLE
-                        </h2>
-                        <ul class="header-dropdown m-r--5">
-
-                            <button data-toggle="modal" data-target="#exampleModal" class="btn bg-BLUE waves-effect" >
-                                <i class="material-icons">local_mall</i>
-                                <span>TAMBAH PRODUK</span>
-                            </button>
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">more_vert</i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="javascript:void(0);">Action</a></li>
-                                    <li><a href="javascript:void(0);">Another action</a></li>
-                                    <li><a href="javascript:void(0);">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    
                     <div class="body">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped table-hover dataTable js-exportable">
@@ -203,7 +182,7 @@ include 'header.php';
                                     <td><?php echo $rows ->quantity?></td>
                                     <td><?php echo $rows ->quantity.'x'.format_rupiah($rows ->harga)?></td>
                                     <td><?php echo format_rupiah($rows ->totalbyar)?></td>
-                                    <td><a class="btn btn-danger waves-effect" href="../laporan/laporantransaksi.php?report=<?php echo $rows->kd_transaksi;?>">
+                                    <td><a class="btn btn-danger waves-effect" href="../laporan/laporantransaksi.php?kd_transaksi=<?php echo $rows->kd_transaksi;?>">
                                             <i class="material-icons">book</i><span></span></a>
                                     </td>
 

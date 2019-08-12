@@ -1,8 +1,9 @@
 
 <?php
-$id_onkir = $_GET['kota'];
+session_start();
+
 if (!isset($_SESSION)) {
-    session_start();
+
 
 }
 include 'aksinya/koneksi.php';
@@ -68,6 +69,8 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
             foreach ($_SESSION['items'] as $key => $value) {
                 $kd_produk = $_POST['kd_produk'.$key];
                 $kuantitas = $value;
+//                $nik = $_POST['nik'];
+                $status = 0;
                 $ojek = $_POST['100'];
                 $query_barang = mysqli_query($koneksi, "SELECT * FROM produk WHERE `kd_produk` = '$key'");
                 $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE  harga= '$ojek'");
@@ -75,12 +78,12 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                 $rs_ojek = mysqli_fetch_array($query_ongkir);
                 $rs_barang = mysqli_fetch_array($query_barang);
                 $harga = $rs_barang['harga'];
-                $hargaujik = $rs_barang['hargaojek'];
+                $ongkir = $rs_barang['hargaojek'];
 
-                $totalbyar = ($harga * $kuantitas) + $ojek;
+                $totalbyar = (($harga * $kuantitas) + $ongkir);
                 //$total += $jumlah_harga;
                 $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik,ongkir)
-     VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar',0,'$nik','$ojek')");
+     VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar','$status','$nik','$ongkir')");
 
             }
         }
@@ -237,29 +240,95 @@ $a++;
                                     <div class="checkout_title">Data Pembeli</div>
                                     <div class="checkout_form_container">
                                         <?php
+
+if(!isset($_SESSION['nik']))
+{
+// Jika buka member
+
+
+                                        $sqltemukan = mysqli_query($koneksi, "select * from member");
+
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <!-- Name -->
+                                                <label style="font-size: medium; color:#e8271b ">NIK KTP ANDA</label>
+
+                                                <input type="text" id="nik" name="nik" onkeyup="checkNumber(this)"
+                                                       class="checkout_input" placeholder="NIK KTP"
+                                                       >
+                                                <label style="font-size: medium; color:#e8271b ">Nama Lengkap ANDA</label>
+                                                <input type="text" id="nama"
+                                                       class="checkout_input" placeholder="Nama Lengkap" name="nama"
+                                                       >
+                                            </div>
+
+                                        </div>
+                                        <div>
+                                            <label style="font-size: medium; color:#e8271b ">LOKASI ANDA</label>
+                                            <select name="hargaojek"
+                                                    class="dropdown_item_select checkout_input">
+                                                <option>Pilih Kota</option>
+                                                <?php
+                                                $queryongkir = "SELECT * from ongkir";
+                                                $hasilonkir = mysqli_query($koneksi,$queryongkir);
+                                                while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
+                                                    echo "<option value=$dataongkir[hargaojek]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[hargaojek]</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label style="font-size: medium; color:#e8271b ">Alamat ANDA</label>
+                                            <textarea type="text"
+                                                      class="checkout_input checkout_address_2"
+                                                      id="alamat" name="alamat" "></textarea>
+                                        </div>
+                                        <div>
+                                            <label style="font-size: medium; color:#e8271b ">Kode Pos</label>
+                                            <input type="text"  id="kodepos" class="checkout_input"name="kodepos" >
+                                        </div>
+                                        <div>
+                                            <label style="font-size: medium; color:#e8271b ">Telphone</label>
+                                            <input type="phone" id="hp" class="checkout_input"
+                                                   name="hp"  onkeyup="checkNumber(this)"
+                                            >
+                                        </div>
+                                        <div class="product_size product_text "><p
+                                                    style="text-align: right"><?php echo  format_rupiah($total); ?></div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <?php
+
+                        }  else
+{
+// jika member
                                         $nik = $_SESSION['nik'];
-                                        $sqltemukan = mysqli_query($koneksi,"select * from member where nik='$nik'");
+                                        $sqltemukan = mysqli_query($koneksi, "select * from member where nik='$nik'");
                                         while ($temukan=mysqli_fetch_object($sqltemukan)){
                                         ?>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <!-- Name -->
-                                                <input type="text" name="nip" id="checkout_name"
-                                                       class="checkout_input" placeholder="NIK KTP"
+
+                                                <input type="text" id="nik" name="nik"
+                                                       class="checkout_input" placeholder="NIK KTP" onkeyup="checkNumber(this)"
                                                        value="<?php echo $nik = $_SESSION['nik']; ?>">
-                                                <input type="text" id="checkout_name"
+                                                <input type="text" id="nama"
                                                        class="checkout_input" placeholder="Nama Lengkap" name="nama"
                                                        value="<?php echo $temukan->n_member; ?>">
                                             </div>
 
                                         </div>
                                         <div>
-                                            <select name="hargaojek" id="foo"
+                                            <select name="hargaojek"
                                                     class="dropdown_item_select checkout_input">
                                                 <option>Pilih Kota</option>
-
                                                 <?php
-
                                                 $queryongkir = "SELECT * from ongkir";
                                                 $hasilonkir = mysqli_query($koneksi,$queryongkir);
                                                 while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
@@ -274,8 +343,8 @@ $a++;
                                             <textarea type="text" id="checkout_address_2"
                                                       class="checkout_input checkout_address_2"
                                                       name="alamat" "><?php
-                                                echo $temukan->alamat;
-                                                ?></textarea>
+                                            echo $temukan->alamat;
+                                            ?></textarea>
                                         </div>
                                         <div>
                                             <!-- Zipcode -->
@@ -285,18 +354,21 @@ $a++;
                                         </div>
                                         <div>
                                             <!-- Phone no -->
-                                            <input type="phone" id="checkout_phone" class="checkout_input"
+                                            <input type="phone" id="checkout_phone" class="checkout_input" onkeyup="checkNumber(this)"
                                                    value="<?php
                                                    echo $temukan->hp;
                                                    ?>" name="hp" id="txtSecond"
-                                                   >
+                                            >
                                         </div>
                                         <div class="product_size product_text "><p
                                                     style="text-align: right"><?php echo  format_rupiah($total); ?></div>
 
                                     </div>
                                 </div>
-                            </div>
+                            </div><?php
+            } }
+
+            ?>
                             <!-- Cart Buttons -->
                             <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
                                 <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
@@ -305,16 +377,12 @@ $a++;
                                     </div>
                                     <div class="button button_continue trans_200"><a href="index.php">continue
                                             shopping</a></div>
-<!--                                    <div class="button button_continue trans_200"><a-->
-<!--                                                class="btn btn-primary btn-md btn-block" id="bar" name=""-->
-<!--                                                href="laporan/sc_cart.php?id_onkir=--><?php // echo "1";?><!--">Cetak Keranjang</a>-->
-<!--                                        </div>-->
-
                                     <h4>*Checkout Non- Member </h4><br/><br/>
                                     <div class="button button_continue trans_200">
-<a
+                                        <a
                                                 class="btn btn-primary btn-md btn-block" name=""
                                                 href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
+                                   <form method="get" action="/sehati/laporan/sc_cart.php?">
                                     <div class="dropdown">
                                         <h4>*Checkout Non- Member </h4><br/>
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -323,23 +391,36 @@ $a++;
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
                                             <?php
-
                                             $queryongkir = "SELECT * from ongkir";
                                             $hasilonkir = mysqli_query($koneksi,$queryongkir);
                                             while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
 
-                                           echo '<a class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['hargaojek'].'">'.$dataongkir['kec'].'-'.$dataongkir['hargaojek'].''.'</a>';
-                                                }
+//                                                echo '<button class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['hargaojek'].'">'.$dataongkir['kec'].'-'.$dataongkir['hargaojek'].''.'</button>';
+
+                                                ?>
+
+                                                <button formtarget="_blank" class="dropdown-item" name="id_onkir" value="<?php
+                                                echo $dataongkir['hargaojek'];
+                                                ?>"><?php
+                                                    echo $dataongkir['kec'].'-'.$dataongkir['hargaojek'];
+                                                    ?></button>
+                                                <?php
+                                            }
                                             ?>
+
                                         </div>
                                     </div>
+                                       <input id="addnik" name="addnik" type="text" />
+                                       <input id="addnama" name="addnama" type="text" />
+                                       <input type="text" name="addalamat" id="addalamat" />
+                                       <input type="text" name="addpos" id="addpos" />
+                                       <input type="text" name="addhp" id="addhp" />
+                                   </form>
                                 </div>
 
                             </div>
                         </div>
-                        <?php
-                        }
-                        ?>
+
                     </div>
 					</div>
 				</div>
@@ -353,16 +434,6 @@ $a++;
 	</div>
 		
 </div>
-<!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
-<!-- Advanced options: -->
-<!-- data-align="left" -->
-<!-- data-overlay="true" -->
-<!-- Live Chat Widget powered by https://keyreply.com/chat/ -->
-<!-- Advanced options: -->
-<!-- data-align="left" -->
-<!-- data-overlay="true" -->
-
-
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap-4.1.2/popper.js"></script>
 <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
@@ -375,15 +446,44 @@ $a++;
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/cart.js"></script>
 <script>
-    $(function(){
-        var $foo = $('#foo');
-        var $bar = $('#bar');
-        function onChange() {
-            $bar.val($foo.val());
-        };
-        $('#foo')
-            .change(onChange)
-            .keyup(onChange);
+
+    function checkNumber(a)
+    {
+        if(!/^[0-9.]+$/.test(a.value))
+        {
+            a.value = a.value.substring(0,a.value.length-1000);
+        }
+    }
+</script>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery.autofill.min.js"></script>
+<script type="text/javascript">
+    $().ready(function() {
+        $("#nik").autofill({
+            fieldId : "addnik",
+            overrideFieldEverytime : true
+        });
+        $("#nama").autofill({
+            fieldId : "addnama",
+            overrideFieldEverytime : true
+        });
+        $("#alamat").autofill({
+            fieldId : "addalamat",
+            overrideFieldEverytime : true
+        });
+        $("#kodepos").autofill({
+            fieldId : "addpos",
+            overrideFieldEverytime : true
+        });
+        $("#hp").autofill({
+            fieldId : "addhp",
+            overrideFieldEverytime : true
+        });
+        // $("#nik").autofill({
+        //     fieldId : "addnik",
+        //     overrideFieldEverytime : true
+        // });
+
     });
 </script>
 </body>

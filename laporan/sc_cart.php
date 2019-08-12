@@ -2,6 +2,7 @@
 include_once("../aksinya/koneksi.php"); //buat koneksi ke database
 include  "../aksinya/fungsi.php";
 $id_onkir = $_GET['id_onkir'];
+
 $onkirnya = mysqli_query($koneksi, "select * from ongkir where id_onkir='$id_onkir'");
   $bacaonkir=mysqli_fetch_object($onkirnya);
 if (!isset($_SESSION)) {
@@ -39,7 +40,7 @@ Telp. 082148352769</h3>
   </span>
 </div>
 
-</table style="border-bottom:solid 1px #000;">
+<!--</table style="border-bottom:solid 1px #000;">-->
 <br />
 
 
@@ -77,14 +78,80 @@ Telp. 082148352769</h3>
         <td  align="center"><?PHP echo $val?></td>
         <td  align="center"><?php echo format_rupiah($jumlah_harga); ?></td>
 
-        </tr><?PHP }}}?>
-    <th width="" colspan="5" align="left" valign="left"><?php echo '<p style="text-align: right">Harga Pengiriman '.format_rupiah($bacaonkir->harga).'</p>'?></th>
+        </tr>
+    <th width="" colspan="5" align="left" valign="left"><?php
+        echo '<p style="text-align: right">Harga Pengiriman '.format_rupiah($id_onkir).'</p>';
+        ?></th>
     </tbody>
-    <th colspan="7" align="left" ><p style="text-align: right">Jumlah : <?php $hitungsemua = $bacaonkir->harga + $total;
-            echo $bacaonkir->harga .'x'.$total .'='. format_rupiah($hitungsemua);
+    <th colspan="7" align="left" ><p style="text-align: right">Jumlah : <?php $hitungsemua = $id_onkir + $total;
+            echo format_rupiah($id_onkir) . '   +  '  .format_rupiah($total) .'  =  '. format_rupiah($hitungsemua);
             ?></p></th>
-</table><br/>
+</table><br/><?PHP }}}?>
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 
+<table style="width:100%; border-right:1px #eeeeee; border-bottom:1px #eeeeee;  border-left:1px  #eeeeee; ">
+
+    <tr style="border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;">
+        <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="3">BIODATA</th>
+    </tr>
+    <?php
+    if(!isset($_SESSION['nik']))
+    {
+   $addnik = $_GET['addnik'];
+        $addnama = $_GET['addnama'];
+        $addalamat = $_GET['addalamat'];
+        $addhp = $_GET['addhp'];
+        $addpos = $_GET['addpos'];
+                ?>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">NIP</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $addnik; ?></td>
+        </tr>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">NAMA</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $addnama; ?></td>
+        </tr>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">Alamat</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $addalamat; ?></td>
+        </tr>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">Kode Pos</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $addpos; ?></td>
+        </tr>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">Handphone</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $addhp; ?></td>
+        </tr>
+
+<?php
+            }  else
+                {
+    $nik = $_GET['nik'];
+    $beli = mysqli_query($koneksi, "select * from member where  nik='$nik'");
+    $no =0;
+    while($profil=mysqli_fetch_object($beli)){
+    $no++;
+    ?>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">NIP</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $profil->nik;?></td>
+        </tr>
+
+<?php
+    }}
+    ?>
+</table style="border-bottom:solid 1px #000;">
 </body>
 </html>

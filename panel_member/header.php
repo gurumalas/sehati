@@ -145,12 +145,12 @@ if(!isset($_SESSION['nik'])){
 
                 <?php
                 $nik = $_GET['nik'];
-                $sqlinvoice = mysqli_query($koneksi, "SELECT * FROM invoice where nik='$nik'");
+                $sqlinvoice = mysqli_query($koneksi, "SELECT * FROM member where nik='$nik'");
                 while($rowsinvoice=mysqli_fetch_object($sqlinvoice)) { ?>
                     <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
-                        <a href="index.php">
+                        <a href="index.php?nik=<?= $rowsinvoice->nik; ?>">
                             <i class="material-icons">home</i>
                             <span>Home</span>
                         </a>
