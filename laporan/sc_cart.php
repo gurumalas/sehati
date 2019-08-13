@@ -77,16 +77,36 @@ Telp. 082148352769</h3>
         <td  align="center"><?PHP echo format_rupiah($keranjang->harga);?></td>
         <td  align="center"><?PHP echo $val?></td>
         <td  align="center"><?php echo format_rupiah($jumlah_harga); ?></td>
+        <br/>
+
 
         </tr>
     <th width="" colspan="5" align="left" valign="left"><?php
         echo '<p style="text-align: right">Harga Pengiriman '.format_rupiah($id_onkir).'</p>';
         ?></th>
+
     </tbody>
-    <th colspan="7" align="left" ><p style="text-align: right">Jumlah : <?php $hitungsemua = $id_onkir + $total;
-            echo format_rupiah($id_onkir) . '   +  '  .format_rupiah($total) .'  =  '. format_rupiah($hitungsemua);
-            ?></p></th>
-</table><br/><?PHP }}}?>
+
+</table>
+<table>
+    <thead>
+    <tr style="border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;">
+        <th width="" colspan="5" align="left" valign="left"><?php
+            echo '<p style="text-align: right">Harga Pengiriman '.format_rupiah($id_onkir).'</p>';
+            ?></th><tr></tr>
+        <th colspan="5" align="left" ><p style="text-align: right">Jumlah : <?php $hitungsemua = $id_onkir + $total;
+                echo format_rupiah($id_onkir) . '   +  '  .format_rupiah($total) .'  =  '. format_rupiah($hitungsemua);
+                ?></p></th>
+    </tr>
+    <tr >
+        <th width="" align="center" valign="middle"></th>
+        <th colspan="5" align="left" ></th>
+    </tr></thead><tbody><tr>
+
+    </tr><?PHP }}
+    }?>
+    </tbody>
+</table><br/>
 
 <br/>
 <br/>

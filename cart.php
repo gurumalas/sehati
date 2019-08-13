@@ -381,7 +381,7 @@ if(!isset($_SESSION['nik']))
                                         <a
                                                 class="btn btn-primary btn-lg btn-block" name=""
                                                 href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
-                                   <form method="get" action="/sehati/laporan/sc_cart.php?">
+                                   <form method="get" action="/sehati/laporan/pdfcart.php?">
                                     <div class="dropdown">
 &nbsp;
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
