@@ -252,9 +252,8 @@ if(!isset($_SESSION['nik']))
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <!-- Name -->
-                                                <label style="font-size: medium; color:#e8271b ">NIK KTP ANDA</label>
 
-                                                <input type="text" id="nik" name="nik" onkeyup="checkNumber(this)"
+                                                <input type="hidden" value="0" id="nik" name="nik" onkeyup="checkNumber(this)"
                                                        class="checkout_input" placeholder="NIK KTP"
                                                        >
                                                 <label style="font-size: medium; color:#e8271b ">Nama Lengkap ANDA</label>
@@ -377,14 +376,14 @@ if(!isset($_SESSION['nik']))
                                     </div>
                                     <div class="button button_continue trans_200"><a href="index.php">continue
                                             shopping</a></div>
-                                    <h4>*Checkout Non- Member </h4><br/><br/>
-                                    <div class="button button_continue trans_200">
+                                    <div class="dropdown">
+
                                         <a
-                                                class="btn btn-primary btn-md btn-block" name=""
+                                                class="btn btn-primary btn-lg btn-block" name=""
                                                 href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
                                    <form method="get" action="/sehati/laporan/sc_cart.php?">
                                     <div class="dropdown">
-                                        <h4>*Checkout Non- Member </h4><br/>
+&nbsp;
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Pilih Area
                                         </button>
@@ -410,11 +409,11 @@ if(!isset($_SESSION['nik']))
 
                                         </div>
                                     </div>
-                                       <input id="addnik" name="addnik" type="text" />
-                                       <input id="addnama" name="addnama" type="text" />
-                                       <input type="text" name="addalamat" id="addalamat" />
-                                       <input type="text" name="addpos" id="addpos" />
-                                       <input type="text" name="addhp" id="addhp" />
+                                       <input id="addnik" name="addnik" type="hidden" />
+                                       <input id="addnama" name="addnama" type="hidden" />
+                                       <input type="hidden" name="addalamat" id="addalamat" />
+                                       <input type="hidden" name="addpos" id="addpos" />
+                                       <input type="hidden" name="addhp" id="addhp" />
                                    </form>
                                 </div>
 
