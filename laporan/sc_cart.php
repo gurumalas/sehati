@@ -34,6 +34,26 @@ if (!isset($_SESSION)) {
 
 <div class="header">
     <p><img align="left" src="../images/logoapotek.png" /></p><span>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
   <h3 >Toko Sehati<br/>
 Jl. A. Yani Km 28 Landasan Ulin, 70724<br/>
 Telp. 082148352769</h3>
@@ -81,9 +101,7 @@ Telp. 082148352769</h3>
 
 
         </tr>
-    <th width="" colspan="5" align="left" valign="left"><?php
-        echo '<p style="text-align: right">Harga Pengiriman '.format_rupiah($id_onkir).'</p>';
-        ?></th>
+
 
     </tbody>
 
