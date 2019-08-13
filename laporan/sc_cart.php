@@ -110,8 +110,6 @@ Telp. 082148352769</h3>
 
 <br/>
 <br/>
-<br/>
-<br/>
 
 
 <table style="width:100%; border-right:1px #eeeeee; border-bottom:1px #eeeeee;  border-left:1px  #eeeeee; ">
@@ -129,7 +127,7 @@ Telp. 082148352769</h3>
         $addpos = $_GET['addpos'];
                 ?>
         <tr style="border-left:1px text-align:left;">
-            <td width="10%">NIP</td>
+            <td width="10%">NIK</td>
             <td width="">:</td>
             <td width="75%"><?php echo $addnik; ?></td>
         </tr>
@@ -164,7 +162,7 @@ Telp. 082148352769</h3>
     $no++;
     ?>
         <tr style="border-left:1px text-align:left;">
-            <td width="10%">NIP</td>
+            <td width="10%">NIK</td>
             <td width="">:</td>
             <td width="75%"><?php echo $profil->nik;?></td>
         </tr>

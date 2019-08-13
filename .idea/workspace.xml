@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laporan/pdfcart.php" beforeDir="false" afterPath="$PROJECT_DIR$/laporan/pdfcart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laporan/sc_cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/laporan/sc_cart.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
+            <state relative-caret-position="137">
+              <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -174,7 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkou</find>
       <find>harg</find>
       <find>regi</find>
       <find>&lt;form</find>
@@ -204,6 +201,7 @@
       <find>nik</find>
       <find>web.</find>
       <find>non</find>
+      <find>nip</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -399,12 +397,12 @@
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
       <workItem from="1564798506869" duration="137837000" />
-      <workItem from="1565598595413" duration="36475000" />
+      <workItem from="1565598595413" duration="36662000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="470059000" />
+    <option name="totallyTimeSpent" value="470246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -864,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
+        <state relative-caret-position="137">
+          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
