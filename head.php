@@ -112,7 +112,7 @@
 
                                     }
                                     ?>
-                                    <input type="text" id="modalLRInput10" name="nik" class="form-control form-control-sm validate" name="minmaxvalue" min="10" max="200" onkeyup="checkNumber(this)">
+                                    <input type="text" id="modalLRInput10" name="nik" class="form-control form-control-sm validate" name="minmaxvalue" min="10" max="200" onkeyup="checkNumber(this)" required>
 
                                 </div>
 
@@ -188,7 +188,7 @@ location='index.php';</script>";
                             <div class="modal-body">
                                 <div class="md-form form-sm mb-7">
                                     <label>NIK</label>
-                                    <input name="nik" type="text" id="modalLRInput12" class="form-control form-control-sm validate" onkeyup="checkNumber(this)">
+                                    <input name="nik" type="text" id="modalLRInput12" class="form-control form-control-sm validate" name="minmaxvalue" min="10" max="200" required onkeyup="checkNumber(this)">
 
                                     <label>Nama Lengkap</label>
                                     <input name="n_member" type="text" id="modalLRInput12" class="form-control form-control-sm validate">

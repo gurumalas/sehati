@@ -22,7 +22,7 @@ include 'header.php';
                 <div class="card">
                     <div class="header">
                         <h2>
-                            EXPORTABLE TABLE
+                            Data Keuangan
                         </h2>
 
 

@@ -39,7 +39,7 @@ if (isset($_GET['aksi']) == 'delete') {
                 <div class="card">
                     <div class="header">
                         <h2>
-                            EXPORTABLE TABLE
+                            DATA MEMBER
                         </h2>
                         <ul class="header-dropdown m-r--5">
 

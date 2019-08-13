@@ -38,6 +38,7 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link href="backend/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -398,6 +399,7 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="backend/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="backend/plugins/sweetalert/sweetalert-dev.js"></script>
 
 <script src="backend/plugins/jquery-validation/jquery.validate.js"></script>
 </body>

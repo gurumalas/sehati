@@ -63,7 +63,7 @@ if(isset ($_POST{'ubah'})){
                                     <label >Jenis Kelamin</label>
                                 <div class="form-line">
                                     <select name="jk" class="form-control show-tick">
-                                        <option value="">-- Please select --</option>
+                                        <option value="">-- Pilih --</option>
                                         <option value="1">Laki-Laki</option>
                                         <option value="2">Prempuan</option>
                                     </select>
