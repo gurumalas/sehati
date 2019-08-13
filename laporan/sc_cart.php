@@ -129,7 +129,11 @@ Telp. 082148352769</h3>
         <tr style="border-left:1px text-align:left;">
             <td width="10%">NIK</td>
             <td width="">:</td>
-            <td width="75%"><?php echo $addnik; ?></td>
+            <td width="75%"><?php
+                if(($addnik)=='') { echo 'Bukan Member';
+                } else {
+                    echo $addnik;
+                } ?></td>
         </tr>
         <tr style="border-left:1px text-align:left;">
             <td width="10%">NAMA</td>
