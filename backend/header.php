@@ -204,7 +204,7 @@ $jprodukpesan = mysqli_num_rows($produkpesan);
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
+                                <a href="bestmember.php" class="menu-toggle">
                                     <span>BEST MEMBER</span>
                                 </a>
                             </li>

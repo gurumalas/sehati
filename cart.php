@@ -80,7 +80,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                 $harga = $rs_barang['harga'];
                 $ongkir = $rs_barang['hargaojek'];
 
-                $totalbyar = (($harga * $kuantitas) + $ongkir);
+                $totalbyar = ($harga * $kuantitas) + $ongkir;
                 //$total += $jumlah_harga;
                 $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik,ongkir)
      VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar','$status','$nik','$ongkir')");

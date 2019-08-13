@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/datamember.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/datamember.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/edatamember.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/edatamember.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/jenis.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/jenis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/keuangan.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/keuangan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/best_produk.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bestmember.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panel_member/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/panel_member/header.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,34 +73,39 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/jenis.php">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
+            <state relative-caret-position="1863">
+              <caret line="315" column="14" lean-forward="true" selection-start-line="315" selection-start-column="14" selection-end-line="315" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cart.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="193" column="48" lean-forward="true" selection-start-line="193" selection-start-column="48" selection-end-line="193" selection-end-column="48" />
               <folding>
-                <element signature="e#136#143#1" expanded="true" />
-                <element signature="e#139#146#1" expanded="true" />
-                <element signature="e#138#145#1" expanded="true" />
-                <element signature="e#126#133#1" expanded="true" />
+                <element signature="e#25#31#0" expanded="true" />
+                <element signature="e#32#38#0" expanded="true" />
+                <element signature="e#25#31#0" expanded="true" />
+                <element signature="e#32#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/keuangan.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/bestmember.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+            <state relative-caret-position="272">
+              <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+              <folding>
+                <element signature="e#136#143#1" expanded="true" />
+                <element signature="e#139#146#1" expanded="true" />
+                <element signature="e#138#145#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,66 +113,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/semuatransaksi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="249">
+              <caret line="80" column="41" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="80" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel_member/index.php">
+        <entry file="file://$PROJECT_DIR$/backend/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="148" column="17" lean-forward="true" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
+            <state relative-caret-position="364">
+              <caret line="206" column="55" selection-start-line="206" selection-start-column="55" selection-end-line="206" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel_member/kategori.php">
+        <entry file="file://$PROJECT_DIR$/backend/produk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2783">
-              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel_member/modalusaha.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel_member/produk.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="312" column="37" lean-forward="true" selection-start-line="312" selection-start-column="37" selection-end-line="312" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/panel_member/tambah_produk.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1334">
-              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/panel_member/transaksiku.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="212" lean-forward="true" selection-start-line="212" selection-end-line="212" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-3130">
+              <caret line="80" column="43" lean-forward="true" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -177,11 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;sele</find>
-      <find>cetak</find>
-      <find>que</find>
-      <find>kelu</find>
-      <find>tota</find>
       <find>bac</find>
       <find>baco</find>
       <find>buka</find>
@@ -206,7 +165,12 @@
       <find>nik</find>
       <find>&lt;input</find>
       <find>EXPORTABLE TABL</find>
+      <find>sess</find>
+      <find>img</find>
+      <find>n_na</find>
       <find>EXPORTABLE TABLE</find>
+      <find>bes</find>
+      <find>DISTINCT</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -237,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/plugins/jquery-sparkline/src/header.js" />
         <option value="$PROJECT_DIR$/masuk.keranjang.php" />
         <option value="$PROJECT_DIR$/keranjang.php" />
         <option value="$PROJECT_DIR$/keranjangku.php" />
@@ -271,23 +234,24 @@
         <option value="$PROJECT_DIR$/laporan/laporankeuangan.php" />
         <option value="$PROJECT_DIR$/laporan/laporanmember.php" />
         <option value="$PROJECT_DIR$/panel_member/transaksiku.php" />
-        <option value="$PROJECT_DIR$/backend/header.php" />
         <option value="$PROJECT_DIR$/backend/login.php" />
         <option value="$PROJECT_DIR$/aksinya/cekadmin.php" />
         <option value="$PROJECT_DIR$/ceklogin.php" />
         <option value="$PROJECT_DIR$/backend/formmember.php" />
         <option value="$PROJECT_DIR$/backend/index.php" />
         <option value="$PROJECT_DIR$/formmember.php" />
-        <option value="$PROJECT_DIR$/panel_member/header.php" />
         <option value="$PROJECT_DIR$/autocopy.php" />
         <option value="$PROJECT_DIR$/laporan/sc_cart.php" />
-        <option value="$PROJECT_DIR$/cart.php" />
         <option value="$PROJECT_DIR$/head.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/backend/edatamember.php" />
         <option value="$PROJECT_DIR$/backend/datamember.php" />
         <option value="$PROJECT_DIR$/backend/jenis.php" />
         <option value="$PROJECT_DIR$/backend/keuangan.php" />
+        <option value="$PROJECT_DIR$/panel_member/header.php" />
+        <option value="$PROJECT_DIR$/cart.php" />
+        <option value="$PROJECT_DIR$/backend/header.php" />
+        <option value="$PROJECT_DIR$/backend/bestmember.php" />
       </list>
     </option>
   </component>
@@ -316,6 +280,11 @@
               <item name="sehati" type="b2602c69:ProjectViewProjectNode" />
               <item name="sehati" type="462c0819:PsiDirectoryNode" />
               <item name="aksinya" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sehati" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sehati" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sehati" type="b2602c69:ProjectViewProjectNode" />
@@ -397,12 +366,12 @@
       <workItem from="1564367798941" duration="21130000" />
       <workItem from="1564574110496" duration="22205000" />
       <workItem from="1564798506869" duration="137837000" />
-      <workItem from="1565598595413" duration="26921000" />
+      <workItem from="1565598595413" duration="32017000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="460505000" />
+    <option name="totallyTimeSpent" value="465601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -647,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aksinya/ceklogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -668,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/produk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="85" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ceklogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -686,13 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panel_member/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="160" column="39" selection-start-line="160" selection-start-column="39" selection-end-line="160" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -720,43 +668,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="293" column="61" selection-start-line="293" selection-start-column="61" selection-end-line="293" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#25#31#0" expanded="true" />
-            <element signature="e#32#38#0" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#2;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#3;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#4;n#div#1;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#25#31#0" expanded="true" />
-            <element signature="e#32#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="275" lean-forward="true" selection-start-line="275" selection-end-line="275" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="315" column="14" lean-forward="true" selection-start-line="315" selection-start-column="14" selection-end-line="315" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/best_produk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -766,18 +681,6 @@
           <caret line="65" column="65" selection-start-line="65" selection-start-column="65" selection-end-line="65" selection-end-column="65" />
           <folding>
             <element signature="e#126#133#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/datamember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="28" />
-          <folding>
-            <element signature="e#136#143#1" expanded="true" />
-            <element signature="e#139#146#1" expanded="true" />
-            <element signature="e#138#145#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -819,38 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/semuatransaksi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panel_member/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="148" column="17" lean-forward="true" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panel_member/kategori.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2783">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panel_member/modalusaha.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -861,6 +732,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/panel_member/kategori.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2783">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panel_member/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="126" column="47" selection-start-line="126" selection-start-column="47" selection-end-line="126" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/panel_member/tambah_produk.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1334">
@@ -868,13 +753,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/panel_member/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3473">
+          <caret line="151" column="13" lean-forward="true" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/panel_member/transaksiku.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="404">
           <caret line="212" lean-forward="true" selection-start-line="212" selection-end-line="212" />
           <folding>
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1863">
+          <caret line="315" column="14" lean-forward="true" selection-start-line="315" selection-start-column="14" selection-end-line="315" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/datamember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="193" column="48" lean-forward="true" selection-start-line="193" selection-start-column="48" selection-end-line="193" selection-end-column="48" />
+          <folding>
+            <element signature="e#25#31#0" expanded="true" />
+            <element signature="e#32#38#0" expanded="true" />
+            <element signature="e#25#31#0" expanded="true" />
+            <element signature="e#32#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="206" column="55" selection-start-line="206" selection-start-column="55" selection-end-line="206" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/produk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3130">
+          <caret line="80" column="43" lean-forward="true" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/semuatransaksi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="80" column="41" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="80" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/bestmember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+          <folding>
+            <element signature="e#136#143#1" expanded="true" />
+            <element signature="e#139#146#1" expanded="true" />
+            <element signature="e#138#145#1" expanded="true" />
           </folding>
         </state>
       </provider>

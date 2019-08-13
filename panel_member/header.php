@@ -113,18 +113,22 @@ if(!isset($_SESSION['nik'])){
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
-            <div class="user-info">
+            <div class="user-info"><?php
+                $nik = $_GET['nik'];
+                $nama = mysqli_query($koneksi, "select * from member where nik='$nik'");
+                $tampilkan=mysqli_fetch_object($nama);
+
+
+                ?>
                 <div class="image">
-                    <img src="images/user.png" width="48" height="48" alt="User" />
+                    <img src="images/<?php echo $tampilkan->fotomember;
+                    ?>" width="80" height="80" alt="User" /><br/>
+                    <?php
+                    echo  $tampilkan->n_member;
+                    ?>
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php
-                        $nik = $_GET['nik'];
-                         $nama = mysqli_query($koneksi, "select * from member where nik='$nik'");
-                         $tampilkan=mysqli_fetch_object($nama);
-
-                          echo  $tampilkan->n_member;
-                            ?>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            </div
 
                     <div class="btn-group user-helper-dropdown">
