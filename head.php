@@ -54,7 +54,7 @@
         <!-- Phone -->
         <div class="header_phone d-flex flex-row align-items-center justify-content-start">
             <div><div><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-            <div><a href="https://wa.widget.web.id/a3e6bd" target="_blank">+628123456789</a></div>
+            <div><a href="https://wa.widget.web.id/7f0ccb" target="_blank">WA : +628123456789</a></div>
         </div>
     </div>
     </div>
