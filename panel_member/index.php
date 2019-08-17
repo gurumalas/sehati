@@ -62,6 +62,7 @@ $sudahtuntas = mysqli_num_rows($sudahtuntassql);
                                     <tr>
                                         <th>No.</th>
                                         <th>Kode Transaksi</th>
+                                        <th>Tanggal Transaksi</th>
                                         <th>NIK Pembeli</th>
                                         <th>Status</th>
                                         <th>Harga X Jumlah</th>

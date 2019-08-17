@@ -106,7 +106,7 @@
                                         mysqli_query($koneksi, $ubahkan);
                                     }
 
-                                    $sqlinvoice = mysqli_query($koneksi, "SELECT * FROM invoice where status='0'");
+                                    $sqlinvoice = mysqli_query($koneksi, "SELECT * FROM invoice where status='0' or status=''");
                                     $no=1;
                                     //proses menampilkan data
 
@@ -118,7 +118,11 @@
                                         <tbody>
                                         <tr>
                                             <td><?php echo $no?></td>
-                                            <td><a><?php echo $rowsinvoice->kd_transaksi?></a></td>
+                                            <td><a><?php if (($rowsinvoice->kd_transaksi)=='') {
+                                                echo 'Tidak Member';
+                                                    } else {
+                                                        echo $rowsinvoice->kd_transaksi;
+                                                    }?></a></td>
                                             <td><?php echo $rowsinvoice->nik?></td>
                                             <td><?php  if (($rowsinvoice->status) ==1) {
                                                 echo  '<span class="label bg-green">Lunas</span>';
