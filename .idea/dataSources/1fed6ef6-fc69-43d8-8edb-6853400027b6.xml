@@ -1575,7 +1575,7 @@
       <DataType>char(60)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="425" parent="388" name="harga">
+    <column id="425" parent="388" name="hargaojek">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>

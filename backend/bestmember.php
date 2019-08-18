@@ -58,7 +58,7 @@ if (isset($_GET['aksi']) == 'delete') {
                     </div>
                     <div class="body">
                         <div class="table-responsive">
-                            <a class="btn btn-primary" name="" href="../laporan/laporanmember.php" target="_blank">Cetak Semua Data</a>
+                            <a class="btn btn-primary" name="" href="../laporan/laporanbestmember.php" target="_blank">Cetak Semua Data</a>
                             <table class="table table-bordered table-striped table-hover dataTable">
                                 <thead>
                                 <tr>

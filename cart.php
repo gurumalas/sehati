@@ -1022,6 +1022,10 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 
                                 </ul>
                             </div>
+                            <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                <div class="button button_clear trans_200"><a lass="button button_clear trans_200"
+                                                                              href="cart.php?act=clear&amp;ref=index.php">Clear</a>
+                                </div>
                             <?php
 $a++;
                             //((mysqli_free_result($query) || (is_object($query) && (get_class($query) == "mysqli_result"))) ? true : false);
@@ -1124,12 +1128,12 @@ if(!isset($_SESSION['nik']))
                                         <div>
                                             <select name="hargaojek"
                                                     class="dropdown_item_select checkout_input">
-                                                <option>Pilih Kota</option>
+                                                <option >Pilih Kota</option>
                                                 <?php
                                                 $queryongkir = "SELECT * from ongkir";
                                                 $hasilonkir = mysqli_query($koneksi,$queryongkir);
                                                 while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-                                                    echo "<option value=$dataongkir[hargaojek]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[hargaojek]</option>";
+                                                    echo  "<option value=$dataongkir[hargaojek]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[hargaojek]</option>";
                                                 }
                                                 ?>
                                             </select>
@@ -1168,10 +1172,7 @@ if(!isset($_SESSION['nik']))
             ?>
                             <!-- Cart Buttons -->
                             <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
-                                <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                    <div class="button button_clear trans_200"><a lass="button button_clear trans_200"
-                                                                                  href="cart.php?act=clear&amp;ref=index.php">Clear</a>
-                                    </div>
+
                                     <div class="button button_continue trans_200"><a href="index.php">continue
                                             shopping</a></div>
                                     <div class="dropdown">
