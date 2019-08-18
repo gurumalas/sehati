@@ -72,7 +72,7 @@ if (isset($_GET['aksi']) == 'delete') {
 
 //                                $query="SELECT * FROM member ORDER by nik desc"  ;
 //                                SELECT username, COUNT(*) duplikat FROM users GROUP BY username HAVING COUNT(duplikat)  > 1
-                                $sql = mysqli_query($koneksi, "SELECT *, count(nik) duplikat FROM invoice group by nik having count(duplikat)");
+                                $sql = mysqli_query($koneksi, "SELECT invoice.*, count(invoice.nik) duplikat FROM invoice group by nik having count(duplikat)");
                                 $no=1;
 
                                 //proses menampilkan data

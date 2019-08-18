@@ -775,7 +775,8 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
             #header img {top:-5px;}
             #header{text-align:center;width:100%;max-width:none}
             #header-inner{margin:10px}
-            #cssmenu{float:none;margin:0;width:100%;}
+            #cssmenu{float:none;
+                max-resolution: res;gin:0;width:100%;}
             #cssmenu ul{background:#f8f8f8;width:100%;display:none;height:auto;margin-top:43px;-webkit-box-shadow:0 2px 8px 0 rgba(0,0,0,0.15);box-shadow:0 2px 8px 0 rgba(0,0,0,0.15)}
             #cssmenu>ul{max-height:calc(100vh - 48px);overflow-y:auto}
             #cssmenu ul ul{-webkit-box-shadow:none;box-shadow:none;display:none;opacity:1;transform:translateY(0);transition:unset}
