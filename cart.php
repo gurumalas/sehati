@@ -64,6 +64,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
         }
     } elseif ($act == "full") {
         $nik = $_SESSION['nik'];
+        $ongkir = $_POST['ongkir'];
         $kd_transaksi = autonumber("invoice", "kd_transaksi", "5", "T");
         if (isset($_SESSION['items'])) {
             foreach ($_SESSION['items'] as $key => $value) {
@@ -78,7 +79,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                 $rs_ojek = mysqli_fetch_array($query_ongkir);
                 $rs_barang = mysqli_fetch_array($query_barang);
                 $harga = $rs_barang['harga'];
-                $ongkir = $rs_barang['hargaojek'];
+                $ongkir = $_POST['ongkir'];
 
                 $totalbyar = ($harga * $kuantitas) + $ongkir;
                 //$total += $jumlah_harga;
@@ -273,14 +274,15 @@ if(!isset($_SESSION['nik']))
                                         </div>
                                         <div>
                                             <label style="font-size: medium; color:#e8271b ">LOKASI ANDA</label>
-                                            <select name="hargaojek"
+                                            <select name="ongkir"
                                                     class="dropdown_item_select checkout_input">
                                                 <option>Pilih Kota</option>
                                                 <?php
+                                                include "aksinya/koneksi.php";
                                                 $queryongkir = "SELECT * from ongkir";
                                                 $hasilonkir = mysqli_query($koneksi,$queryongkir);
                                                 while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-                                                    echo "<option value=$dataongkir[hargaojek]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[hargaojek]</option>";
+                                                    echo "<option value=$dataongkir[ongkir]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[ongkir]</option>";
                                                 }
                                                 ?>
                                             </select>
