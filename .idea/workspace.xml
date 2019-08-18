@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/laporan/laporanbestmember.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1fed6ef6-fc69-43d8-8edb-6853400027b6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1fed6ef6-fc69-43d8-8edb-6853400027b6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/bestmember.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bestmember.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laporan/laporanbestmember.php" beforeDir="false" afterPath="$PROJECT_DIR$/laporan/laporanbestmember.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/laporan/laporanbestmember.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+            <state relative-caret-position="458">
+              <caret line="93" column="25" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -379,12 +374,12 @@
       <workItem from="1564574110496" duration="22205000" />
       <workItem from="1564798506869" duration="137837000" />
       <workItem from="1565598595413" duration="38275000" />
-      <workItem from="1566037492450" duration="11000000" />
+      <workItem from="1566037492450" duration="12389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="482859000" />
+    <option name="totallyTimeSpent" value="484248000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -891,8 +886,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/laporan/laporanbestmember.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+        <state relative-caret-position="458">
+          <caret line="93" column="25" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
         </state>
       </provider>
     </entry>

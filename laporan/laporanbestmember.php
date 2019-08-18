@@ -85,7 +85,16 @@ Telp. 082148352769</h3>
 
             ?>" We></td>
 
-        <td  align="center"><?PHP echo $datapost['nik']?></td>
+        <td  align="center"><?PHP
+            $gambar= mysqli_query($koneksi, "Select * FROM member where nik='".$datapost['nik']."'");
+            while($pic=mysqli_fetch_array($gambar)){
+                if (($datapost['nik'])=='0') {
+                    echo "Tidak Ada";
+                } else {
+                    echo $pic['nik'];
+                }
+            }
+            ?></td>
         <td  align="center"><?PHP echo $datapost['duplikat']?></td>
         <td  align="center"><?PHP  $gambar= mysqli_query($koneksi, "Select * FROM member where nik='".$datapost['nik']."'");
             while($pic=mysqli_fetch_array($gambar)){
