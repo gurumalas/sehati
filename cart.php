@@ -1109,7 +1109,9 @@ if(!isset($_SESSION['nik']))
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <!-- Name -->
-
+                                                <input type="text" id="" name="kd_transaksi"
+                                                       class="checkout_input" placeholder="NIK KTP"
+                                                       value="<?php echo autonumber("invoice", "kd_transaksi", "5", "T"); ?>">
                                                 <input type="text" id="nik" name="nik"
                                                        class="checkout_input" placeholder="NIK KTP" onkeyup="checkNumber(this)"
                                                        value="<?php echo $nik = $_SESSION['nik']; ?>">
