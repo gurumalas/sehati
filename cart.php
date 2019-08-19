@@ -74,14 +74,14 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                 $status = 0;
                 $ojek = $_POST['100'];
                 $query_barang = mysqli_query($koneksi, "SELECT * FROM produk WHERE `kd_produk` = '$key'");
-                $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE  harga= '$ojek'");
+//                $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE  harga= '$ojek'");
 
-                $rs_ojek = mysqli_fetch_array($query_ongkir);
+//                $rs_ojek = mysqli_fetch_array($query_ongkir);
                 $rs_barang = mysqli_fetch_array($query_barang);
                 $harga = $rs_barang['harga'];
                 $ongkir = $_POST['ongkir'];
-
-                $totalbyar = ($harga * $kuantitas) + $ongkir;
+                $tanpaojek = $harga * $kuantitas;
+                $totalbyar = $tanpaojek + $ongkir;
                 //$total += $jumlah_harga;
                 $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik,ongkir)
      VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar','$status','$nik','$ongkir')");
