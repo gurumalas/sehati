@@ -795,65 +795,7 @@
         #credit {padding:20px 0;text-align:left;}
     }
 </style>
-<script>
-    /*<![CDATA[*/
-    // head
-    $(function(){$(window).scroll(function(){$(this).scrollTop()>80?$(".header-wrap").addClass("fixed"):$(".header-wrap").removeClass("fixed")})});
 
-    // timer
-    !function(t){function e(t,e){return t.toFixed(e.decimals)}t.fn.countTo=function(e){return e=e||{},t(this).each(function(){function n(){u+=l,f++,o(u),"function"==typeof a.onUpdate&&a.onUpdate.call(i,u),f>=r&&(c.removeData("countTo"),clearInterval(d.interval),u=a.to,"function"==typeof a.onComplete&&a.onComplete.call(i,u))}function o(t){var e=a.formatter.call(i,t,a);c.html(e)}var a=t.extend({},t.fn.countTo.defaults,{from:t(this).data("from"),to:t(this).data("to"),speed:t(this).data("speed"),refreshInterval:t(this).data("refresh-interval"),decimals:t(this).data("decimals")},e),r=Math.ceil(a.speed/a.refreshInterval),l=(a.to-a.from)/r,i=this,c=t(this),f=0,u=a.from,d=c.data("countTo")||{};c.data("countTo",d),d.interval&&clearInterval(d.interval),d.interval=setInterval(n,a.refreshInterval),o(u)})},t.fn.countTo.defaults={from:0,to:0,speed:1e3,refreshInterval:100,decimals:0,formatter:e,onUpdate:null,onComplete:null}}(jQuery),jQuery(function(t){function e(e){var n=t(this);e=t.extend({},e||{},n.data("countToOptions")||{}),n.countTo(e)}t(".count-number").data("countToOptions",{formatter:function(t,e){return t.toFixed(e.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g,",")}}),t(".timer").each(e)});
-
-    // nav
-    // $(function() {
-    //     var navHeight = $("nav").outerHeight();
-    //     $('a[href*="#"]:not([href="#"])').click(function() {
-    //         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-    //             var target = $(this.hash);
-    //             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    //             if (target.length) {
-    //                 $('html, body').animate({
-    //                     scrollTop: target.offset().top - navHeight
-    //                 }, 1000);
-    //                 return false;
-    //             }
-    //         }
-    //     });
-    // });
-
-    // whatsapp
-    function closeModal(){document.getElementById("pelajar").classList.remove("active"),document.getElementById("whatsapp").classList.remove("active")}function openModal(){document.getElementById("pelajar").classList.add("active"),document.getElementById("whatsapp").classList.add("active")}
-
-    // Onclick Whatsapp Sent!
-    function WhatsApp(){var a="";if(""==$("#whatsapp .asal").val())return a=$("#whatsapp .asal").attr("name"),alert("Please select the city of origin "+a),$("#whatsapp .nama").focus(),!1;if(""==$("#whatsapp .ke").val())return a=$("#whatsapp .ke").attr("name"),alert("Please select the destination city "+a),$("#whatsapp .ke").focus(),!1;if(""==$("#whatsapp .tanggal").val())return a=$("#whatsapp .tanggal").attr("name"),alert("Please Specify Order Date "),$("#whatsapp .tanggal").focus(),!1;if(""==$("#whatsapp .jadwal").val())return a=$("#whatsapp .jadwal").attr("name"),alert("Please select a departure schedule "+a),$("#whatsapp .jadwal").focus(),!1;if(""==$("#whatsapp .nama").val())return a=$("#whatsapp .nama").attr("name"),alert("Please write name"),$("#whatsapp .nama").focus(),!1;if(""==$("#whatsapp .hp").val())return a=$("#whatsapp .hp").attr("name"),alert("Please write the active mobile number "+a),$("#whatsapp .hp").focus(),!1;if(""==$("#whatsapp .jumlah").val())return a=$("#whatsapp .jumlah").attr("name"),alert("Please specify the number of items "),$("#whatsapp .jumlah").focus(),!1;if(""==$("#whatsapp .jemput").val())return a=$("#whatsapp .jemput").attr("name"),alert("Please write the message "),$("#whatsapp .jemput").focus(),!1;if(""==$("#whatsapp .antar").val())return a=$("#whatsapp .antar").attr("name"),alert("Please write the complete destination address "+a),$("#whatsapp .antar").focus(),!1;if(confirm("Already installed WhatsApp?"))
-    {var t="https://wa.me/";/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)&&(t="whatsapp://send/");var e=$("#whatsapp .tujuan").val(),p=(location.href,$("#whatsapp .asal").val()),s=($("#whatsapp .ke").val(),$("#whatsapp .tanggal").val()),r=($("#whatsapp .jadwal").val(),$("#whatsapp .nama").val()),h=$("#whatsapp .hp").val(),l=$("#whatsapp .jumlah").val(),n=$("#whatsapp .jemput").val();$("#whatsapp .antar").val();$(this).attr("href",t+"?phone=62 "+e+"&text=*Pesanan: "+p+" "+s+" %0A "+r+" %0A "+h+" %0A "+l+" %0A%0A "+n);var w=960,i=540,o=Number(screen.width/2-w/2),u=Number(screen.height/2-i/2),m=window.open(this.href,"","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=1, copyhistory=no, width="+w+", height="+i+", top="+u+", left="+o);return m.focus(),!1}window.open("https://www.whatsapp.com/download/")}$("#whatsapp .submit").click(WhatsApp);var reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
-    // youvideo
-    function toggleVideo(e){var o=document.getElementById("youvideo"),i=o.getElementsByTagName("iframe")[0].contentWindow;o.style.display="hide"==e?"none":"",func="hide"==e?"pauseVideo":"playVideo",i.postMessage('{"event":"command","func":"'+func+'","args":""}',"*")}$(document).ready(function(){$(".play-trailer").click(function(){toggleVideo("show"),$(".moviecard").addClass("movie-view-trailer")}),$(".back-btn").click(function(){$(".moviecard").removeClass("movie-view-trailer"),toggleVideo("hide")})}),$(function(){$(".popup-youtube, .popup-vimeo").magnificPopup({disableOn:700,type:"iframe",mainClass:"mfp-fade",removalDelay:160,preloader:!1,fixedContentPos:!1})});
-
-    /*! WOW wow.js - v1.3.0 - 2016-10-04
-    * https://wowjs.uk
-    * Copyright (c) 2016 Thomas Grainger; Licensed MIT */!function(a,b){if("function"==typeof define&&define.amd)define(["module","exports"],b);else if("undefined"!=typeof exports)b(module,exports);else{var c={exports:{}};b(c,c.exports),a.WOW=c.exports}}(this,function(a,b){"use strict";function c(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function d(a,b){return b.indexOf(a)>=0}function e(a,b){for(var c in b)if(null==a[c]){var d=b[c];a[c]=d}return a}function f(a){return/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(a)}function g(a){var b=arguments.length<=1||void 0===arguments[1]?!1:arguments[1],c=arguments.length<=2||void 0===arguments[2]?!1:arguments[2],d=arguments.length<=3||void 0===arguments[3]?null:arguments[3],e=void 0;return null!=document.createEvent?(e=document.createEvent("CustomEvent"),e.initCustomEvent(a,b,c,d)):null!=document.createEventObject?(e=document.createEventObject(),e.eventType=a):e.eventName=a,e}function h(a,b){null!=a.dispatchEvent?a.dispatchEvent(b):b in(null!=a)?a[b]():"on"+b in(null!=a)&&a["on"+b]()}function i(a,b,c){null!=a.addEventListener?a.addEventListener(b,c,!1):null!=a.attachEvent?a.attachEvent("on"+b,c):a[b]=c}function j(a,b,c){null!=a.removeEventListener?a.removeEventListener(b,c,!1):null!=a.detachEvent?a.detachEvent("on"+b,c):delete a[b]}function k(){return"innerHeight"in window?window.innerHeight:document.documentElement.clientHeight}Object.defineProperty(b,"__esModule",{value:!0});var l,m,n=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),o=window.WeakMap||window.MozWeakMap||function(){function a(){c(this,a),this.keys=[],this.values=[]}return n(a,[{key:"get",value:function(a){for(var b=0;b<this.keys.length;b++){var c=this.keys[b];if(c===a)return this.values[b]}}},{key:"set",value:function(a,b){for(var c=0;c<this.keys.length;c++){var d=this.keys[c];if(d===a)return this.values[c]=b,this}return this.keys.push(a),this.values.push(b),this}}]),a}(),p=window.MutationObserver||window.WebkitMutationObserver||window.MozMutationObserver||(m=l=function(){function a(){c(this,a),"undefined"!=typeof console&&null!==console&&(console.warn("MutationObserver is not supported by your browser."),console.warn("WOW.js cannot detect dom mutations, please call .sync() after loading new content."))}return n(a,[{key:"observe",value:function(){}}]),a}(),l.notSupported=!0,m),q=window.getComputedStyle||function(a){var b=/(\-([a-z]){1})/g;return{getPropertyValue:function(c){"float"===c&&(c="styleFloat"),b.test(c)&&c.replace(b,function(a,b){return b.toUpperCase()});var d=a.currentStyle;return(null!=d?d[c]:void 0)||null}}},r=function(){function a(){var b=arguments.length<=0||void 0===arguments[0]?{}:arguments[0];c(this,a),this.defaults={boxClass:"wow",animateClass:"animated",offset:0,mobile:!0,live:!0,callback:null,scrollContainer:null,resetAnimation:!0},this.animate=function(){return"requestAnimationFrame"in window?function(a){return window.requestAnimationFrame(a)}:function(a){return a()}}(),this.vendors=["moz","webkit"],this.start=this.start.bind(this),this.resetAnimation=this.resetAnimation.bind(this),this.scrollHandler=this.scrollHandler.bind(this),this.scrollCallback=this.scrollCallback.bind(this),this.scrolled=!0,this.config=e(b,this.defaults),null!=b.scrollContainer&&(this.config.scrollContainer=document.querySelector(b.scrollContainer)),this.animationNameCache=new o,this.wowEvent=g(this.config.boxClass)}return n(a,[{key:"init",value:function(){this.element=window.document.documentElement,d(document.readyState,["interactive","complete"])?this.start():i(document,"DOMContentLoaded",this.start),this.finished=[]}},{key:"start",value:function(){var a=this;if(this.stopped=!1,this.boxes=[].slice.call(this.element.querySelectorAll("."+this.config.boxClass)),this.all=this.boxes.slice(0),this.boxes.length)if(this.disabled())this.resetStyle();else for(var b=0;b<this.boxes.length;b++){var c=this.boxes[b];this.applyStyle(c,!0)}if(this.disabled()||(i(this.config.scrollContainer||window,"scroll",this.scrollHandler),i(window,"resize",this.scrollHandler),this.interval=setInterval(this.scrollCallback,50)),this.config.live){var d=new p(function(b){for(var c=0;c<b.length;c++)for(var d=b[c],e=0;e<d.addedNodes.length;e++){var f=d.addedNodes[e];a.doSync(f)}});d.observe(document.body,{childList:!0,subtree:!0})}}},{key:"stop",value:function(){this.stopped=!0,j(this.config.scrollContainer||window,"scroll",this.scrollHandler),j(window,"resize",this.scrollHandler),null!=this.interval&&clearInterval(this.interval)}},{key:"sync",value:function(){p.notSupported&&this.doSync(this.element)}},{key:"doSync",value:function(a){if("undefined"!=typeof a&&null!==a||(a=this.element),1===a.nodeType){a=a.parentNode||a;for(var b=a.querySelectorAll("."+this.config.boxClass),c=0;c<b.length;c++){var e=b[c];d(e,this.all)||(this.boxes.push(e),this.all.push(e),this.stopped||this.disabled()?this.resetStyle():this.applyStyle(e,!0),this.scrolled=!0)}}}},{key:"show",value:function(a){return this.applyStyle(a),a.className=a.className+" "+this.config.animateClass,null!=this.config.callback&&this.config.callback(a),h(a,this.wowEvent),this.config.resetAnimation&&(i(a,"animationend",this.resetAnimation),i(a,"oanimationend",this.resetAnimation),i(a,"webkitAnimationEnd",this.resetAnimation),i(a,"MSAnimationEnd",this.resetAnimation)),a}},{key:"applyStyle",value:function(a,b){var c=this,d=a.getAttribute("data-wow-duration"),e=a.getAttribute("data-wow-delay"),f=a.getAttribute("data-wow-iteration");return this.animate(function(){return c.customStyle(a,b,d,e,f)})}},{key:"resetStyle",value:function(){for(var a=0;a<this.boxes.length;a++){var b=this.boxes[a];b.style.visibility="visible"}}},{key:"resetAnimation",value:function(a){if(a.type.toLowerCase().indexOf("animationend")>=0){var b=a.target||a.srcElement;b.className=b.className.replace(this.config.animateClass,"").trim()}}},{key:"customStyle",value:function(a,b,c,d,e){return b&&this.cacheAnimationName(a),a.style.visibility=b?"hidden":"visible",c&&this.vendorSet(a.style,{animationDuration:c}),d&&this.vendorSet(a.style,{animationDelay:d}),e&&this.vendorSet(a.style,{animationIterationCount:e}),this.vendorSet(a.style,{animationName:b?"none":this.cachedAnimationName(a)}),a}},{key:"vendorSet",value:function(a,b){for(var c in b)if(b.hasOwnProperty(c)){var d=b[c];a[""+c]=d;for(var e=0;e<this.vendors.length;e++){var f=this.vendors[e];a[""+f+c.charAt(0).toUpperCase()+c.substr(1)]=d}}}},{key:"vendorCSS",value:function(a,b){for(var c=q(a),d=c.getPropertyCSSValue(b),e=0;e<this.vendors.length;e++){var f=this.vendors[e];d=d||c.getPropertyCSSValue("-"+f+"-"+b)}return d}},{key:"animationName",value:function(a){var b=void 0;try{b=this.vendorCSS(a,"animation-name").cssText}catch(c){b=q(a).getPropertyValue("animation-name")}return"none"===b?"":b}},{key:"cacheAnimationName",value:function(a){return this.animationNameCache.set(a,this.animationName(a))}},{key:"cachedAnimationName",value:function(a){return this.animationNameCache.get(a)}},{key:"scrollHandler",value:function(){this.scrolled=!0}},{key:"scrollCallback",value:function(){if(this.scrolled){this.scrolled=!1;for(var a=[],b=0;b<this.boxes.length;b++){var c=this.boxes[b];if(c){if(this.isVisible(c)){this.show(c);continue}a.push(c)}}this.boxes=a,this.boxes.length||this.config.live||this.stop()}}},{key:"offsetTop",value:function(a){for(;void 0===a.offsetTop;)a=a.parentNode;for(var b=a.offsetTop;a.offsetParent;)a=a.offsetParent,b+=a.offsetTop;return b}},{key:"isVisible",value:function(a){var b=a.getAttribute("data-wow-offset")||this.config.offset,c=this.config.scrollContainer&&this.config.scrollContainer.scrollTop||window.pageYOffset,d=c+Math.min(this.element.clientHeight,k())-b,e=this.offsetTop(a),f=e+a.clientHeight;return d>=e&&f>=c}},{key:"disabled",value:function(){return!this.config.mobile&&f(navigator.userAgent)}}]),a}();b["default"]=r,a.exports=b["default"]});
-    new WOW().init();
-
-    // features
-    var containerHeight=$(window).height()/2;$(".spacer").css("height",containerHeight);var x=$(".features").prev().height()/4;$(window).scroll(function(){$(window).scrollTop()>=x&&$(".skill-percent").each(function(){$(this).animate({width:$(this).data("percent")+"%"},1e3)})});
-
-    // slider
-    $(document).ready(function(){$(".slider").slick({slidesToShow:3,slidesToScroll:1,autoplay:!1,centerMode:!0,variableWidth:!0,autoplaySpeed:1500,arrows:!1,dots:!0,pauseOnHover:!1,responsive:[{breakpoint:768,settings:{slidesToShow:4}},{breakpoint:520,settings:{slidesToShow:3}}]})});
-
-    // testimonial
-    $(document).ready(function(){$("#testimonial-slider").slick({slidesToShow:3,slidesToScroll:1,autoplay:!1,autoplaySpeed:1500,arrows:!1,dots:!0,pauseOnHover:!1,responsive:[{breakpoint:800,settings:{slidesToShow:2}},{breakpoint:520,settings:{slidesToShow:1}}]})});
-
-    // accordion
-    var accordion=function(){var o=$(".js-accordion"),c=o.find(".js-accordion-header"),e=($(".js-accordion-item"),{speed:400,oneOpen:!1});return{init:function(o){c.on("click",function(){accordion.toggle($(this))}),$.extend(e,o),e.oneOpen&&$(".js-accordion-item.active").length>1&&$(".js-accordion-item.active:not(:first)").removeClass("active"),$(".js-accordion-item.active").find("> .js-accordion-body").show()},toggle:function(o){e.oneOpen&&o[0]!=o.closest(".js-accordion").find("> .js-accordion-item.active > .js-accordion-header")[0]&&o.closest(".js-accordion").find("> .js-accordion-item").removeClass("active").find(".js-accordion-body").slideUp(),o.closest(".js-accordion-item").toggleClass("active"),o.next().stop().slideToggle(e.speed)}}}();$(document).ready(function(){accordion.init({speed:300,oneOpen:!0})});$("#toTop").click(function () {$("html,body").animate({scrollTop: 0}, 500);});
-
-    // menu
-    !function(s){s.fn.menumaker=function(n){var e=s(this),o=s.extend({format:"dropdown",sticky:!1},n);return this.each(function(){s(this).find(".button").on("click",function(){s(this).toggleClass("menu-opened");var n=s(this).next("ul");n.hasClass("open")?n.slideToggle(150).removeClass("open"):(n.slideToggle(150).addClass("open"),"dropdown"===o.format&&n.find("ul").show())}),e.find("li ul").parent().addClass("has-sub"),multiTg=function(){e.find(".has-sub").prepend('<span class="submenu-button"></span>'),e.find(".submenu-button").on("click",function(){s(this).toggleClass("submenu-opened"),s(this).siblings("ul").hasClass("open")?s(this).siblings("ul").removeClass("open").slideToggle(150):s(this).siblings("ul").addClass("open").slideToggle(150)})},"multitoggle"===o.format?multiTg():e.addClass("dropdown"),!0===o.sticky&&e.css("position","fixed")})}}(jQuery),function(s){s(document).ready(function(){s("#cssmenu").menumaker({format:"multitoggle"})})}(jQuery);
-
-    // breadcrumbs
-    document.getElementById("bread-crumbs").appendChild(document.getElementById("breadcrumbs"));
-    /*]]>*/
-</script>
 <header class="header">
     <div class="header_overlay"></div>
     <div class="header_content d-flex flex-row align-items-center justify-content-start">
@@ -883,8 +825,16 @@
 <!--            </div>-->
             <!-- User -->
             <div class="user">
+                <?php
 
-                <a data-toggle="modal" data-target="#modalLRForm" class="user-profile"  aria-expanded="false"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>4</div></div></a>
+
+                if('location:../index.php'){
+                   echo ' <a data-toggle="modal" data-target="#modalLRForm" class="user-profile"  aria-expanded="false"><div><img src="images/user.svg" alt="https://www.flaticon.com/authors/freepik"><div>4</div></div></a>';
+                } else{
+                    echo '';}
+
+                ?>
+
                 <nav>
                     <ul >
                         <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -1151,14 +1101,16 @@ location='index.php';</script>";
         <div class='form-whatsapp'>
             <label class='wa-label bagi'>Item Choices</label>
             <select class='asal wa-option bagi' placeholder='Barang' required=''>
-                <option data-index='0' name='asal' value='Samsung'>Samsung</option>
-                <option data-index='1' name='asal' value='Xiomi'>Xiomi</option>
-                <option data-index='2' name='asal' value='Oppo'>Oppo</option>
-                <option data-index='3' name='asal' value='Vivo'>Vivo</option>
-                <option data-index='4' name='asal' value='Nokia'>Nokia</option>
-                <option data-index='5' name='asal' value='LG'>LG</option>
-                <option data-index='6' name='asal' value='Soni Ericson'>Soni Ericson</option>
-                <option data-index='7' name='asal' value='Mito'>Mito</option>
+                <option data-index='0' name='asal' value=''>Pilih Transaksi</option>
+                <option data-index='0' name='asal' value='0'>COD</option>
+                <?php
+                $query = " SELECT DISTINCT kd_transaksi FROM invoice";
+                $hasil = mysqli_query($koneksi,$query);
+                while ($data = mysqli_fetch_array($hasil))
+                {
+                    echo "<option name='asal' value=$data[kd_transaksi]>$data[kd_transaksi]</option>";
+                }
+                ?>
             </select>
         </div>
         <div class='left'>
