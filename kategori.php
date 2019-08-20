@@ -73,7 +73,8 @@ $kd_jenis = $_GET['kd_jenis'];
                         $pages = ceil($total/$halaman);
                         if (($kd_jenis)=='') {
                             $query = mysqli_query($koneksi, "select * from produk LIMIT $mulai, $halaman") or die("gagal " . mysqli_error($koneksi));
-                        } else  $query = mysqli_query($koneksi, "select * from produk where kd_jenis='$kd_jenis' LIMIT $mulai, $halaman") or die("gagal " . mysqli_error($koneksi));
+                        }
+                        else  $query = mysqli_query($koneksi, "select * from produk where kd_jenis='$kd_jenis' LIMIT $mulai, $halaman") or die("gagal " . mysqli_error($koneksi));
                         $no =$mulai+1;
 
 

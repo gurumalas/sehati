@@ -1364,17 +1364,17 @@ location='index.php';</script>";
 
                                 </ul>
                             </div>
-                            <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
-                                <div class="button button_clear trans_200"><a lass="button button_clear trans_200"
-                                                                              href="cart.php?act=clear&amp;ref=index.php">Clear</a>
-                                </div>
+
                             <?php
 $a++;
                             //((mysqli_free_result($query) || (is_object($query) && (get_class($query) == "mysqli_result"))) ? true : false);
                             }
                             }
     }?>
-
+                            <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                <div class="button button_clear trans_200"><a lass="button button_clear trans_200"
+                                                                              href="cart.php?act=clear&amp;ref=index.php">Clear</a>
+                                </div>
 
 <!--profil penerima-->
                             <div class="col-lg-12">
@@ -1523,7 +1523,7 @@ if(!isset($_SESSION['nik']))
                                         <a
                                                 class="btn btn-primary btn-lg btn-block" name=""
                                                 href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
-                                   <form method="get" action="/sehati/laporan/pdfcart.php?">
+                                   <form method="get" action="/sehati/laporan/sc_cart.php?">
                                     <div class="dropdown">
 &nbsp;
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1551,7 +1551,7 @@ if(!isset($_SESSION['nik']))
 
                                         </div>
                                     </div>
-                                       <input id="addnik" name="addnik" type="hidden" />
+                                       <input id="addnik" name="addnik" type="" />
                                        <input id="addnama" name="addnama" type="hidden" />
                                        <input type="hidden" name="addalamat" id="addalamat" />
                                        <input type="hidden" name="addpos" id="addpos" />

@@ -230,7 +230,7 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
                     <!-- Product -->
                     <?php
                     // UNtuk banyak tampilan produk
-                    $halaman = 1;
+                    $halaman = 5;
                     $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
                     $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
                     $result = mysqli_query($koneksi,"SELECT * FROM produk");
@@ -245,7 +245,7 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
                         <div class="col-xl-4 col-md-6">
                             <div class="product">
                                 <div class="thumbnail">
-                                    <?php echo "<img  src='images/" . $prod ->foto_file . "';/> ";?>
+                                    <?php echo "<img  width='230px' height='190px'src='images/" . $prod ->foto_file . "';/> ";?>
                                 </div>
                                 <div class="product_content">
                                     <div class="product_info d-flex flex-row align-items-start justify-content-start">

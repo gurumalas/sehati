@@ -138,7 +138,7 @@ Telp. 082148352769</h3>
     <?php
     if(!isset($_SESSION['nik']))
     {
-   $addnik = $_GET['addnik'];
+   $addnik = $_GET['nik'];
         $addnama = $_GET['addnama'];
         $addalamat = $_GET['addalamat'];
         $addhp = $_GET['addhp'];
@@ -177,8 +177,8 @@ Telp. 082148352769</h3>
 <?php
             }  else
                 {
-    $nik = $_GET['nik'];
-    $beli = mysqli_query($koneksi, "select * from member where  nik='$nik'");
+    $addnik = $_GET['addnik'];
+    $beli = mysqli_query($koneksi, "select * from member where  nik='$addnik'");
     $no =0;
     while($profil=mysqli_fetch_object($beli)){
     $no++;
