@@ -79,7 +79,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 //                $rs_ojek = mysqli_fetch_array($query_ongkir);
                 $rs_barang = mysqli_fetch_array($query_barang);
                 $harga = $rs_barang['harga'];
-                $ongkir = $_POST['ongkir'];
+                $ongkir = $_GET['ongkir'];
                 $tanpaojek = $harga * $kuantitas;
                 $totalbyar = $tanpaojek + $ongkir;
                 //$total += $jumlah_harga;
@@ -1469,7 +1469,7 @@ if(!isset($_SESSION['nik']))
 
                                         </div>
                                         <div>
-                                            <select name="hargaojek"
+                                            <select name="ongkir"
                                                     class="dropdown_item_select checkout_input">
                                                 <option >Pilih Kota</option>
                                                 <?php

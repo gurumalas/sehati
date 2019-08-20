@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coba.php" beforeDir="false" afterPath="$PROJECT_DIR$/coba.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="1542" column="126" lean-forward="true" selection-start-line="1542" selection-start-column="126" selection-end-line="1542" selection-end-column="126" />
+            <state relative-caret-position="496">
+              <caret line="86" column="109" selection-start-line="86" selection-start-column="109" selection-end-line="86" selection-end-column="109" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="e#84480#84507#1#HTML" expanded="true" />
@@ -400,7 +398,6 @@
       <find>toko</find>
       <find>wha</find>
       <find>ongkirca</find>
-      <find>ongkir</find>
       <find>hargao</find>
       <find>modal</find>
       <find>fff</find>
@@ -409,6 +406,7 @@
       <find>user</find>
       <find>user.s</find>
       <find>getlink</find>
+      <find>ongkir</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -605,12 +603,12 @@
       <workItem from="1564574110496" duration="22205000" />
       <workItem from="1564798506869" duration="137837000" />
       <workItem from="1565598595413" duration="38275000" />
-      <workItem from="1566037492450" duration="24727000" />
+      <workItem from="1566037492450" duration="25246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="496586000" />
+    <option name="totallyTimeSpent" value="497105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1313,8 +1311,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="1542" column="126" lean-forward="true" selection-start-line="1542" selection-start-column="126" selection-end-line="1542" selection-end-column="126" />
+        <state relative-caret-position="496">
+          <caret line="86" column="109" selection-start-line="86" selection-start-column="109" selection-end-line="86" selection-end-column="109" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="e#84480#84507#1#HTML" expanded="true" />
