@@ -955,7 +955,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 
 
                     if('location:../cart.php'){
-                        
+
                         echo '';}
 
                     ?>
@@ -1541,9 +1541,9 @@ if(!isset($_SESSION['nik']))
                                                 ?>
 
                                                 <button formtarget="_blank" class="dropdown-item" name="id_onkir" value="<?php
-                                                echo $dataongkir['hargaojek'];
+                                                echo $dataongkir['ongkir'];
                                                 ?>"><?php
-                                                    echo $dataongkir['kec'].'-'.$dataongkir['hargaojek'];
+                                                    echo $dataongkir['kec'].'-'.$dataongkir['ongkir'];
                                                     ?></button>
                                                 <?php
                                             }
