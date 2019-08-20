@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2019 at 06:09 AM
+-- Generation Time: Aug 20, 2019 at 10:15 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -58,36 +58,35 @@ CREATE TABLE `invoice` (
   `totalbyar` char(20) DEFAULT NULL,
   `status` char(10) DEFAULT NULL,
   `quantity` char(30) DEFAULT NULL,
-  `harga` char(12) DEFAULT NULL
+  `harga` char(12) DEFAULT NULL,
+  `ongkir` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `invoice`
 --
 
-INSERT INTO `invoice` (`kd_transaksi`, `kd_invoice`, `nik`, `tgl`, `kd_produk`, `totalbyar`, `status`, `quantity`, `harga`) VALUES
-('T00001', 1, 0, '2019-07-05', '5467', '195', '1', '3', '65'),
-('T00001', 2, 0, '2019-07-05', '6666666666', '30', '0', '3', '10'),
-('T00001', 3, 1, '2019-07-05', '5467', '195', '0', '3', '65'),
-('T00001', 4, 1, '2019-07-05', '6666666666', '30', '1', '3', '10'),
-('T00002', 5, 1, '2019-08-05', '5467', '195', '0', '3', '65'),
-('T00002', 6, 1, '2019-08-05', '6666666666', '30', '0', '3', '10'),
-('T00003', 7, 1, '2019-08-05', '5467', '195', '0', '3', '65'),
-('T00003', 8, 1, '2019-08-05', '6666666666', '30', '0', '3', '10'),
-('', 9, 0, '2019-08-05', '5467', '1', '', '1', NULL),
-('', 10, 0, '2019-08-05', '6666666666', '1', '', '1', NULL),
-('T00004', 11, 1, '2019-08-05', '5467', '130', '0', '2', '65'),
-('T00004', 12, 1, '2019-08-05', '6666666666', '30', '1', '3', '10'),
-('', 13, 0, '2019-08-05', '5467', '1', '', '1', NULL),
-('T00005', 14, 123, '2019-08-05', '5467', '260', '0', '4', '65'),
-('T00006', 15, 123, '2019-08-05', '5467', '260', '1', '4', '65'),
-('', 16, 0, '2019-08-05', '5467', '1', '', '1', NULL),
-('', 17, 0, '2019-08-07', '5467', '1', '', '1', NULL),
-('', 18, 0, '2019-08-07', '5467', '2', '', '2', NULL),
-('', 19, 0, '2019-08-07', '9', '1', '', '1', NULL),
-('', 20, 0, '2019-08-07', '5467', '1', '', '1', NULL),
-('', 21, 0, '2019-08-07', '9', '1', '', '1', NULL),
-('', 22, 0, '2019-08-07', '5467', '2', '', '2', NULL);
+INSERT INTO `invoice` (`kd_transaksi`, `kd_invoice`, `nik`, `tgl`, `kd_produk`, `totalbyar`, `status`, `quantity`, `harga`, `ongkir`) VALUES
+('T00001', 59, 123, '2019-08-17', '5467', '65', '1', '1', '65', '0'),
+('', 60, 0, '2019-08-17', '5467', '1', '', '1', NULL, NULL),
+('', 61, 0, '2019-08-17', '5467', '1', '', '1', NULL, NULL),
+('T00002', 62, 1, '2019-08-17', '5467', '195', '1', '3', '65', '0'),
+('', 63, 0, '2019-08-18', '5467', '1', '', '1', NULL, NULL),
+('T00003', 64, 0, '2019-08-18', '5467', '65', '0', '1', '65', '0'),
+('T00004', 65, 0, '2019-08-18', '5467', '65', '0', '1', '65', '0'),
+('T00005', 66, 0, '2019-08-18', '5467', '65', '0', '1', '65', '0'),
+('T00006', 67, 0, '2019-08-18', '5467', '65', '0', '1', '65', '0'),
+('T00007', 68, 0, '2019-08-18', '5467', '65', '0', '1', '65', '0'),
+('T00008', 69, 0, '2019-08-18', '5467', '65', '0', '1', '65', '0'),
+('T00009', 70, 0, '2019-08-18', '5467', '65', '0', '1', '65', '0'),
+('T00010', 71, 0, '2019-08-19', '5467', '65', '0', '1', '65', '0'),
+('T00011', 72, 0, '2019-08-19', '5467', '65', '0', '1', '65', '0'),
+('T00012', 73, 0, '2019-08-20', '5467', '65', '0', '1', '65', '0'),
+('T00013', 74, 0, '2019-08-20', '5467', '65', '0', '1', '65', '0'),
+('T00014', 75, 0, '2019-08-20', '5467', '65', '0', '1', '65', '7'),
+('T00015', 76, 0, '2019-08-20', '5467', '65', '0', '1', '65', '0'),
+('T00016', 77, 0, '2019-08-20', '5467', '65', '0', '1', '65', ''),
+('T00017', 78, 0, '2019-08-20', '5467', '65', '0', '1', '65', '');
 
 -- --------------------------------------------------------
 
@@ -134,10 +133,34 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`nik`, `n_member`, `jk`, `hp`, `email`, `kota`, `kodepos`, `alamat`, `fotomember`, `password`) VALUES
-('1', 'riduan', 1, '77778', 'akhmadriduan.umm.ac.id', 'BJB', '897', '', 'giphy.gif', '202cb962ac59075b964b07152d234b70'),
+('1', 'riduan', 1, '77778', 'akhmadriduan.umm.ac.id', 'BJB', '897', 'coba', 'user-lg.jpg', '827ccb0eea8a706c4c34a16891f84e7b'),
 ('123', 'muhammad iqbal', 1, '082148352769', 'rendy.septian98@yahoo.com', 'banjarbaru', '70724', 'aaaa', '8138193836_64d71b9205.jpg', '60496a1f3d8615e89c38575c39a0aaa7'),
+('1234', 'paijo', 1, '0808192709', '', 'banjar', '70724', 'kjnbUDAfd', '3206264-pubg+artwork_.jpg', '827ccb0eea8a706c4c34a16891f84e7b'),
 ('7', '', 1, '', '', '', '', '', 'AADKfPE.jpg', ''),
 ('9', 'Nanda', 0, '', '', '', '', '', 'merawat kuku.png', '21232f297a57a5a743894a0e4a801fc3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ongkir`
+--
+
+CREATE TABLE `ongkir` (
+  `id_onkir` int(11) NOT NULL,
+  `kec` char(60) DEFAULT NULL,
+  `ongkir` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ongkir`
+--
+
+INSERT INTO `ongkir` (`id_onkir`, `kec`, `ongkir`) VALUES
+(1, 'Banjarbaru Selatan', 20000),
+(2, 'Banjarbaru Utara', 25000),
+(3, 'Cempaka', 30000),
+(4, 'Liang Anggang', 15000),
+(5, 'Landasan Ulin', 10000);
 
 -- --------------------------------------------------------
 
@@ -155,6 +178,7 @@ CREATE TABLE `owner` (
 --
 
 INSERT INTO `owner` (`no`, `nama`) VALUES
+(0, 'H. Ramlan'),
 (1, 'H. Ramlan');
 
 -- --------------------------------------------------------
@@ -210,6 +234,12 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`nik`);
 
 --
+-- Indexes for table `ongkir`
+--
+ALTER TABLE `ongkir`
+  ADD PRIMARY KEY (`id_onkir`);
+
+--
 -- Indexes for table `owner`
 --
 ALTER TABLE `owner`
@@ -229,7 +259,13 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `kd_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `kd_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+
+--
+-- AUTO_INCREMENT for table `ongkir`
+--
+ALTER TABLE `ongkir`
+  MODIFY `id_onkir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

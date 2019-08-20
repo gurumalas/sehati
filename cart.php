@@ -79,7 +79,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
 //                $rs_ojek = mysqli_fetch_array($query_ongkir);
                 $rs_barang = mysqli_fetch_array($query_barang);
                 $harga = $rs_barang['harga'];
-                $ongkir = $_GET['ongkir'];
+                $ongkir = $_POST['ongkir'];
                 $tanpaojek = $harga * $kuantitas;
                 $totalbyar = $tanpaojek + $ongkir;
                 //$total += $jumlah_harga;
