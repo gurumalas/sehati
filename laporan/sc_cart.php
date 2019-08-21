@@ -34,26 +34,7 @@ if (!isset($_SESSION)) {
 
 <div class="header">
     <p><img align="left" src="../images/logoapotek.png" /></p><span>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+
   <h3 >Toko Sehati<br/>
 Jl. A. Yani Km 28 Landasan Ulin, 70724<br/>
 Telp. 082148352769</h3>
@@ -61,7 +42,7 @@ Telp. 082148352769</h3>
 </div>
 
 <!--</table style="border-bottom:solid 1px #000;">-->
-<br />
+
 
 
 <table width="100%" cellpadding="0" cellspacing="0" class="table"style="background-image: url('#')">
@@ -104,12 +85,14 @@ Telp. 082148352769</h3>
 
 
     </tbody>
-
+    <?PHP
+    }}}
+    ?>
 </table>
 <table>
     <thead>
     <tr style="border-right:1px #eeeeee; background:#EF4135;color:#ffffff;font-size:16px; padding:5px;text-align:center;">
-        <th width="" colspan="5" align="left" valign="left"><?php
+        <th width="100%" colspan="5" align="left" valign="left"><?php
             echo '<p style="text-align: right">Harga Pengiriman '.format_rupiah($id_onkir).'</p>';
             ?></th><tr></tr>
         <th colspan="5" align="left" ><p style="text-align: right">Jumlah : <?php $hitungsemua = $id_onkir + $total;
@@ -121,8 +104,7 @@ Telp. 082148352769</h3>
         <th colspan="5" align="left" ></th>
     </tr></thead><tbody><tr>
 
-    </tr><?PHP }}
-    }?>
+    </tr>
     </tbody>
 </table><br/>
 
@@ -138,7 +120,7 @@ Telp. 082148352769</h3>
     <?php
     if(!isset($_SESSION['nik']))
     {
-   $addnik = $_GET['nik'];
+   $nik = $_GET['nik'];
         $addnama = $_GET['addnama'];
         $addalamat = $_GET['addalamat'];
         $addhp = $_GET['addhp'];
@@ -148,9 +130,9 @@ Telp. 082148352769</h3>
             <td width="10%">NIK</td>
             <td width="">:</td>
             <td width="75%"><?php
-                if(($addnik)=='') { echo 'Bukan Member';
+                if(($nik)=='') { echo 'Bukan Member';
                 } else {
-                    echo $addnik;
+                    echo $nik;
                 } ?></td>
         </tr>
         <tr style="border-left:1px text-align:left;">
@@ -177,8 +159,8 @@ Telp. 082148352769</h3>
 <?php
             }  else
                 {
-    $addnik = $_GET['addnik'];
-    $beli = mysqli_query($koneksi, "select * from member where  nik='$addnik'");
+    $nik = $_GET['nik'];
+    $beli = mysqli_query($koneksi, "select * from member where  nik='$nik'");
     $no =0;
     while($profil=mysqli_fetch_object($beli)){
     $no++;
@@ -188,7 +170,26 @@ Telp. 082148352769</h3>
             <td width="">:</td>
             <td width="75%"><?php echo $profil->nik;?></td>
         </tr>
-
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">NAMA</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $profil->n_member; ?></td>
+        </tr>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">Alamat</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $profil->alamat; ?></td>
+        </tr>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">Kode Pos</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $profil->kodepos; ?></td>
+        </tr>
+        <tr style="border-left:1px text-align:left;">
+            <td width="10%">Handphone</td>
+            <td width="">:</td>
+            <td width="75%"><?php echo $profil->hp; ?></td>
+        </tr>
 <?php
     }}
     ?>

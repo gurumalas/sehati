@@ -1522,8 +1522,16 @@ if(!isset($_SESSION['nik']))
 
                                         <a
                                                 class="btn btn-primary btn-lg btn-block" name=""
-                                                href="cart.php?act=full&amp;ref=index.php">checkout</a></div>
-                                   <form method="get" action="/sehati/laporan/sc_cart.php?">
+                                                href="cart.php?act=full&amp;ref=index.php" href="">checkout</a></div>
+
+                                <?php
+                                if(!isset($_SESSION['nik'])) {
+                                    echo'<form method = "get" action = "/sehati/laporan/sc_cart.php?nik=" >';
+                                }
+else {
+    echo'<form method = "get" action = "/sehati/laporan/sc_cart.php?addnik=" >';
+}
+                                   ?>
                                     <div class="dropdown">
 &nbsp;
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1539,7 +1547,6 @@ if(!isset($_SESSION['nik']))
 //                                                echo '<button class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['hargaojek'].'">'.$dataongkir['kec'].'-'.$dataongkir['hargaojek'].''.'</button>';
 
                                                 ?>
-
                                                 <button formtarget="_blank" class="dropdown-item" name="id_onkir" value="<?php
                                                 echo $dataongkir['ongkir'];
                                                 ?>"><?php
@@ -1551,7 +1558,18 @@ if(!isset($_SESSION['nik']))
 
                                         </div>
                                     </div>
-                                       <input id="addnik" name="addnik" type="" />
+<?php
+if(!isset($_SESSION['nik'])) {
+
+    echo '<input id="addnik" name="addnik" value="0" type="" />';
+} else
+{
+    $nik = $_SESSION['nik'];
+    echo'
+    <input id="addnik" name="nik" value="'.$nik.'" />
+    ';
+}?>
+
                                        <input id="addnama" name="addnama" type="hidden" />
                                        <input type="hidden" name="addalamat" id="addalamat" />
                                        <input type="hidden" name="addpos" id="addpos" />
