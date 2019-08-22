@@ -64,7 +64,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
         }
     } elseif ($act == "full") {
         $nik = $_SESSION['nik'];
-        $ongkir = $_POST['ongkir'];
+//        $ongkir = $_POST['ongkir'];
         $kd_transaksi = autonumber("invoice", "kd_transaksi", "5", "T");
         if (isset($_SESSION['items'])) {
             foreach ($_SESSION['items'] as $key => $value) {
@@ -72,13 +72,14 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                 $kuantitas = $value;
 //                $nik = $_POST['nik'];
                 $status = 0;
-                $ojek = $_POST['100'];
+//                $ongkir = $_POST['ongkir'];
                 $query_barang = mysqli_query($koneksi, "SELECT * FROM produk WHERE `kd_produk` = '$key'");
-//                $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE  harga= '$ojek'");
+                $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE");
 
-//                $rs_ojek = mysqli_fetch_array($query_ongkir);
+                $rs_ojek = mysqli_fetch_array($query_ongkir);
                 $rs_barang = mysqli_fetch_array($query_barang);
                 $harga = $rs_barang['harga'];
+                $ongkir = $rs_ojek['ongkir'];
                 $ongkir = $_POST['ongkir'];
                 $tanpaojek = $harga * $kuantitas;
                 $totalbyar = $tanpaojek + $ongkir;
@@ -986,7 +987,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
             <div class="header_phone d-flex flex-row align-items-center justify-content-start">
                 <div><div><a href="tel:+628123456789" target="_blank"><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik" ></a></div></div>
                 <div><a </a></div>
-                <a class='btn-wa' href='javascript:void(0)' onclick='openModal()'><i aria-hidden='true' class='fa fa-whatsapp'></i><span>Form WhatsApp</span></a>
+                <a class='btn-wa' href='javascript:void(0)' onclick='openModal()'><i aria-hidden='true' class='fa fa-whatsapp'></i><span>Form Pesanan WhatsApp</span></a>
             </div>
         </div>
 </div>
@@ -1224,7 +1225,7 @@ location='index.php';</script>";
             </div>
         </div>
         <div class='form-whatsapp'>
-            <label class='wa-label bagi'>Item Choices</label>
+            <label class='wa-label bagi'>Transaksi</label>
             <select class='asal wa-option bagi' placeholder='Barang' required=''>
                 <option data-index='0' name='asal' value=''>Pilih Transaksi</option>
                 <option data-index='0' name='asal' value='0'>COD</option>
@@ -1293,10 +1294,10 @@ location='index.php';</script>";
                                 <h3>Kode Transaksi - <?php echo autonumber("invoice", "kd_transaksi", "5", "T");?></h3>
                                 <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
                                     <li class="mr-auto">Product</li>
-                                    <li>Kode Produk</li>
-                                    <li>Harga</li>
-                                    <li>Tambah</li>
-                                    <li>Sub Total</li>
+                                    <li  class="mr-auto">Kode Produk</li>
+                                    <li  class="mr-auto">Harga</li>
+                                    <li  class="mr-auto">Tambah</li>
+                                    <li class="mr-auto">Sub Total</li>
                                     <li>Hapus</li>
                                 </ul> <?php
                                 $total=0;
@@ -1323,24 +1324,24 @@ location='index.php';</script>";
 
                                         <!-- Cart Item -->
                                         <li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
-                                            <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
-                                                 <div>
+
+
                                                     <div class="product_image">
                                                         <img src="images/<?php echo $keranjang->foto_file; ?>" alt="">
                                                     </div>
-                                                </div>
+
                                                 <div class="product_name_container">
                                                     <div class="product_name"><a
                                                                 href="product.php?cari=produk&kd_produk=<?php echo $keranjang->kd_produk;?>"><?php echo $keranjang->nama; ?></a>
                                                     </div>
 
                                                 </div>
+
+                                                <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
+                                                <input type="hidden" name='kd_produk' value="<?php echo $keranjang->kd_produk;?>"><?php echo $keranjang->kd_produk;?>
                                             </div>
-                                            <div class="product_price product_text">
-                                                <span>Kode: </span><input type="hidden" name='kd_produk' value="<?php echo $keranjang->kd_produk;?>"><?php echo $keranjang->kd_produk;?>
-                                            </div>
-                                            <div class="product_price product_text">
-                                                <span>Harga: </span><input type="hidden" name="harga" value="<?php echo $keranjang->harga; ?>"><?php echo format_rupiah($keranjang->harga); ?>
+                                            <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
+                                                <input type="hidden" name="harga" value="<?php echo $keranjang->harga; ?>"><?php echo format_rupiah($keranjang->harga); ?>
                                             </div>
 
                                             <div class="product_quaproduct_price product_textntity ml-lg-auto mr-lg-auto text-center">
@@ -1353,12 +1354,13 @@ location='index.php';</script>";
                                                 </div>
                                             </div>
 
-                                            <div class="product_price product_text">
-                                                <span>Harga: </span><?php echo format_rupiah($jumlah_harga); ?></div>
+                                            <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
+                                                <?php echo format_rupiah($jumlah_harga); ?></div>
                                             <div class="product_price product_text">
                                                 <a  href="cart.php?act=del&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php"> <span>Hapus</a>
 
                                             </div>
+
 
                                         </li>
 
@@ -1409,13 +1411,14 @@ if(!isset($_SESSION['nik']))
                                             <label style="font-size: medium; color:#e8271b ">LOKASI ANDA</label>
                                             <select name="ongkir"
                                                     class="dropdown_item_select checkout_input">
-                                                <option>Pilih Kota</option>
+                                                <option >Pilih Kota</option>
+                                                <option name="ongkir" value="0">COD</option>
                                                 <?php
                                                 include "aksinya/koneksi.php";
                                                 $queryongkir = "SELECT * from ongkir";
                                                 $hasilonkir = mysqli_query($koneksi,$queryongkir);
                                                 while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-                                                    echo "<option value=$dataongkir[ongkir]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[ongkir]</option>";
+                                                    echo "<option name='ongkir' value=$dataongkir[ongkir]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[ongkir]</option>";
                                                 }
                                                 ?>
                                             </select>
@@ -1472,11 +1475,12 @@ if(!isset($_SESSION['nik']))
                                             <select name="ongkir"
                                                     class="dropdown_item_select checkout_input">
                                                 <option >Pilih Kota</option>
+                                                <option name="ongkir"value="0">COD</option>
                                                 <?php
                                                 $queryongkir = "SELECT * from ongkir";
                                                 $hasilonkir = mysqli_query($koneksi,$queryongkir);
                                                 while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-                                                    echo  "<option value=$dataongkir[ongkir]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[ongkir]</option>";
+                                                    echo  "<option name='ongkir' value='$dataongkir[ongkir]'>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[ongkir]</option>";
                                                 }
                                                 ?>
                                             </select>
@@ -1561,12 +1565,12 @@ else {
 <?php
 if(!isset($_SESSION['nik'])) {
 
-    echo '<input id="addnik" name="addnik" value="0" type="" />';
+    echo '<input id="addnik" name="addnik" value="0" type="hidden" />';
 } else
 {
     $nik = $_SESSION['nik'];
     echo'
-    <input id="addnik" name="nik" value="'.$nik.'" />
+    <input id="addnik" name="nik" type="hidden" value="'.$nik.'" />
     ';
 }?>
 

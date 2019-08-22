@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coba.php" beforeDir="false" afterPath="$PROJECT_DIR$/coba.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laporan/sc_cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/laporan/sc_cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/head.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/head.php">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="863" selection-start-line="863" selection-end-line="863" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -106,27 +109,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="1568" column="42" selection-start-line="1568" selection-start-column="42" selection-end-line="1568" selection-end-column="42" />
+            <state relative-caret-position="180">
+              <caret line="1477" column="69" selection-start-line="1477" selection-start-column="69" selection-end-line="1477" selection-end-column="69" />
               <folding>
                 <element signature="e#25#31#0" expanded="true" />
                 <element signature="e#32#38#0" expanded="true" />
-                <element signature="e#25#31#0" expanded="true" />
-                <element signature="e#32#38#0" expanded="true" />
-                <element signature="e#132352#132358#0#HTML" expanded="true" />
+                <element signature="e#27#33#0" expanded="true" />
+                <element signature="e#34#40#0" expanded="true" />
+                <element signature="e#132504#132510#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="180">
+              <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
               </folding>
@@ -168,11 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
-      <find>user.s</find>
-      <find>getlink</find>
-      <find>ongkir</find>
-      <find>sc_ca</find>
       <find>&lt;body</find>
       <find>cetak</find>
       <find>cart.php</find>
@@ -186,7 +184,6 @@
       <find>checko</find>
       <find>se</find>
       <find>session</find>
-      <find>pilih ko</find>
       <find>harga p</find>
       <find>img</find>
       <find>sessin</find>
@@ -197,7 +194,13 @@
       <find>start</find>
       <find>hei</find>
       <find>nik</find>
+      <find>pilih</find>
       <find>nama len</find>
+      <find>tel:</find>
+      <find>pilih ko</find>
+      <find>cod</find>
+      <find>full</find>
+      <find>&lt;optio</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -273,12 +276,12 @@
         <option value="$PROJECT_DIR$/backend/bestmember.php" />
         <option value="$PROJECT_DIR$/laporan/laporanbestmember.php" />
         <option value="$PROJECT_DIR$/aksinya/fungsi.php" />
-        <option value="$PROJECT_DIR$/head.php" />
         <option value="$PROJECT_DIR$/kategori.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/coba.php" />
-        <option value="$PROJECT_DIR$/cart.php" />
         <option value="$PROJECT_DIR$/laporan/sc_cart.php" />
+        <option value="$PROJECT_DIR$/head.php" />
+        <option value="$PROJECT_DIR$/cart.php" />
       </list>
     </option>
   </component>
@@ -395,12 +398,12 @@
       <workItem from="1564798506869" duration="137837000" />
       <workItem from="1565598595413" duration="38275000" />
       <workItem from="1566037492450" duration="25571000" />
-      <workItem from="1566301248310" duration="10691000" />
+      <workItem from="1566301248310" duration="16548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="508121000" />
+    <option name="totallyTimeSpent" value="513978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -877,9 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/head.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -887,26 +887,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cart.php">
+    <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="1568" column="42" selection-start-line="1568" selection-start-column="42" selection-end-line="1568" selection-end-column="42" />
+        <state relative-caret-position="180">
+          <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
           <folding>
-            <element signature="e#25#31#0" expanded="true" />
-            <element signature="e#32#38#0" expanded="true" />
-            <element signature="e#25#31#0" expanded="true" />
-            <element signature="e#32#38#0" expanded="true" />
-            <element signature="e#132352#132358#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
+    <entry file="file://$PROJECT_DIR$/head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="226">
+          <caret line="863" selection-start-line="863" selection-end-line="863" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="1477" column="69" selection-start-line="1477" selection-start-column="69" selection-end-line="1477" selection-end-column="69" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+            <element signature="e#25#31#0" expanded="true" />
+            <element signature="e#32#38#0" expanded="true" />
+            <element signature="e#27#33#0" expanded="true" />
+            <element signature="e#34#40#0" expanded="true" />
+            <element signature="e#132504#132510#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

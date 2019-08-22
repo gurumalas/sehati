@@ -861,7 +861,7 @@
         <div class="header_phone d-flex flex-row align-items-center justify-content-start">
             <div><div><a href="tel:+628123456789" target="_blank"><img src="images/phone.svg" alt="https://www.flaticon.com/authors/freepik" ></a></div></div>
             <div><a </a></div>
-            <a class='btn-wa' href='javascript:void(0)' onclick='openModal()'><i aria-hidden='true' class='fa fa-whatsapp'></i><span>Form WhatsApp</span></a>
+
         </div>
     </div>
     </div>
