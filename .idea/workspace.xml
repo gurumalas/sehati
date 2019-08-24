@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/bestmember.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bestmember.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/head.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,17 +109,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="1477" column="69" selection-start-line="1477" selection-start-column="69" selection-end-line="1477" selection-end-column="69" />
+            <state relative-caret-position="151">
+              <caret line="1474" column="26" selection-start-line="1474" selection-start-column="26" selection-end-line="1474" selection-end-column="26" />
               <folding>
                 <element signature="e#25#31#0" expanded="true" />
                 <element signature="e#32#38#0" expanded="true" />
-                <element signature="e#27#33#0" expanded="true" />
-                <element signature="e#34#40#0" expanded="true" />
                 <element signature="e#132504#132510#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/bestmember.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+              <folding>
+                <element signature="e#136#143#1" expanded="true" />
+                <element signature="e#139#146#1" expanded="true" />
+                <element signature="e#138#145#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -198,9 +210,9 @@
       <find>nama len</find>
       <find>tel:</find>
       <find>pilih ko</find>
-      <find>cod</find>
       <find>full</find>
       <find>&lt;optio</find>
+      <find>cod</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -273,7 +285,6 @@
         <option value="$PROJECT_DIR$/panel_member/modalusaha.php" />
         <option value="$PROJECT_DIR$/backend/index.php" />
         <option value="$PROJECT_DIR$/panel_member/index.php" />
-        <option value="$PROJECT_DIR$/backend/bestmember.php" />
         <option value="$PROJECT_DIR$/laporan/laporanbestmember.php" />
         <option value="$PROJECT_DIR$/aksinya/fungsi.php" />
         <option value="$PROJECT_DIR$/kategori.php" />
@@ -282,6 +293,7 @@
         <option value="$PROJECT_DIR$/laporan/sc_cart.php" />
         <option value="$PROJECT_DIR$/head.php" />
         <option value="$PROJECT_DIR$/cart.php" />
+        <option value="$PROJECT_DIR$/backend/bestmember.php" />
       </list>
     </option>
   </component>
@@ -398,12 +410,12 @@
       <workItem from="1564798506869" duration="137837000" />
       <workItem from="1565598595413" duration="38275000" />
       <workItem from="1566037492450" duration="25571000" />
-      <workItem from="1566301248310" duration="16548000" />
+      <workItem from="1566301248310" duration="22448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="513978000" />
+    <option name="totallyTimeSpent" value="519878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -791,18 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/bestmember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="160" />
-          <folding>
-            <element signature="e#136#143#1" expanded="true" />
-            <element signature="e#139#146#1" expanded="true" />
-            <element signature="e#138#145#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aksinya/cekadmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -906,14 +906,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="1477" column="69" selection-start-line="1477" selection-start-column="69" selection-end-line="1477" selection-end-column="69" />
+        <state relative-caret-position="151">
+          <caret line="1474" column="26" selection-start-line="1474" selection-start-column="26" selection-end-line="1474" selection-end-column="26" />
           <folding>
             <element signature="e#25#31#0" expanded="true" />
             <element signature="e#32#38#0" expanded="true" />
-            <element signature="e#27#33#0" expanded="true" />
-            <element signature="e#34#40#0" expanded="true" />
             <element signature="e#132504#132510#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/bestmember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+          <folding>
+            <element signature="e#136#143#1" expanded="true" />
+            <element signature="e#139#146#1" expanded="true" />
+            <element signature="e#138#145#1" expanded="true" />
           </folding>
         </state>
       </provider>

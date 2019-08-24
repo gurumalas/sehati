@@ -72,7 +72,10 @@ if (isset($_GET['aksi']) == 'delete') {
 
 //                                $query="SELECT * FROM member ORDER by nik desc"  ;
 //                                SELECT username, COUNT(*) duplikat FROM users GROUP BY username HAVING COUNT(duplikat)  > 1
-                                $sql = mysqli_query($koneksi, "SELECT invoice.*, count(invoice.nik) duplikat FROM invoice group by nik having count(duplikat)");
+                                $sql = mysqli_query($koneksi, "SELECT invoice.*, count(invoice.nik) duplikat FROM invoice
+                                where  not nik=0
+                                group by nik ");
+//                                having count(duplikat)
                                 $no=1;
 
                                 //proses menampilkan data
@@ -91,13 +94,6 @@ if (isset($_GET['aksi']) == 'delete') {
                                     <td><?php echo $rows->duplikat ?></td>
 
                                     <td>
-                                        <a class="btn bg-green waves-effect"href="edatamember.php?aksi=ubah&nik=<?= $rows -> nik; ?>" >
-                                            <i class="material-icons">edit</i>
-                                            <span>Edit</span></a>
-                                        <a class="btn bg-red waves-effect" href="datamember.php?aksi=delete&nik=<?= $rows -> nik; ?>"
-                                           onclick="return confirm('Anda Yakin Akan Menghapus')" title="Hapus Data" >
-                                            <i class="material-icons">delete</i>
-                                            <span>Hapus</span></a>
                                         <a target="_blank" class="btn bg-black waves-effect"href="../laporan/profilmember.php?nik=<?= $rows -> nik; ?>" >
                                             <i class="material-icons">print</i>
                                             <span>Cetak</span></a>

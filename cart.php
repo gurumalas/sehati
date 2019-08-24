@@ -1471,20 +1471,29 @@ if(!isset($_SESSION['nik']))
                                             </div>
 
                                         </div>
-                                        <div>
-                                            <select name="ongkir"
-                                                    class="dropdown_item_select checkout_input">
-                                                <option >Pilih Kota</option>
-                                                <option name="ongkir"value="0">COD</option>
-                                                <?php
-                                                $queryongkir = "SELECT * from ongkir";
-                                                $hasilonkir = mysqli_query($koneksi,$queryongkir);
-                                                while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-                                                    echo  "<option name='ongkir' value='$dataongkir[ongkir]'>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[ongkir]</option>";
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pilih Area
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                <?php
+                                $queryongkir = "SELECT * from ongkir";
+                                $hasilonkir = mysqli_query($koneksi,$queryongkir);
+                                while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
+
+//                                                echo '<button class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['hargaojek'].'">'.$dataongkir['kec'].'-'.$dataongkir['hargaojek'].''.'</button>';
+
+                                    ?>
+                                    <button formtarget="_blank" class="dropdown-item" name="ongkir" value="<?php
+                                    echo $dataongkir['ongkir'];
+                                    ?>"><?php
+                                        echo $dataongkir['kec'].'-'.$dataongkir['ongkir'];
+                                        ?></button>
+                                    <?php
+                                }
+                                ?>
+
+                            </div>
                                         <div>
                                             <!-- Address -->
 
