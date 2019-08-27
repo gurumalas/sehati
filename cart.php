@@ -64,7 +64,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
         }
     } elseif ($act == "full") {
         $nik = $_SESSION['nik'];
-//        $ongkir = $_POST['ongkir'];
+
         $kd_transaksi = autonumber("invoice", "kd_transaksi", "5", "T");
         if (isset($_SESSION['items'])) {
             foreach ($_SESSION['items'] as $key => $value) {
@@ -72,15 +72,15 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                 $kuantitas = $value;
 //                $nik = $_POST['nik'];
                 $status = 0;
-//                $ongkir = $_POST['ongkir'];
-                $query_barang = mysqli_query($koneksi, "SELECT * FROM produk WHERE `kd_produk` = '$key'");
-                $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE");
 
-                $rs_ojek = mysqli_fetch_array($query_ongkir);
+                $query_barang = mysqli_query($koneksi, "SELECT * FROM produk WHERE `kd_produk` = '$key'");
+//                $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE");
+
+//                $rs_ojek = mysqli_fetch_array($query_ongkir);
                 $rs_barang = mysqli_fetch_array($query_barang);
                 $harga = $rs_barang['harga'];
-                $ongkir = $rs_ojek['ongkir'];
-                $ongkir = $_POST['ongkir'];
+//                $ongkir = $rs_ojek['ongkir'];
+                $ongkir = $_POST{'ongkir'};
                 $tanpaojek = $harga * $kuantitas;
                 $totalbyar = $tanpaojek + $ongkir;
                 //$total += $jumlah_harga;
@@ -1417,8 +1417,8 @@ if(!isset($_SESSION['nik']))
                                                 include "aksinya/koneksi.php";
                                                 $queryongkir = "SELECT * from ongkir";
                                                 $hasilonkir = mysqli_query($koneksi,$queryongkir);
-                                                while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-                                                    echo "<option name='ongkir' value=$dataongkir[ongkir]>$dataongkir[kec]&nbsp;-&nbsp;$dataongkir[ongkir]</option>";
+                                                while ($dataongkir = mysqli_fetch_object($hasilonkir)) {
+                                                    echo "<option name='ongkir' value='$dataongkir->ongkir'>$dataongkir->kec &nbsp;-&nbsp;$dataongkir->ongkir</option>";
                                                 }
                                                 ?>
                                             </select>
@@ -1472,7 +1472,7 @@ if(!isset($_SESSION['nik']))
 
                                         </div>
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Pilih Area
+                                Lokasi Anda
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
