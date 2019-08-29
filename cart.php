@@ -48,7 +48,17 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                 $_SESSION['items'][$kd_produk] -= 1;
             }
         }
-    } elseif ($act == "del") {
+    } elseif ($act == "masuk") {
+        if (isset($_GET['kd_produk'])) {
+            $kd_produk = $_GET['kd_produk'];
+            $quantity = $_GET['quantity'];
+
+            if (isset($_SESSION['items'][$kd_produk])) {
+                $_SESSION['items'][$kd_produk] += $quantity;
+            }
+        }
+    }
+    elseif ($act == "del") {
         if (isset($_GET['kd_produk'])) {
             $kd_produk = $_GET['kd_produk'];
             if (isset($_SESSION['items'][$kd_produk])) {
@@ -85,7 +95,7 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
                 $totalbyar = $tanpaojek + $ongkir;
                 //$total += $jumlah_harga;
                 $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik,ongkir)
-     VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar','$status','$nik','$ongkir')");
+     VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar','$status','$nik','".$_POST['ongkir']."')");
 
             }
         }
@@ -1313,6 +1323,7 @@ location='index.php';</script>";
 
 
 
+
                                 ?>
                             </div>
 
@@ -1348,10 +1359,12 @@ location='index.php';</script>";
                                                 <div class="qty_sub qty_button trans_200 text-center"><a
                                                             href="cart.php?act=min&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php">&blacktriangledown;</a></span>
                                                 </div>
-                                                <input name="quantity" type="hidden" value="<?php echo $val; ?>"/><?php echo $val; ?>
+                                                <input name="quantity" type="text" style="width:30px;" value="<?php echo $val; ?>"/>
                                                 <div class="qty_add qty_button trans_200 text-center"><a
                                                             href="cart.php?act=plus&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php">&blacktriangle;</a></span>
                                                 </div>
+                                                <a
+                                                        href="cart.php?act=masuk&amp;kd_produk=<?php echo $key; ?>&amp;quantity=&amp;ref=index.php">Tambah</a>
                                             </div>
 
                                             <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
@@ -1409,17 +1422,21 @@ if(!isset($_SESSION['nik']))
                                         </div>
                                         <div>
                                             <label style="font-size: medium; color:#e8271b ">LOKASI ANDA</label>
-                                            <select name="ongkir"
-                                                    class="dropdown_item_select checkout_input">
+                                            <select name="ongkir" class="dropdown_item_select checkout_input">
                                                 <option >Pilih Kota</option>
                                                 <option name="ongkir" value="0">COD</option>
+                                                <option name="ongkir" value="20000">Banjarbaru Selatan</option>
+                                                <option name="ongkir" value="25000">Banjarbaru Utara</option>
+                                                <option name="ongkir" value="30000">Liang Anggang</option>
+                                                <option name="ongkir" value="10000">Landasan Ulin</option>
+                                                <option name="ongkir" value="15000">Cempaka</option>
                                                 <?php
-                                                include "aksinya/koneksi.php";
-                                                $queryongkir = "SELECT * from ongkir";
-                                                $hasilonkir = mysqli_query($koneksi,$queryongkir);
-                                                while ($dataongkir = mysqli_fetch_object($hasilonkir)) {
-                                                    echo "<option name='ongkir' value='$dataongkir->ongkir'>$dataongkir->kec &nbsp;-&nbsp;$dataongkir->ongkir</option>";
-                                                }
+//                                                include "aksinya/koneksi.php";
+//                                                $queryongkir = "SELECT * from ongkir";
+//                                                $hasilonkir = mysqli_query($koneksi,$queryongkir);
+//                                                while ($dataongkir = mysqli_fetch_object($hasilonkir)) {
+//                                                    echo "<option name='ongkir' value='$dataongkir->ongkir'>$dataongkir->kec &nbsp;-&nbsp;$dataongkir->ongkir</option>";
+//                                                }
                                                 ?>
                                             </select>
                                         </div>

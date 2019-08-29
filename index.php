@@ -264,6 +264,14 @@ if (isset($_SESSION['nik']) && isset($_SESSION['email']) && isset($_SESSION['n_m
                                             </div>
                                         </div>
                                         <div class="ml-auto text-right">
+                                            <div class="product_category">Banyak<code>
+                                                    <?php
+                                                    $ques = mysqli_query($koneksi,"select * from stok where kd_produk='$prod->kd_produk'");
+                                                    while ($cats = mysqli_fetch_object($ques)) {
+                                                    ?><?=$cats->banyak?>
+                                                </code><?php
+                                                }
+                                                ?></div>
                                             <div class="product_price text-right"><?=format_rupiah($prod->harga); ?></div>
                                         </div>
                                     </div>
