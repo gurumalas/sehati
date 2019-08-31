@@ -84,13 +84,13 @@ if (isset($_POST["tambah"])) {
                 <div class="card">
                     <div class="header">
                         <h2>
-                            TABEL DATA SUpplier
+                            TABEL DATA SUPPLIER
                         </h2>
                         <ul class="header-dropdown m-r--5">
 
                             <button data-toggle="modal" data-target="#exampleModal" class="btn bg-BLUE waves-effect" >
                                 <i class="material-icons">local_mall</i>
-                                <span>STOK PRODUK</span>
+                                <span>DATA SUPPLIER</span>
                             </button>
 
                         </ul>
@@ -118,11 +118,10 @@ if (isset($_POST["tambah"])) {
                                 <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Produk</th>
-                                    <th>Nama Produk</th>
-                                    <th>Harga Beli Produk</th>
-                                    <th>Harga Jual Produk</th>
-                                    <th>Banyak</th>
+                                    <th>ID</th>
+                                    <th>Supplier</th>
+                                    <th>Alamat</th>
+                                    <th>Kontak</th>
                                     <th>Aksi</th>
                                 </tr>
                                 </thead> <?php
@@ -135,8 +134,7 @@ if (isset($_POST["tambah"])) {
                                 //                                    while($rows=mysqli_fetch_object($sql));
                                 //                                } else
 
-                                $sql = mysqli_query($koneksi, "select * from stok left join produk 
-                                on stok.kd_produk = produk.kd_produk ");
+                                $sql = mysqli_query($koneksi, "select * from supplier");
                                 $no=1;
                                 //proses menampilkan data
                                 while($rows=mysqli_fetch_object($sql)){

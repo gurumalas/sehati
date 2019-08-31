@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2019 at 06:05 AM
+-- Generation Time: Aug 31, 2019 at 06:30 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -67,8 +67,8 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`kd_transaksi`, `kd_invoice`, `nik`, `tgl`, `kd_produk`, `totalbyar`, `status`, `quantity`, `harga`, `ongkir`) VALUES
-('T00001', 139, 0, '2019-08-27', '5467', '65', '0', '1', '65', ''),
-('', 140, 0, '2019-08-29', '5467', '1', '', '1', NULL, NULL);
+('T00001', 139, 0, '2019-08-27', '5467', '65', '1', '1', '65', ''),
+('', 140, 0, '2019-08-29', '5467', '130', '1', '2', '65', NULL);
 
 -- --------------------------------------------------------
 
@@ -211,6 +211,19 @@ INSERT INTO `stok` (`idstok`, `kd_produk`, `beli`, `jual`, `banyak`) VALUES
 (1, '9', 800, 1000, 50),
 (2, '5467', 50, 65, 30);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplier`
+--
+
+CREATE TABLE `supplier` (
+  `id_supplier` int(11) NOT NULL,
+  `nama_supplier` varchar(30) NOT NULL,
+  `alamat` varchar(150) NOT NULL,
+  `kontak` varchar(14) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -264,6 +277,12 @@ ALTER TABLE `stok`
   ADD PRIMARY KEY (`idstok`);
 
 --
+-- Indexes for table `supplier`
+--
+ALTER TABLE `supplier`
+  ADD PRIMARY KEY (`id_supplier`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -284,6 +303,12 @@ ALTER TABLE `ongkir`
 --
 ALTER TABLE `stok`
   MODIFY `idstok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `supplier`
+--
+ALTER TABLE `supplier`
+  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
