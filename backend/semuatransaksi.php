@@ -98,6 +98,7 @@ include 'header.php';
                                     <th>Tanggal Transaksi</th>
                                     <th>Kode Produk</th>
                                     <th>Status</th>
+                                    <th>Modal</th>
                                     <th>Banyak</th>
                                     <th>Banyak X Harga</th>
                                     <th>Total</th>
@@ -105,7 +106,8 @@ include 'header.php';
                                 </tr>
                                 </thead> <?php
                                 include '../aksinya/koneksi.php';
-                                $sqlku = mysqli_query($koneksi, "SELECT * FROM invoice order by status asc");
+                                $sqlku = mysqli_query($koneksi, "SELECT * FROM invoice left join stok on 
+                                invoice.kd_produk= stok.kd_produk order by tgl desc ");
                                 $no=1;
                                 //proses menampilkan data
                                 while($rows=mysqli_fetch_object($sqlku)){
@@ -124,6 +126,7 @@ include 'header.php';
                                         } else {
                                             echo '<p style="color:#11e800">Lunas</p>';
                                         }?></td>
+                                    <td><?php echo format_rupiah($rows ->beli);?></td>
                                     <td><?php echo $rows ->quantity?></td>
                                     <td><?php echo $rows ->quantity.'x'.format_rupiah($rows ->harga)?></td>
                                     <td><?php echo format_rupiah($rows ->totalbyar)?></td>

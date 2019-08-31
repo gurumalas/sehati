@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_SESSION)) {
 
-
+    $quantity = $_GET['quantity'];
 }
 include 'aksinya/koneksi.php';
 include 'aksinya/fungsi.php';
@@ -15,6 +15,16 @@ include 'aksinya/fungsi.php';
 if (isset($_GET['act']) && isset($_GET['ref'])) {
     $act = $_GET['act'];
     $ref = $_GET['ref'];
+if (isset($POST['masuk'])) {
+        if (isset($_GET['kd_produk'])) {
+            $kd_produk = $_GET['kd_produk'];
+            $quantity = $_GET['quantity'];
+            $_SESSION['items'][$kd_produk] = 0;
+            if (isset($_SESSION['items'][$kd_produk])) {
+                $_SESSION['items'][$kd_produk] +=  $_GET['quantity'];
+            }
+        }
+    }
 
     if ($act == "add") {
 
@@ -34,7 +44,16 @@ if (isset($_GET['act']) && isset($_GET['ref'])) {
             $query = mysqli_query( $koneksi, "INSERT INTO invoice  (kd_produk, quantity, tgl, status, totalbyar) 
 VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((is_object($koneksi)) ? mysqli_error($koneksi) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)));
         }
-    } elseif ($act == "plus") {
+    } elseif ($act == "masuk") {
+        if (isset($_GET['kd_produk'])) {
+            $kd_produk = $_GET['kd_produk'];
+            $quantity = $_GET['quantity'];
+            $_SESSION['items'][$kd_produk] = $quantity = $_GET['quantity'];
+            if (isset($_SESSION['items'][$kd_produk])) {
+                $_SESSION['items'][$kd_produk];
+            }
+        }
+    }elseif ($act == "plus") {
         if (isset($_GET['kd_produk'])) {
             $kd_produk = $_GET['kd_produk'];
             if (isset($_SESSION['items'][$kd_produk])) {
@@ -46,15 +65,6 @@ VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((i
             $kd_produk = $_GET['kd_produk'];
             if (isset($_SESSION['items'][$kd_produk])) {
                 $_SESSION['items'][$kd_produk] -= 1;
-            }
-        }
-    } elseif ($act == "masuk") {
-        if (isset($_GET['kd_produk'])) {
-            $kd_produk = $_GET['kd_produk'];
-            $quantity = $_GET['quantity'];
-
-            if (isset($_SESSION['items'][$kd_produk])) {
-                $_SESSION['items'][$kd_produk] += $quantity;
             }
         }
     }
@@ -1359,12 +1369,17 @@ location='index.php';</script>";
                                                 <div class="qty_sub qty_button trans_200 text-center"><a
                                                             href="cart.php?act=min&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php">&blacktriangledown;</a></span>
                                                 </div>
-                                                <input name="quantity" type="text" style="width:30px;" value="<?php echo $val; ?>"/>
+                                                <form action="cart.php?act=masuk&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php&&quantity=" method="get">
+
+                                                    <input name="quantity" id="quantity"type="text" style="width:30px;" value="<?php echo $val; ?>"/><?php echo $val; ?>
+                                                    <button name="masuk" type="submit">Tambah</button>
+
+                                                </form>
+
                                                 <div class="qty_add qty_button trans_200 text-center"><a
                                                             href="cart.php?act=plus&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php">&blacktriangle;</a></span>
                                                 </div>
-                                                <a
-                                                        href="cart.php?act=masuk&amp;kd_produk=<?php echo $key; ?>&amp;quantity=&amp;ref=index.php">Tambah</a>
+
                                             </div>
 
                                             <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
@@ -1654,6 +1669,10 @@ if(!isset($_SESSION['nik'])) {
         });
         $("#nama").autofill({
             fieldId : "addnama",
+            overrideFieldEverytime : true
+        });
+        $("#quantity").autofill({
+            fieldId : "addquantity",
             overrideFieldEverytime : true
         });
         $("#alamat").autofill({

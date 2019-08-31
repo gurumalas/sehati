@@ -195,6 +195,12 @@ $jprodukpesan = mysqli_num_rows($produkpesan);
                                 <a href="stok.php"><span>STOK PRODUK</span></a>
                             </li>
 
+                            <li>
+
+
+                                <a href="supplier.php"><span>SUPPLIER PRODUK</span></a>
+                            </li>
+
                         </ul>
                     </li>
 
