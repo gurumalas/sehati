@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2019 at 06:30 AM
+-- Generation Time: Sep 24, 2019 at 03:22 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -67,8 +67,26 @@ CREATE TABLE `invoice` (
 --
 
 INSERT INTO `invoice` (`kd_transaksi`, `kd_invoice`, `nik`, `tgl`, `kd_produk`, `totalbyar`, `status`, `quantity`, `harga`, `ongkir`) VALUES
-('T00001', 139, 0, '2019-08-27', '5467', '65', '1', '1', '65', ''),
-('', 140, 0, '2019-08-29', '5467', '130', '1', '2', '65', NULL);
+('T00001', 1, 0, '2019-09-22', '5467', '975', '0', '15', '65', NULL),
+('T00001', 2, 0, '2019-09-22', '9', '170', '0', '17', '10', NULL),
+('T00002', 3, 0, '2019-09-22', '5467', '975', '0', '15', '65', NULL),
+('T00002', 4, 0, '2019-09-22', '9', '170', '0', '17', '10', NULL),
+('T00003', 5, 0, '2019-09-22', '5467', '975', '0', '15', '65', NULL),
+('T00003', 6, 0, '2019-09-22', '9', '170', '0', '17', '10', NULL),
+('T00004', 7, 0, '2019-09-22', '5467', '975', '0', '15', '65', NULL),
+('T00004', 8, 0, '2019-09-22', '9', '170', '0', '17', '10', NULL),
+('T00005', 9, 0, '2019-09-22', '5467', '975', '0', '15', '65', NULL),
+('T00005', 10, 0, '2019-09-22', '9', '170', '0', '17', '10', NULL),
+('T00006', 11, 0, '2019-09-22', '5467', '975', '0', '15', '65', NULL),
+('T00006', 12, 0, '2019-09-22', '9', '170', '0', '17', '10', NULL),
+('T00007', 13, 0, '2019-09-22', '5467', '455', '0', '7', '65', NULL),
+('T00008', 14, 0, '2019-09-22', '5467', '455', '0', '7', '65', NULL),
+('T00009', 15, 0, '2019-09-22', '5467', '455', '0', '7', '65', NULL),
+('T00010', 16, 0, '2019-09-22', '5467', '455', '0', '7', '65', NULL),
+('T00011', 17, 0, '2019-09-22', '5467', '520', '0', '8', '65', NULL),
+('T00012', 18, 0, '2019-09-22', '5467', '260', '0', '4', '65', NULL),
+('T00013', 19, 0, '2019-09-22', '5467', '260', '0', '4', '65', NULL),
+('T00014', 20, 0, '2019-09-22', '5467', '910', '0', '14', '65', NULL);
 
 -- --------------------------------------------------------
 
@@ -209,7 +227,7 @@ CREATE TABLE `stok` (
 
 INSERT INTO `stok` (`idstok`, `kd_produk`, `beli`, `jual`, `banyak`) VALUES
 (1, '9', 800, 1000, 50),
-(2, '5467', 50, 65, 30);
+(2, '5467', 50, 65, 16);
 
 -- --------------------------------------------------------
 
@@ -223,6 +241,45 @@ CREATE TABLE `supplier` (
   `alamat` varchar(150) NOT NULL,
   `kontak` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat`, `kontak`) VALUES
+(1, 'Herbalife', 'Jakarta, Indonesia', '0213823982');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaksi`
+--
+
+CREATE TABLE `transaksi` (
+  `kd_transaksi` char(9) NOT NULL,
+  `tglt` date DEFAULT NULL,
+  `nik` int(11) DEFAULT NULL,
+  `totalsemua` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`kd_transaksi`, `tglt`, `nik`, `totalsemua`) VALUES
+('T00001', '2019-09-22', 0, 0),
+('T00002', '2019-09-22', 0, 0),
+('T00003', '2019-09-22', 0, 1147),
+('T00004', '2019-09-22', 0, 1145),
+('T00005', '2019-09-22', 0, 1145),
+('T00006', '2019-09-22', 0, 1145),
+('T00008', '2019-09-22', 0, 0),
+('T00009', '2019-09-22', 0, 455),
+('T00010', '2019-09-22', 0, 455),
+('T00011', '2019-09-22', 0, 520),
+('T00012', '2019-09-22', 0, 260),
+('T00013', '2019-09-22', 0, 260),
+('T00014', '2019-09-22', 0, 910);
 
 --
 -- Indexes for dumped tables
@@ -283,6 +340,12 @@ ALTER TABLE `supplier`
   ADD PRIMARY KEY (`id_supplier`);
 
 --
+-- Indexes for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`kd_transaksi`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -290,7 +353,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `kd_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `kd_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `ongkir`
@@ -308,7 +371,7 @@ ALTER TABLE `stok`
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
