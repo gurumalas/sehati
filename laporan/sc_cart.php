@@ -1,18 +1,65 @@
 <?php
-include_once("../aksinya/koneksi.php"); //buat koneksi ke database
-include  "../aksinya/fungsi.php";
+session_start();
+
+class Item{
+    var $kd_produk;
+    var $banyak;
+    var $nama;
+    var $harga;
+    var $quantity;
+    var $foto_file;
+}
+
+if (!isset($_SESSION)) {
+
+    $quantity = $_GET['quantity'];
+}
+include '../aksinya/koneksi.php';
+include '../aksinya/fungsi.php';
+if(isset($_GET['kd_produk']) && !isset($_POST['update']))  {
+    $sql = "SELECT * FROM produk WHERE kd_produk=".$_GET['kd_produk'];
+    $sqlstok = "SELECT * FROM stok WHERE kd_produk=".$_GET['kd_produk'];
+    $result = mysqli_query($koneksi, $sql);
+    $resultstok = mysqli_query($koneksi, $sqlstok);
+    $stock = mysqli_fetch_object($resultstok);
+    $product = mysqli_fetch_object($result);
+    $item = new Item();
+    $item->kd_produk = $product->kd_produk;
+    $item->foto_file = $product->foto_file;
+    $item->nama = $product->nama;
+    $item->harga = $product->harga;
+    $item->banyak = $stock->banyak;
+    $iteminstock = $product->quantity;
+    $item->quantity = 1;
+    // Check product is existing in cart
+    $index = -1;
+    $cart = unserialize(serialize($_SESSION['cart'])); // set $cart as an array, unserialize() converts a string into array
+    for($i=0; $i<count($cart);$i++)
+        if ($cart[$i]->kd_produk == $_GET['kd_produk']){
+            $index = $i;
+            break;
+        }
+    if($index == -1)
+        $_SESSION['cart'][] = $item; // $_SESSION['cart']: set $cart as session variable
+    else {
+
+        if (($cart[$index]->quantity) < $iteminstock)
+            $cart[$index]->quantity ++;
+        $_SESSION['cart'] = $cart;
+    }
+}
+?>
+<?php
+
 $id_onkir = $_GET['id_onkir'];
 
 $onkirnya = mysqli_query($koneksi, "select * from ongkir where id_onkir='$id_onkir'");
   $bacaonkir=mysqli_fetch_object($onkirnya);
-if (!isset($_SESSION)) {
-    session_start();
 
-}
-//$kd_transaksi   = $_GET['kd_transaksi']; //kode berita yang akan dikonvert
-//$sql=mysqli_query($koneksi, "SELECT * FROM invoice WHERE kd_transaksi='".$kd_transaksi."'");
-//$data=mysqli_fetch_array($sql);
+
+
 ?>
+
 <html xmlns="http://www.w3.org/1999/xhtml"> <!-- Bagian halaman HTML yang akan konvert -->
 <head>
     <style>
@@ -61,33 +108,31 @@ Telp. 082148352769</h3>
     <br/>
     <?php
     $total=0;
-    if (isset($_SESSION['items'])) {
-    foreach ($_SESSION['items'] as $key => $val) {
-    $que = mysqli_query($koneksi, "select * from produk where produk.kd_produk = '$key'");
-    $no =0;
-    while($keranjang=mysqli_fetch_object($que)){
-        $no++;
-        $jumlah_harga = $keranjang->harga * $val;
-        $total += $jumlah_harga;
+    if (isset($_SESSION['cart'])) {
+    $cart = unserialize(serialize($_SESSION['cart']));
+    $s = 0;
+    $index = 0;
 
-
-
+    for($i=0; $i<count($cart); $i++){
+    $jumlah_harga = $cart[$i]->harga * $cart[$i]->quantity;
+    $total += $jumlah_harga;
         ?>    <tr>
-        <td  align="center"> <img height="130" width="130" src="../images/<?php echo $keranjang->foto_file; ?>" alt=""></td>
-        <td  align="center"><?PHP echo $keranjang->kd_produk?></td>
-        <td  align="center"><?PHP echo format_rupiah($keranjang->harga);?></td>
-        <td  align="center"><?PHP echo $val?></td>
-        <td  align="center"><?php echo format_rupiah($jumlah_harga); ?></td>
+        <td  align="center"> <img height="130" width="130" src="../images/<?php echo $cart[$i]->foto_file; ?>" alt=""></td>
+        <td  align="center"><?PHP echo $cart[$i]->kd_produk;?></td>
+        <td  align="center"><?PHP echo format_rupiah($cart[$i]->harga);?></td>
+        <td  align="center"><?PHP echo $cart[$i]->quantity;?></td>
+        <td  align="center"><?php echo format_rupiah($cart[$i]->harga * $cart[$i]->quantity); ?></td>
         <br/>
 
 
         </tr>
 
-
-    </tbody>
-    <?PHP
-    }}}
+        <?PHP
+        $index++;
+    }}
     ?>
+    </tbody>
+
 </table>
 <table>
     <thead>
@@ -118,9 +163,11 @@ Telp. 082148352769</h3>
         <th  style="width: 100%; text-align:center; background:#000;color:#ffffff;" colspan="3">BIODATA</th>
     </tr>
     <?php
+
     if(!isset($_SESSION['nik']))
+
     {
-   $nik = $_GET['nik'];
+
         $addnama = $_GET['addnama'];
         $addalamat = $_GET['addalamat'];
         $addhp = $_GET['addhp'];
@@ -130,9 +177,9 @@ Telp. 082148352769</h3>
             <td width="10%">NIK</td>
             <td width="">:</td>
             <td width="75%"><?php
-                if(($nik)=='') { echo 'Bukan Member';
+                if(isset($_SESSION['nik'])=='') { echo 'Bukan Member';
                 } else {
-                    echo $nik;
+                    echo $_SESSION['nik'];
                 } ?></td>
         </tr>
         <tr style="border-left:1px text-align:left;">

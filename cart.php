@@ -1,4 +1,13 @@
-
+<?php
+class Item{
+    var $kd_produk;
+    var $banyak;
+    var $nama;
+    var $harga;
+    var $quantity;
+    var $foto_file;
+}
+?>
 <?php
 session_start();
 
@@ -8,113 +17,95 @@ if (!isset($_SESSION)) {
 }
 include 'aksinya/koneksi.php';
 include 'aksinya/fungsi.php';
+if(isset($_GET['kd_produk']) && !isset($_POST['update']))  {
+    $sql = "SELECT * FROM produk WHERE kd_produk=".$_GET['kd_produk'];
+    $sqlstok = "SELECT * FROM stok WHERE kd_produk=".$_GET['kd_produk'];
 
+    $result = mysqli_query($koneksi, $sql);
+    $resultstok = mysqli_query($koneksi, $sqlstok);
+    $stock = mysqli_fetch_object($resultstok);
+    $product = mysqli_fetch_object($result);
+    $item = new Item();
+    $item->kd_produk = $product->kd_produk;
+    $item->foto_file = $product->foto_file;
+    $item->nama = $product->nama;
+    $item->harga = $product->harga;
+    $item->banyak = $stock->banyak;
+    $iteminstock = $product->quantity;
 
+    $item->quantity = 1;
+    // Check product is existing in cart
+    $index = -1;
+    $cart = unserialize(serialize($_SESSION['cart'])); // set $cart as an array, unserialize() converts a string into array
+    for($i=0; $i<count($cart);$i++)
+        if ($cart[$i]->kd_produk == $_GET['kd_produk']){
+            $index = $i;
+            break;
+        }
+    if($index == -1)
+        $_SESSION['cart'][] = $item; // $_SESSION['cart']: set $cart as session variable
+    else {
 
+        if (($cart[$index]->quantity) < $iteminstock)
+            $cart[$index]->quantity ++;
+        $_SESSION['cart'] = $cart;
+    }
+}
+// Delete product in cart
+if(isset($_GET['index']) && !isset($_POST['update'])) {
+    $cart = unserialize(serialize($_SESSION['cart']));
+    unset($cart[$_GET['index']]);
+    $cart = array_values($cart);
+    $_SESSION['cart'] = $cart;
+}
+// Update quantity in cart
+if(isset($_POST['update'])) {
+    $arrQuantity = $_POST['quantity'];
+    $cart = unserialize(serialize($_SESSION['cart']));
+    for($i=0; $i<count($cart);$i++) {
+        $cart[$i]->quantity = $arrQuantity[$i];
+    }
+    $_SESSION['cart'] = $cart;
+}
 //include 'aksinya/item.php';
 if (isset($_GET['act']) && isset($_GET['ref'])) {
     $act = $_GET['act'];
     $ref = $_GET['ref'];
-if (isset($POST['masuk'])) {
-        if (isset($_GET['kd_produk'])) {
-            $kd_produk = $_GET['kd_produk'];
-            $quantity = $_GET['quantity'];
-            $_SESSION['items'][$kd_produk] = 0;
-            if (isset($_SESSION['items'][$kd_produk])) {
-                $_SESSION['items'][$kd_produk] +=  $_GET['quantity'];
-            }
-        }
-    }
-
-    if ($act == "add") {
-
-        if (isset($_GET['kd_produk'])) {
-
-            $kd_produk = $_GET['kd_produk'];
-            if (isset($_SESSION['items'][$kd_produk])) {
-                $_SESSION['items'][$kd_produk] += 1;
-            } else {
-                $_SESSION['items'][$kd_produk] = 1;
-            }
-            $quantity = $_SESSION['items'][$kd_produk];
-            $status = $_POST['status'];
-            $total = $_POST['total'];
-            $totalbyar = $quantity;
-            ((bool)mysqli_query($koneksi, "USE " . $database));
-            $query = mysqli_query( $koneksi, "INSERT INTO invoice  (kd_produk, quantity, tgl, status, totalbyar) 
-VALUES ('$kd_produk', '$quantity', '$tgl', '$status', '$totalbyar')") or die(((is_object($koneksi)) ? mysqli_error($koneksi) : (($___mysqli_res = mysqli_connect_error()) ? $___mysqli_res : false)));
-        }
-    } elseif ($act == "masuk") {
-        if (isset($_GET['kd_produk'])) {
-            $kd_produk = $_GET['kd_produk'];
-            $quantity = $_GET['quantity'];
-            $_SESSION['items'][$kd_produk] = $quantity = $_GET['quantity'];
-            if (isset($_SESSION['items'][$kd_produk])) {
-                $_SESSION['items'][$kd_produk];
-            }
-        }
-    }elseif ($act == "plus") {
-        if (isset($_GET['kd_produk'])) {
-            $kd_produk = $_GET['kd_produk'];
-            if (isset($_SESSION['items'][$kd_produk])) {
-                $_SESSION['items'][$kd_produk] += 1;
-            }
-        }
-    } elseif ($act == "min") {
-        if (isset($_GET['kd_produk'])) {
-            $kd_produk = $_GET['kd_produk'];
-            if (isset($_SESSION['items'][$kd_produk])) {
-                $_SESSION['items'][$kd_produk] -= 1;
-            }
-        }
-    }
-    elseif ($act == "del") {
-        if (isset($_GET['kd_produk'])) {
-            $kd_produk = $_GET['kd_produk'];
-            if (isset($_SESSION['items'][$kd_produk])) {
-                unset($_SESSION['items'][$kd_produk]);
-            }
-        }
-    } elseif ($act == "clear") {
-        if (isset($_SESSION['items'])) {
-            foreach ($_SESSION['items'] as $key => $val) {
-                unset($_SESSION['items'][$key]);
-            }
-            unset($_SESSION['items']);
+    if ($act == "clear") {
+        if (isset($_SESSION['cart'])) {
+            unset($_SESSION['cart']);
         }
     } elseif ($act == "full") {
+        $cart = unserialize(serialize($_SESSION['cart']));
         $nik = $_SESSION['nik'];
 
         $kd_transaksi = autonumber("invoice", "kd_transaksi", "5", "T");
-        if (isset($_SESSION['items'])) {
-            foreach ($_SESSION['items'] as $key => $value) {
-                $kd_produk = $_POST['kd_produk'.$key];
-                $kuantitas = $value;
-//                $nik = $_POST['nik'];
-                $status = 0;
 
-                $query_barang = mysqli_query($koneksi, "SELECT * FROM produk WHERE `kd_produk` = '$key'");
-//                $query_ongkir = mysqli_query($koneksi, "SELECT * FROM ongkir WHERE");
 
-//                $rs_ojek = mysqli_fetch_array($query_ongkir);
-                $rs_barang = mysqli_fetch_array($query_barang);
-                $harga = $rs_barang['harga'];
-//                $ongkir = $rs_ojek['ongkir'];
-                $ongkir = $_POST{'ongkir'};
-                $tanpaojek = $harga * $kuantitas;
-                $totalbyar = $tanpaojek + $ongkir;
-                //$total += $jumlah_harga;
-                $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik,ongkir)
-     VALUES ('$kd_transaksi','$kd_produk$key','$value','$harga','$tgl','$totalbyar','$status','$nik','".$_POST['ongkir']."')");
 
-            }
+        $status = 0;
+        $max=count($cart);
+        for($i=0;$i<$max;$i++){
+            $totalsemua += $cart[$i]->harga * $cart[$i]->quantity;
+
+            $totalbyar = $cart[$i]->quantity * $cart[$i]->harga;
+            $sisa = $cart[$i]->banyak - $cart[$i]->quantity;
+            mysqli_query($koneksi, "insert into invoice(kd_transaksi,kd_produk,quantity,harga,status,totalbyar,tgl) 
+values ('$kd_transaksi','".$cart[$i]->kd_produk."','".$cart[$i]->quantity."','".$cart[$i]->harga."','$status','$totalbyar','$tgl')");
+
+            $sqlsisa = mysqli_query($koneksi, "UPDATE stok SET banyak='$sisa' WHERE kd_produk='".$cart[$i]->kd_produk."'") or die(mysqli_error($koneksi));
         }
-}
 
+        $sqltransaksi = mysqli_query($koneksi, "INSERT INTO transaksi(nik,kd_transaksi,tglt,totalsemua)
+VALUES ('$nik','$kd_transaksi','$tgl','$totalsemua')") or die(mysqli_error($koneksi));
+        header ("location: cart.php");
+
+    }
     header ("location: cart.php");
 }
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -1262,13 +1253,13 @@ location='index.php';</script>";
         <div class='left'>
             <div class='form-whatsapp'>
                 <label class='wa-label bagi'>Total</label>
-                <input class='jumlah wa-input bagi' max='10' min='1' name='jumlah' placeholder='The amount of goods' type='number'/>
+                <input class='jumlah wa-input bagi' max='10' min='1' name='jumlah' id="upah2" placeholder='The amount of goods' type='number' disabled="true"/>
             </div>
         </div>
         <div class='right'>
             <div class='form-whatsapp'>
                 <label class='wa-label bagi'>Date</label>
-                <input class='tanggal wa-input bagi' name='tanggal' placeholder='Message Date' required='' type='date'/>
+                <input class='tanggal wa-input bagi' name='tanggal' placeholder='Message Date' required='' type='date' value="<?php echo $tgl=date("Y/m/d");?>"/>
             </div>
         </div>
         <div class='form-whatsapp'>
@@ -1311,101 +1302,182 @@ location='index.php';</script>";
                         <div class="cart_container">
 
                             <div class="cart_bar">
-                                <h3>Kode Transaksi - <?php echo autonumber("invoice", "kd_transaksi", "5", "T");?></h3>
-                                <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
-                                    <li class="mr-auto">Product</li>
-                                    <li  class="mr-auto">Kode Produk</li>
-                                    <li  class="mr-auto">Harga</li>
-                                    <li  class="mr-auto">Tambah</li>
-                                    <li class="mr-auto">Sub Total</li>
-                                    <li>Hapus</li>
-                                </ul> <?php
-                                $total=0;
-                                if (isset($_SESSION['items'])) {
-                                foreach ($_SESSION['items'] as $key => $val) {
-                                $que = mysqli_query($koneksi, "select * from produk where produk.kd_produk = '$key'");
-                                $a = 1;
-                                while($keranjang=mysqli_fetch_object($que)){
 
-                                $jumlah_harga = $keranjang->harga * $val;
-                                $total += $jumlah_harga;
-
-
-
-
-
-                                ?>
                             </div>
 
                             <!-- Cart Items -->
-                            <div class="cart_items">
-
-                                <ul class="cart_items_list">
-<!--                                    <form action="" method="post" enctype="multipart/form-data">-->
-
-                                        <!-- Cart Item -->
-                                        <li class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
 
 
-                                                    <div class="product_image">
-                                                        <img src="images/<?php echo $keranjang->foto_file; ?>" alt="">
-                                                    </div>
+                            <form method="POST">
+                                <table class="table table-bordered table-striped table-hover dataTable ">
+                                    <th colspan="6" style="text-align:left; font-weight:bold"> Kode Transaksi : <?php echo autonumber("invoice", "kd_transaksi", "5", "T"); ?></th>
 
-                                                <div class="product_name_container">
-                                                    <div class="product_name"><a
-                                                                href="product.php?cari=produk&kd_produk=<?php echo $keranjang->kd_produk;?>"><?php echo $keranjang->nama; ?></a>
-                                                    </div>
+                                    <tr>
 
-                                                </div>
+                                        <th>Produk</th>
+                                        <th>Nama</th>
+                                        <th>Harga</th>
+                                        <th>Banyak</th>
+                                        <th>Sub Total (CAD)</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                    <?php
+                                    $cart = unserialize(serialize($_SESSION['cart']));
+                                    $s = 0;
+                                    $index = 0;
 
-                                                <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
-                                                <input type="hidden" name='kd_produk' value="<?php echo $keranjang->kd_produk;?>"><?php echo $keranjang->kd_produk;?>
-                                            </div>
-                                            <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
-                                                <input type="hidden" name="harga" value="<?php echo $keranjang->harga; ?>"><?php echo format_rupiah($keranjang->harga); ?>
-                                            </div>
+                                    for($i=0; $i<count($cart); $i++) {
 
-                                            <div class="product_quaproduct_price product_textntity ml-lg-auto mr-lg-auto text-center">
-                                                <div class="qty_sub qty_button trans_200 text-center"><a
-                                                            href="cart.php?act=min&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php">&blacktriangledown;</a></span>
-                                                </div>
-                                                <form action="cart.php?act=masuk&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php&&quantity=" method="get">
+//                                        $bakul =mysqli_query($koneksi, "INSERT INTO invoice (kd_transaksi,kd_produk,quantity,harga,tgl,totalbyar,status,nik,ongkir)
+//     VALUES ('$kd_produk[$i]')");
+                                        $s += $cart[$i]->harga * $cart[$i]->quantity;
+                                        ?>
+                                        <tr>
 
-                                                    <input name="quantity" id="quantity"type="text" style="width:30px;" value="<?php echo $val; ?>"/><?php echo $val; ?>
-                                                    <button name="masuk" type="submit">Tambah</button>
+                                            <td class="product_image">
+                                                <img src="images/<?php echo $cart[$i]->foto_file; ?>" alt="">
+                                                <br/>
+                                                <a
+                                                        href="product.php?cari=produk&kd_produk=<?php echo $cart[$i]->kd_produk; ?>"><?php echo $cart[$i]->kd_produk; ?></a>
+                                                <input type="hidden" value="<?php echo $cart[$i]->kd_produk; ?>"
+                                                       name="kd_produk">
+                                            </td>
+                                            <td> <?php echo $cart[$i]->nama; ?> </td>
+                                            <td> <?php echo format_rupiah($cart[$i]->harga); ?>
+                                                <input type="hidden" value="<?php echo $cart[$i]->harga; ?>"
+                                                       name="harga"></td>
 
-                                                </form>
+                                            <td><input type="number" min="1" max="<?php
+                                                $ques = mysqli_query($koneksi,"select * from stok where kd_produk='".$cart[$i]->kd_produk."'");
+                                                while ($cats = mysqli_fetch_object($ques)) {
+                                                    ?><?=$cats->banyak; }?>"
+                                                       style="width: 60px"
+                                                       oninvalid="this.setCustomValidity('Stok Tidak Mencukupi ! Harap Hubunggi Admin :)')"
+                                                       value="<?php echo $cart[$i]->quantity; ?>" name="quantity[]">
+                                                <br><code><?php
+                                                    $ques = mysqli_query($koneksi,"select * from stok where kd_produk='".$cart[$i]->kd_produk."'");
+                                                    while ($cats = mysqli_fetch_object($ques)) {
+                                                        ?>
+                                                        <?php echo "Stok Saat ini", " $cats->banyak  ", "Items";
+                                                    }?> </code></td>
+                                            <td> <?php echo format_rupiah($cart[$i]->harga * $cart[$i]->quantity); ?>
+                                            </td>
+                                            <td><a class="button btn-success btn-lg"
+                                                   href="cart.php?index=<?php echo $index; ?>"
+                                                   onclick="return confirm('Are you sure?')">Hapus</a><br>
 
-                                                <div class="qty_add qty_button trans_200 text-center"><a
-                                                            href="cart.php?act=plus&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php">&blacktriangle;</a></span>
-                                                </div>
+                                            </td>
 
-                                            </div>
+                                        </tr>
+                                        <?php
+                                        $index++;
+                                    } ?>
+                            </form>
 
-                                            <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
-                                                <?php echo format_rupiah($jumlah_harga); ?></div>
-                                            <div class="product_price product_text">
-                                                <a  href="cart.php?act=del&amp;kd_produk=<?php echo $key; ?>&amp;ref=index.php"> <span>Hapus</a>
+                                    <tr>
+                                        <td colspan="2" >
+                                            <label>Pilih Lokasi</label>
+                                            <select name="onkir" id="onkir" onchange="changeValue(this.value)">
+                                                <option value='0' disabled="disabled" selected/>Pilih Tujuan</option>
+                                                <option value='0'  selected/>COD</option>
+                                                <?php
+                                                include "aksinya/koneksi.php";
+                                                $result = mysqli_query($koneksi,"select * from ongkir");
+                                                $jsArray = "var dataongkir = new Array();\n";
 
-                                            </div>
+
+                                                while ($row = mysqli_fetch_array($result)) {
+                                                    $hasill = $row['ongkir'] + $s;
+                                                    echo '<option value="' . $row['id_onkir'] . '">' . $row['kec'] . '-' . $row['ongkir'] . '</option>
+                                                    ';
+                                                    $jsArray .= "dataongkir['" . $row['id_onkir'] . "'] = {upah:'" . addslashes($hasill). "',ttotal:'".addslashes($row['ongkir'])."',upah2:'" . addslashes($hasill). "'};\n";
 
 
-                                        </li>
+                                                }
 
-                                </ul>
-                            </div>
+                                                ?>
+                                            </select>
+                                        </td>
 
-                            <?php
-$a++;
-                            //((mysqli_free_result($query) || (is_object($query) && (get_class($query) == "mysqli_result"))) ? true : false);
-                            }
-                            }
-    }?>
+                                        <td colspan="2" style="text-align:left; font-weight:bold">
+                                            <label>Total Belanja + Ongkir</label><br/>
+                                            <input style="" type='text' id="upah" disabled="true" value="" name="upah"/>
+                                            <input style="" type='text' id="ttotal" disabled="true" value="" name="ttotal"/>
+
+                                        </td>
+                                        <td>
+                                            <label>Total Belanja</label><br/><?php echo format_rupiah($s); ?>
+                                            <input style="" type='text' id="" disabled="true" value="<?php echo $s; ?>" name="subtotal"/></td>
+                                        <td colspan="" style="text-align:center; font-weight:bold">
+                                            <button id="saveimg" class="button btn-primary btn-lg" src="images/save.png" onclick="return confirm('Update Keranjang?')"name="update" alt="Upadate QTY ">Update QTY</button>
+                                            <button id="saveimg" class="button btn-primary btn-lg" src="images/save.png" onclick="return confirm('Segarkan Halaman Ini?')"value="Refresh Halaman" onclick="window.location.href=window.location.href;">Refresh</button>
+                                        </td>
+
+                                    </tr>
+                                </table>
+
                             <div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
                                 <div class="button button_clear trans_200"><a lass="button button_clear trans_200"
                                                                               href="cart.php?act=clear&amp;ref=index.php">Clear</a>
                                 </div>
+                                <div class="button button_continue trans_200"><a href="index.php">Lanjutkan Belanja</a></div>
+                                <div class="dropdown">
+                                    <a class="btn btn-primary btn-lg btn-block" name="tambahtr" href="cart.php?act=full&amp;ref=index.php" href="">checkout</a></div>
 
+                                <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
+                                    <?php
+                                    if(!isset($_SESSION['nik'])) {
+                                        echo'<form method = "get" action = "/sehati3/laporan/sc_cart.php?nik=" >';
+                                    }
+                                    else {
+                                        echo'<form method = "get" action = "/sehati3/laporan/sc_cart.php?addnik=" >';
+                                    }
+                                    ?>
+                                    <div class="dropdown">
+                                        &nbsp;
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Pilih Area
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                            <?php
+                                            $queryongkir = "SELECT * from ongkir";
+                                            $hasilonkir = mysqli_query($koneksi,$queryongkir);
+                                            while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
+
+//                                                echo '<button class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['hargaojek'].'">'.$dataongkir['kec'].'-'.$dataongkir['hargaojek'].''.'</button>';
+
+                                                ?>
+                                                <button formtarget="_blank" class="dropdown-item" name="id_onkir" value="<?php
+                                                echo $dataongkir['ongkir'];
+                                                ?>"><?php
+                                                    echo $dataongkir['kec'].'-'.$dataongkir['ongkir'];
+                                                    ?></button>
+                                                <?php
+                                            }
+                                            ?>
+
+                                        </div>
+                                    </div>
+                                    <?php
+                                    if(!isset($_SESSION['nik'])) {
+
+                                        echo '<input id="addnik" name="addnik" value="0" type="hidden" />';
+                                    } else
+                                    {
+                                        $nik = $_SESSION['nik'];
+                                        echo'
+    <input id="addnik" name="nik" type="hidden" value="'.$nik.'" />
+    ';
+                                    }?>
+
+                                    <input id="addnama" name="addnama" type="hidden" />
+                                    <input type="hidden" name="addalamat" id="addalamat" />
+                                    <input type="hidden" name="addpos" id="addpos" />
+                                    <input type="hidden" name="addhp" id="addhp" />
+                                    </form>
+                                </div>
+                            </div>
 <!--profil penerima-->
                             <div class="col-lg-12">
                                 <div class="billing">
@@ -1471,8 +1543,7 @@ if(!isset($_SESSION['nik']))
                                                    name="hp"  onkeyup="checkNumber(this)"
                                             >
                                         </div>
-                                        <div class="product_size product_text "><p
-                                                    style="text-align: right"><?php echo  format_rupiah($total); ?></div>
+
 
                                     </div>
                                 </div>
@@ -1559,68 +1630,7 @@ if(!isset($_SESSION['nik']))
 
             ?>
                             <!-- Cart Buttons -->
-                            <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
 
-                                    <div class="button button_continue trans_200"><a href="index.php">continue
-                                            shopping</a></div>
-                                    <div class="dropdown">
-
-                                        <a
-                                                class="btn btn-primary btn-lg btn-block" name=""
-                                                href="cart.php?act=full&amp;ref=index.php" href="">checkout</a></div>
-
-                                <?php
-                                if(!isset($_SESSION['nik'])) {
-                                    echo'<form method = "get" action = "/sehati/laporan/sc_cart.php?nik=" >';
-                                }
-else {
-    echo'<form method = "get" action = "/sehati/laporan/sc_cart.php?addnik=" >';
-}
-                                   ?>
-                                    <div class="dropdown">
-&nbsp;
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Pilih Area
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-                                            <?php
-                                            $queryongkir = "SELECT * from ongkir";
-                                            $hasilonkir = mysqli_query($koneksi,$queryongkir);
-                                            while ($dataongkir = mysqli_fetch_array($hasilonkir)) {
-
-//                                                echo '<button class="dropdown-item" href="/sehati/laporan/sc_cart.php?id_onkir='.$dataongkir['hargaojek'].'">'.$dataongkir['kec'].'-'.$dataongkir['hargaojek'].''.'</button>';
-
-                                                ?>
-                                                <button formtarget="_blank" class="dropdown-item" name="id_onkir" value="<?php
-                                                echo $dataongkir['ongkir'];
-                                                ?>"><?php
-                                                    echo $dataongkir['kec'].'-'.$dataongkir['ongkir'];
-                                                    ?></button>
-                                                <?php
-                                            }
-                                            ?>
-
-                                        </div>
-                                    </div>
-<?php
-if(!isset($_SESSION['nik'])) {
-
-    echo '<input id="addnik" name="addnik" value="0" type="hidden" />';
-} else
-{
-    $nik = $_SESSION['nik'];
-    echo'
-    <input id="addnik" name="nik" type="hidden" value="'.$nik.'" />
-    ';
-}?>
-
-                                       <input id="addnama" name="addnama" type="hidden" />
-                                       <input type="hidden" name="addalamat" id="addalamat" />
-                                       <input type="hidden" name="addpos" id="addpos" />
-                                       <input type="hidden" name="addhp" id="addhp" />
-                                   </form>
-                                </div>
 
                             </div>
                         </div>
@@ -1723,7 +1733,7 @@ if(!isset($_SESSION['nik'])) {
     function closeModal(){document.getElementById("pelajar").classList.remove("active"),document.getElementById("whatsapp").classList.remove("active")}function openModal(){document.getElementById("pelajar").classList.add("active"),document.getElementById("whatsapp").classList.add("active")}
 
     // Onclick Whatsapp Sent!
-    function WhatsApp(){var a="";if(""==$("#whatsapp .asal").val())return a=$("#whatsapp .asal").attr("name"),alert("Please select the city of origin "+a),$("#whatsapp .nama").focus(),!1;if(""==$("#whatsapp .ke").val())return a=$("#whatsapp .ke").attr("name"),alert("Please select the destination city "+a),$("#whatsapp .ke").focus(),!1;if(""==$("#whatsapp .tanggal").val())return a=$("#whatsapp .tanggal").attr("name"),alert("Please Specify Order Date "),$("#whatsapp .tanggal").focus(),!1;if(""==$("#whatsapp .jadwal").val())return a=$("#whatsapp .jadwal").attr("name"),alert("Please select a departure schedule "+a),$("#whatsapp .jadwal").focus(),!1;if(""==$("#whatsapp .nama").val())return a=$("#whatsapp .nama").attr("name"),alert("Please write name"),$("#whatsapp .nama").focus(),!1;if(""==$("#whatsapp .hp").val())return a=$("#whatsapp .hp").attr("name"),alert("Please write the active mobile number "+a),$("#whatsapp .hp").focus(),!1;if(""==$("#whatsapp .jumlah").val())return a=$("#whatsapp .jumlah").attr("name"),alert("Please specify the number of items "),$("#whatsapp .jumlah").focus(),!1;if(""==$("#whatsapp .jemput").val())return a=$("#whatsapp .jemput").attr("name"),alert("Please write the message "),$("#whatsapp .jemput").focus(),!1;if(""==$("#whatsapp .antar").val())return a=$("#whatsapp .antar").attr("name"),alert("Please write the complete destination address "+a),$("#whatsapp .antar").focus(),!1;if(confirm("Already installed WhatsApp?"))
+    function WhatsApp(){var a="";if(""==$("#whatsapp .asal").val())return a=$("#whatsapp .asal").attr("name"),alert("Harap Pilih Kode Transaksi Yang Benar "+a),$("#whatsapp .nama").focus(),!1;if(""==$("#whatsapp .ke").val())return a=$("#whatsapp .ke").attr("name"),alert("Please select the destination city "+a),$("#whatsapp .ke").focus(),!1;if(""==$("#whatsapp .tanggal").val())return a=$("#whatsapp .tanggal").attr("name"),alert("Please Specify Order Date "),$("#whatsapp .tanggal").focus(),!1;if(""==$("#whatsapp .jadwal").val())return a=$("#whatsapp .jadwal").attr("name"),alert("Please select a departure schedule "+a),$("#whatsapp .jadwal").focus(),!1;if(""==$("#whatsapp .nama").val())return a=$("#whatsapp .nama").attr("name"),alert("Tolong Isikan Nama Anda"),$("#whatsapp .nama").focus(),!1;if(""==$("#whatsapp .hp").val())return a=$("#whatsapp .hp").attr("name"),alert("Tolong Masukan Nomer HP Yang Benar "+a),$("#whatsapp .hp").focus(),!1;if(""==$("#whatsapp .jumlah").val())return a=$("#whatsapp .jumlah").attr("name"),alert("Pilih Lokasi Terlebih dahulu Pada Keranjang "),$("#whatsapp .jumlah").focus(),!1;if(""==$("#whatsapp .jemput").val())return a=$("#whatsapp .jemput").attr("name"),alert("Isikan Pesan "),$("#whatsapp .jemput").focus(),!1;if(""==$("#whatsapp .antar").val())return a=$("#whatsapp .antar").attr("name"),alert("Please write the complete destination address "+a),$("#whatsapp .antar").focus(),!1;if(confirm("Already installed WhatsApp?"))
     {var t="https://wa.me/";/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)&&(t="whatsapp://send/");var e=$("#whatsapp .tujuan").val(),p=(location.href,$("#whatsapp .asal").val()),s=($("#whatsapp .ke").val(),$("#whatsapp .tanggal").val()),r=($("#whatsapp .jadwal").val(),$("#whatsapp .nama").val()),h=$("#whatsapp .hp").val(),l=$("#whatsapp .jumlah").val(),n=$("#whatsapp .jemput").val();$("#whatsapp .antar").val();$(this).attr("href",t+"?phone=62 "+e+"&text=*Pesanan: "+p+" "+s+" %0A "+r+" %0A "+h+" %0A "+l+" %0A%0A "+n);var w=960,i=540,o=Number(screen.width/2-w/2),u=Number(screen.height/2-i/2),m=window.open(this.href,"","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=1, copyhistory=no, width="+w+", height="+i+", top="+u+", left="+o);return m.focus(),!1}window.open("https://www.whatsapp.com/download/")}$("#whatsapp .submit").click(WhatsApp);var reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
     // youvideo
@@ -1753,5 +1763,28 @@ if(!isset($_SESSION['nik'])) {
     document.getElementById("bread-crumbs").appendChild(document.getElementById("breadcrumbs"));
     /*]]>*/
 </script>
+
+<script type="text/javascript">
+    <?php echo $jsArray; ?>
+    function changeValue(id_onkir){
+
+        document.getElementById('upah').value = dataongkir[id_onkir].upah;
+        document.getElementById('upah2').value = dataongkir[id_onkir].upah2;
+        document.getElementById('ttotal').value = dataongkir[id_onkir].ttotal;
+    };
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<?php echo "
+<script>
+    function sum() {
+        var satu = (document.getElementById('upah').value == '' ? 0:document.getElementById('upah').value);
+        var satuy = (document.getElementById('upah2').value == '' ? 0:document.getElementById('upah2').value);
+        var dua = (document.getElementById('ttotal').value  == '' ? 0:document.getElementById('ttotal').value)\n;
+        var result = parseInt(satu) + parseInt(dua);
+        if (!isNaN(result)) {
+            document.getElementById('hasilonkir').value = result;
+        }
+    }
+</script> ";?>
 </body>
 </html>

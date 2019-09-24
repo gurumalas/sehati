@@ -143,23 +143,20 @@ if (isset($_POST["tambah"])) {
                                 <tbody>
                                 <tr>
                                     <td><?php echo $no?></td>
-                                    <td><img src='../images/<?php echo $rows -> foto_file?>'  width='150px' height='150px'> <br/>
-                                        <p style="text-align: center;"><strong><?php echo $rows -> kd_produk?></strong></p>
-                                    </td>
-                                    <td><?php echo $rows -> nama?></td>
-                                    <td><?php echo format_rupiah($rows ->beli)?></td>
-                                    <td><?php echo format_rupiah($rows ->jual)?></td>
-                                    <td><?php echo $rows -> banyak?></td>
+                                    <td><?php echo $rows -> id_supplier?></td>
+                                    <td><?php echo $rows -> nama_supplier?></td>
+                                    <td><?php echo $rows -> alamat?></td>
+                                    <td><?php echo $rows -> kontak?></td>
                                     <td>
 
-                                        <a class="btn bg-green waves-effect"href="estok.php?aksi=ubah&kd_produk=<?= $rows -> kd_produk; ?>" >
+                                        <a class="btn bg-green waves-effect"href="esupplier.php?aksi=ubah&id_supplier=<?= $rows -> id_supplier; ?>" >
                                             <i class="material-icons">edit</i>
                                             <span>Edit</span></a>
-                                        <a class="btn bg-red waves-effect" href="stok.php?delete&kd_produk=<?= $rows -> kd_produk; ?>"
+                                        <a class="btn bg-red waves-effect" href="supplier.php?delete&id_supplier=<?= $rows -> id_supplier; ?>"
                                            onclick="return confirm('Anda Yakin Akan Menghapus')" title="Hapus Data" >
                                             <i class="material-icons">delete</i>
                                             <span>Hapus</span></a>
-                                        <a target="_blank" class="btn bg-black waves-effect"href="../laporan/rincianproduk.php?kd_produk=<?= $rows -> kd_produk; ?>" >
+                                        <a target="_blank" class="btn bg-black waves-effect"href="../laporan/rinciansupplier.php?kd_produk=<?= $rows -> id_supplier; ?>" >
                                             <i class="material-icons">print</i>
                                             <span>Cetak</span></a>
 
