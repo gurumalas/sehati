@@ -18,10 +18,7 @@ if (isset($_GET['aksi']) == 'delete') {
         }
     }
 }
-
-
 ?>
-
 
 <section class="content">
     <div class="container-fluid">

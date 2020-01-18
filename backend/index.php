@@ -134,7 +134,7 @@
                                             <td><?php echo format_rupiah($rowsinvoice->totalbyar)?></td>
                                             <td>
 
-                                                    <a href="index.php?act=ubah&kd_invoice=<?php echo $rowsinvoice->kd_invoice?>">Lunas</a>
+                                                    <a href="index.php?act=ubah&kd_invoice=<?php echo $rowsinvoice->kd_invoice?>"><span class="label bg-blue">Lunas</span></a>
 
                                             </td>
                                         </tr>

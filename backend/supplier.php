@@ -97,19 +97,6 @@ if (isset($_POST["tambah"])) {
                     </div>
 
                     <div class="body">
-                        <!--                        <form action="stok.php" method="get">-->
-                        <!---->
-                        <!--                            <select name="cari2" >-->
-                        <!--                                <option value="">Pilih Menurut Kategori</option>-->
-                        <!--                                <option value="kd_produk">Kode Produk</option>-->
-                        <!--                                <option value="namaproduk">Nama Produk</option>-->
-                        <!--                                <option value="jproduk">Jenis Produk</option>-->
-                        <!--                                <option value="hproduk">Harga Produk</option>-->
-                        <!--                                <option value="desproduk">Deskripsi Produk</option>-->
-                        <!--                            </select>-->
-                        <!--                            <input type="text" name="cari3"/>-->
-                        <!--                            <button name="cari2" class="btn btn-success">CARI</button>-->
-                        <!--                        </form>-->
                         <div class="table-responsive">
                             <a target="_blank" class="btn bg-black waves-effect"href="../laporan/laporanproduk.php" >
                                 <i class="material-icons">print</i>
@@ -176,7 +163,7 @@ if (isset($_POST["tambah"])) {
             </div>
         </div>
         <!-- #END# Exportable Table -->
-    </div>
+<!--    </div>-->
 </section>
 
 <?php include 'footer.php';?>

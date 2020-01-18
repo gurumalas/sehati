@@ -1079,6 +1079,7 @@ location='index.php';</script>";
         <!--/.Content-->
     </div>
 </div>
+
 <!--Modal: Login / Register Form-->
 <div class='pelajar' id='pelajar'></div>
 <div id='whatsapp'>

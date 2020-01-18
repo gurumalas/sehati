@@ -13,6 +13,7 @@ if (isset($_POST["tambah"])) {
     $kd_jenis = $_POST['kd_jenis'];
 
     $harga = $_POST['harga'];
+    $nama_supplier = $_POST['nama_supplier'];
     $deskripsi = $_POST['deskripsi'];
     $foto_file = $_POST['foto_file'];
     $nama = "1463";
@@ -28,7 +29,7 @@ if (isset($_POST["tambah"])) {
         $masuk = move_uploaded_file($_FILES['foto_file']['tmp_name'],
             $dir_upload . $nama_file);
 
-        $mysqli = "INSERT INTO produk(kd_produk,foto_file,kd_jenis,harga,deskripsi) VALUES ('$kd_produk','$nama_file','$kd_jenis','$harga','$deskripsi')";
+        $mysqli = "INSERT INTO produk(kd_produk,foto_file,kd_jenis,harga,deskripsi,nama_supplier) VALUES ('$kd_produk','$nama_file','$kd_jenis','$harga','$deskripsi','$nama_supplier')";
         $result = mysqli_query($koneksi, $mysqli) or die("gagal " . mysqli_error($koneksi));
         $cek = mysqli_query($koneksi, "SELECT * FROM produk WHERE kd_produk='$kd_produk'");
         if ($cek) {
@@ -67,6 +68,24 @@ if (isset($_POST["tambah"])) {
                             <label >Nama Produk</label>
                             <input type="text" class="form-control" name="nama" maxlength="50" minlength="3"  placeholder="Herbalife Milk" required>
                             <div class="help-info">Min. Kerakter: 3, Max. Kerakter: 50</div>
+                        </div>
+                    </div>
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <label >Pilih Supplier</label>
+                            <select name="nama_supplier" class="form-control"  style="width: 100%;" required>
+                                <option value="">Pilih Supplier</option>
+                                <?php
+                                include "../aksinya/koneksi.php";
+                                $query = "SELECT * from supplier";
+                                $hasil = mysqli_query($koneksi,$query);
+                                while ($data = mysqli_fetch_array($hasil))
+                                {
+
+                                    echo "<option value=$data[nama_supplier]>$data[id_supplier]&nbsp;-&nbsp;$data[nama_supplier]</option>";
+                                }
+                                ?>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group form-float">
@@ -187,6 +206,7 @@ if (isset($_POST["tambah"])) {
                                     <th>Jenis</th>
                                     <th>Harga</th>
                                     <th>Deskripsi</th>
+                                    <th>Supplier</th>
                                     <th>Aksi</th>
                                 </tr>
                                 </thead> <?php
@@ -218,6 +238,7 @@ if (isset($_POST["tambah"])) {
                                     <td><?php echo $rows -> kd_jenis?></td>
                                     <td><?php echo format_rupiah($rows ->harga)?></td>
                                     <td><?php echo $rows -> deskripsi?></td>
+                                    <td><?php echo $rows -> nama_supplier?></td>
                                     <td>
 
                                         <a class="btn bg-green waves-effect"href="eproduk.php?aksi=ubah&kd_produk=<?= $rows -> kd_produk; ?>" >

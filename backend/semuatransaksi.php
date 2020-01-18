@@ -131,7 +131,7 @@ include 'header.php';
                                     <td><?php echo $rows ->quantity.'x'.format_rupiah($rows ->harga)?></td>
                                     <td><?php echo format_rupiah($rows ->totalbyar)?></td>
                                     <td><a class="btn btn-danger waves-effect" href="../laporan/laporantransaksi.php?kd_transaksi=<?php echo $rows -> kd_transaksi;?>">
-                                            <i class="material-icons">book</i><span></span></a>
+                                            <i class="material-icons">book</i><span></span>[C]etak</a>
                                     </td>
 
                                 </tr>

@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213f59bf-8ec8-4702-acf1-1c81f656be7f" name="Default Changelist" comment="Toko Obat Sehati">
-      <change afterPath="$PROJECT_DIR$/backend/esupplier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1fed6ef6-fc69-43d8-8edb-6853400027b6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1fed6ef6-fc69-43d8-8edb-6853400027b6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bestmember.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bestmember.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/produk.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/produk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/semuatransaksi.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/semuatransaksi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/supplier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coba.php" beforeDir="false" afterPath="$PROJECT_DIR$/coba.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/head.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +55,13 @@
         <item name="sehati" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="sehati: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="produk: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="sehati" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sehati: schema" type="ebfa3cd1:MariaImplModel$Schema" />
         <item name="supplier: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
@@ -59,67 +70,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+        <entry file="file://$PROJECT_DIR$/product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6816">
-              <caret line="284" column="161" selection-start-line="284" selection-start-column="161" selection-end-line="284" selection-end-column="161" />
+            <state relative-caret-position="480">
+              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/stok.php">
+        <entry file="file://$PROJECT_DIR$/backend/produk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3648">
-              <caret line="152" column="16" selection-end-line="210" />
+            <state relative-caret-position="4728">
+              <caret line="197" column="43" selection-start-line="197" selection-start-column="38" selection-end-line="197" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/esupplier.php">
+        <entry file="file://$PROJECT_DIR$/laporan/laporanproduk.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cart.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="264">
+              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
+        <entry file="file://$PROJECT_DIR$/head.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="25584">
+              <caret line="1066" column="14" selection-start-line="1066" selection-start-column="14" selection-end-line="1066" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/header.php">
+        <entry file="file://$PROJECT_DIR$/backend/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4800">
-              <caret line="200" column="49" selection-start-line="200" selection-start-column="41" selection-end-line="200" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/supplier.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="15" selection-end-column="31" />
+            <state relative-caret-position="1392">
+              <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -127,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/semuatransaksi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3072">
-              <caret line="128" column="79" selection-start-line="128" selection-start-column="79" selection-end-line="128" selection-end-column="79" />
+            <state relative-caret-position="840">
+              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -136,8 +126,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1872">
-              <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
+            <state relative-caret-position="1440">
+              <caret line="60" column="46" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cart.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32376">
+              <caret line="1349" column="77" selection-start-line="1349" selection-start-column="77" selection-end-line="1349" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/coba.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="24" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -146,29 +154,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cod</find>
-      <find>ONGKIR</find>
-      <find>pilih</find>
-      <find>contin</find>
-      <find>$total</find>
-      <find>pili</find>
-      <find>produk</find>
-      <find>cari2</find>
-      <find>beli</find>
-      <find>sub to</find>
-      <find>addn</find>
-      <find>addni</find>
-      <find>addnama</find>
-      <find>nama</find>
-      <find>alama</find>
-      <find>masu</find>
-      <find>addna</find>
-      <find>33</find>
-      <find>&lt;form</find>
       <find>$val</find>
       <find>semua</find>
-      <find>join</find>
-      <find>tambah</find>
       <find>delte</find>
       <find>quan</find>
       <find>insert</find>
@@ -176,6 +163,27 @@
       <find>head</find>
       <find>masuk</find>
       <find>&lt;img</find>
+      <find>desk</find>
+      <find>tambah</find>
+      <find>&lt;body</find>
+      <find>&lt;section class=&quot;content&quot;&gt;</find>
+      <find>JQUERY DATATABLES</find>
+      <find>lunas</find>
+      <find>aksi</find>
+      <find>carousel</find>
+      <find>toko</find>
+      <find>toko o</find>
+      <find>toko oba</find>
+      <find>tang</find>
+      <find>join</find>
+      <find>bulan1</find>
+      <find>$data</find>
+      <find>bulan</find>
+      <find>tgl</find>
+      <find>cetak</find>
+      <find>if</find>
+      <find>dari</find>
+      <find>stok ti</find>
     </findStrings>
     <replaceStrings>
       <replace>produk</replace>
@@ -216,7 +224,6 @@
         <option value="$PROJECT_DIR$/product.php" />
         <option value="$PROJECT_DIR$/laporan/laporanproduk.php" />
         <option value="$PROJECT_DIR$/aksinya/koneksi.php" />
-        <option value="$PROJECT_DIR$/backend/produk.php" />
         <option value="$PROJECT_DIR$/laporan/Laporanjenisobat.php" />
         <option value="$PROJECT_DIR$/panel_member/eporfil.php" />
         <option value="$PROJECT_DIR$/panel_member/eprofil.php" />
@@ -239,29 +246,30 @@
         <option value="$PROJECT_DIR$/panel_member/header.php" />
         <option value="$PROJECT_DIR$/laporan/pdfcart.php" />
         <option value="$PROJECT_DIR$/panel_member/modalusaha.php" />
-        <option value="$PROJECT_DIR$/backend/index.php" />
         <option value="$PROJECT_DIR$/panel_member/index.php" />
         <option value="$PROJECT_DIR$/laporan/laporanbestmember.php" />
         <option value="$PROJECT_DIR$/aksinya/fungsi.php" />
         <option value="$PROJECT_DIR$/kategori.php" />
-        <option value="$PROJECT_DIR$/coba.php" />
         <option value="$PROJECT_DIR$/laporan/sc_cart.php" />
-        <option value="$PROJECT_DIR$/head.php" />
-        <option value="$PROJECT_DIR$/backend/bestmember.php" />
         <option value="$PROJECT_DIR$/backend/stok.php" />
         <option value="$PROJECT_DIR$/backend/estok.php" />
-        <option value="$PROJECT_DIR$/backend/semuatransaksi.php" />
         <option value="$PROJECT_DIR$/laporan/laporantransaksi.php" />
         <option value="$PROJECT_DIR$/backend/header.php" />
-        <option value="$PROJECT_DIR$/backend/supplier.php" />
         <option value="$PROJECT_DIR$/backend/esupplier.php" />
+        <option value="$PROJECT_DIR$/backend/produk.php" />
+        <option value="$PROJECT_DIR$/backend/supplier.php" />
+        <option value="$PROJECT_DIR$/backend/index.php" />
+        <option value="$PROJECT_DIR$/backend/bestmember.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/head.php" />
+        <option value="$PROJECT_DIR$/backend/semuatransaksi.php" />
         <option value="$PROJECT_DIR$/cart.php" />
+        <option value="$PROJECT_DIR$/coba.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -273,6 +281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,21 +289,10 @@
               <item name="sehati" type="b2602c69:ProjectViewProjectNode" />
               <item name="sehati" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sehati" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sehati" type="462c0819:PsiDirectoryNode" />
-              <item name="aksinya" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sehati" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sehati" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,17 +379,21 @@
       <workItem from="1568807392414" duration="1532000" />
       <workItem from="1568836946353" duration="3537000" />
       <workItem from="1568984120943" duration="3810000" />
+      <workItem from="1572208069912" duration="9415000" />
+      <workItem from="1576926358047" duration="2680000" />
+      <workItem from="1577911595478" duration="12203000" />
+      <workItem from="1578740168737" duration="598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="569597000" />
+    <option name="totallyTimeSpent" value="594493000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="10" y="20" width="1346" height="698" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919486" visible="true" weight="0.15960665" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919486" visible="true" weight="0.16407464" />
       <window_info id="Structure" order="1" sideWeight="0.50080514" side_tool="true" weight="0.25718608" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -411,30 +413,8 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15582451" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15085536" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919486" visible="true" weight="0.13918306" />
-      <window_info id="Structure" order="1" sideWeight="0.50080514" side_tool="true" weight="0.25718608" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32850242" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49924356" weight="0.32850242" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.12399356" />
-      <window_info anchor="bottom" id="Database Console" order="12" sideWeight="0.49848714" weight="0.12399356" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.17019667" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -445,20 +425,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Toko Obat Sehati" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/laporan/Laporanjenisobat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="174" column="3" lean-forward="true" selection-start-line="174" selection-start-column="3" selection-end-line="174" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laporan/rincianproduk.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -703,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="123" column="88" selection-start-line="123" selection-start-column="88" selection-end-line="123" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aksinya/cekadmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -745,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19849">
-          <caret line="863" selection-start-line="863" selection-end-line="863" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laporan/laporanmember.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="943">
@@ -766,32 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coba.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16882">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/bestmember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="72" column="50" lean-forward="true" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
-          <folding>
-            <element signature="e#136#143#1" expanded="true" />
-            <element signature="e#139#146#1" expanded="true" />
-            <element signature="e#138#145#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="63" column="35" lean-forward="true" selection-end-line="206" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/eproduk.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -803,24 +729,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/produk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/estok.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="16" selection-end-line="151" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6816">
-          <caret line="284" column="161" selection-start-line="284" selection-start-column="161" selection-end-line="284" selection-end-column="161" />
         </state>
       </provider>
     </entry>
@@ -838,6 +750,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2664">
+          <caret line="111" column="13" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4800">
@@ -847,39 +766,94 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/supplier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="288">
+          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/bestmember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="e#29#980#0#PHP" />
+            <element signature="e#136#143#1" expanded="true" />
+            <element signature="e#139#146#1" expanded="true" />
+            <element signature="e#138#145#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/plugins/jquery-sparkline/src/header.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/produk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4728">
+          <caret line="197" column="43" selection-start-line="197" selection-start-column="38" selection-end-line="197" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laporan/laporanproduk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25584">
+          <caret line="1066" column="14" selection-start-line="1066" selection-start-column="14" selection-end-line="1066" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1392">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/semuatransaksi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3072">
-          <caret line="128" column="79" selection-start-line="128" selection-start-column="79" selection-end-line="128" selection-end-column="79" />
+        <state relative-caret-position="840">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laporan/laporantransaksi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1872">
-          <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laporan/sc_cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1440">
+          <caret line="60" column="46" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="32376">
+          <caret line="1349" column="77" selection-start-line="1349" selection-start-column="77" selection-end-line="1349" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coba.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="24" selection-end-column="9" />
         </state>
       </provider>
     </entry>
